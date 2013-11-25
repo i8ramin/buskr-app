@@ -1,0 +1,15 @@
+<div ng-app="artistApp">
+  <div ng-controller="IndexCtrl">
+    <div class="topcoat-list__container">
+
+      <ul class="topcoat-list">
+        <li class="topcoat-list__item" ng-click="open(artist._id)" ng-repeat="artist in artists">
+          Artist: {{artist.name}}
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>

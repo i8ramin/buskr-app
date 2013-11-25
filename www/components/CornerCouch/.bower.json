@@ -1,0 +1,20 @@
+{
+  "name": "CornerCouch",
+  "main": "angular-cornercouch.js",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0"
+  },
+  "homepage": "https://github.com/eddelplus/CornerCouch",
+  "_release": "6e9d593c72",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6e9d593c72c8bfb2b5c837c73cd4bed51143f8e2"
+  },
+  "_source": "git://github.com/eddelplus/CornerCouch.git",
+  "_target": "*",
+  "_originalSource": "CornerCouch"
+}
