@@ -32,13 +32,15 @@ Currently, loading.html is supported by iOS only.
   .centered {
     height:100%;
     display: -webkit-box;
-    -webkit-box-orient:vertical;
+    -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     -webkit-box-align: center;
   }
 
   img#spinner {
-    width:36px;
+    opacity: 0;
+    width: 36px;
+
     -webkit-animation-name:            rotate;
     -webkit-animation-duration:        1s;
     -webkit-animation-iteration-count: infinite;

@@ -10,19 +10,27 @@ if ( typeof angular == 'undefined' ) {
 var module = angular.module('ArtistModel', ['CornerCouch']);
 
 module.factory('ArtistCouch', function(cornercouch) {
-  var databaseName  = "artist",
+  var databaseName  = "artists",
       server        = cornercouch("http://.touchdb.", "GET"),
       database      = server.getDB(databaseName);
 
   // Set up two way replication with server and monitoring of the local database
   var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
-      cloudUrl      = "https://agaislostarysedweentirwo:xd6DJbQA32ExBQ4LodWOKgDD@buskr.cloudant.com/artist";
+      cloudUrl      = "https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/artists";
 
   steroidsDB.replicateFrom({
     url: cloudUrl
+  }, {
+    onSuccess: function () {
+      // alert('[replicateFrom] success');
+    },
+    onFailure: function (response) {
+      alert('[replicateFrom] fail ' + response);
+    }
   });
 
   database.getInfo().success(function() {
+    alert("Database " + databaseName + " loaded:" + JSON.stringify(database.info));
     console.log("Database " + databaseName + " loaded:" + JSON.stringify(database.info));
   });
 
@@ -32,28 +40,33 @@ module.factory('ArtistCouch', function(cornercouch) {
       url: cloudUrl
     }, {
       onSuccess: function() {
-        console.log("Database " + databaseName + " replication was successful.");
+        // alert("[startTwoWayReplication] Database " + databaseName + " replication was successful.");
+        console.log("[startTwoWayReplication]Database " + databaseName + " replication was successful.");
       }, onFailure: function() {
-        console.log("Database " + databaseName + " replication failed.");
+        alert("[startTwoWayReplication] Database " + databaseName + " replication failed.");
+        console.log("[startTwoWayReplication] Database " + databaseName + " replication failed.");
       }
     });
   };
 
-  var startOneWayReplication = function(cb) {
-    steroidsDB.startReplication({
+  var startOneWayReplication = function(onChangeCallback) {
+    var options = {
       source: cloudUrl,
       target: "artist"
-    }, {
+    };
+
+    var callbacks = {
       onSuccess: function() {
-        // alert("Replication started");
+        alert("[startOneWayReplication] Replication started");
       },
       onFailure: function() {
-        // alert("Could not start replication");
+        alert("[startOneWayReplication] Could not start replication");
       }
-    });
+    };
 
+    steroidsDB.startReplication(options, callbacks);
     steroidsDB.startMonitoringChanges({}, {
-      onChange: cb
+      onChange: onChangeCallback
     });
   };
 
@@ -66,16 +79,24 @@ module.factory('ArtistCouch', function(cornercouch) {
 
   var ensureDB = function(onEnsuredCallback) {
     steroidsDB.createDB({}, {
-      onSuccess: function() {
-        console.log("Database has been created.");
-        onEnsuredCallback()
+      onSuccess: function () {
+        // alert("[ensureDB] Database has been created.");
+
+        if (onEnsuredCallback) {
+          onEnsuredCallback.call();
+        }
       },
-      onFailure: function(error) {
+      onFailure: function (error) {
         if ( error.status == 412 ) {
           // Already exists
-          onEnsuredCallback()
+          // onEnsuredCallback()
+          // alert("[ensureDB] Already exists!");
+
+          if (onEnsuredCallback) {
+            onEnsuredCallback.call();
+          }
         } else {
-          alert("Unable to create database: " + error.error);
+          alert("[ensureDB] Unable to create database: " + error.error);
         }
       }
     });

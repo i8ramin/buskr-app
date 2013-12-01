@@ -69,5 +69,4 @@
     </plugins>
 
     <access origin="*" />
-    <access origin="http://.touchdb./artist/" />
 </widget>

@@ -7,13 +7,20 @@ artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
     steroids.layers.push(webView);
   };
 
-  ArtistCouch.ensureDB();
+  ArtistCouch.ensureDB(function () {
+    ArtistCouch.keepInSync();
+  });
+
+  $scope.server = ArtistCouch.server;
+  $scope.server.getInfo();
+  $scope.server.getDatabases();
 
   $scope.artists = [];
 
   ArtistCouch.steroidsDB.on('change', function() {
     ArtistCouch.cornerCouchDB.queryAll({ include_docs: true, descending: true, limit: 8 }).success(function(rows) {
       $scope.artists = ArtistCouch.cornerCouchDB.rows.map(function(row) {
+        alert(JSON.stringify(row.doc));
         return row.doc;
       });
     });
@@ -36,6 +43,6 @@ artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
   steroids.view.navigationBar.show("Show " + steroids.view.params.id);
 });
 
-document.addEventListener("deviceready", function () {
-  angular.bootstrap(document, ['artistApp']);
-}, false);
+// document.addEventListener("deviceready", function () {
+//   angular.bootstrap(document, ['artistApp']);
+// }, false);

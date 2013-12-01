@@ -85,10 +85,11 @@ factory('cornercouch', ['$http', function($http) {
         };
 
         // Requires File-API 'file', sorry IE9
-        CouchDoc.prototype.attach = function(file, name) {
+        CouchDoc.prototype.attach = function(file, name, reloadCB) {
 
             var doc = this;
-            
+            if (ng.isFunction(name)) { reloadCB = name; name = null; }
+
             return $http({
                 method:     "PUT",
                 url:        encodeUri(dbUri, doc._id, name || file.name),
@@ -98,10 +99,20 @@ factory('cornercouch', ['$http', function($http) {
             })
             .success(function () {
                 // Reload document for local consistency
-                doc.load();
+                doc.load().success(reloadCB || ng.noop);
             });
         };
-        
+
+        CouchDoc.prototype.attachMulti = function(files, successCB) {
+            var doc = this;
+            var idx = 0;
+            function loopCB() {
+                if (idx < files.length)
+                    doc.attach(files[idx], ++idx < files.length ? loopCB : successCB);
+            };
+            loopCB();
+        }
+
         CouchDoc.prototype.detach = function(name) {
 
             var doc = this;
