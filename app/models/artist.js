@@ -9,7 +9,7 @@ if ( typeof angular == 'undefined' ) {
 
 var module = angular.module('ArtistModel', ['CornerCouch']);
 
-module.factory('ArtistCouch', function(cornercouch) {
+module.factory('ArtistCouch', function ($http, cornercouch) {
   var databaseName  = "artists",
       server        = cornercouch("http://.touchdb.", "GET"),
       database      = server.getDB(databaseName);
@@ -18,11 +18,16 @@ module.factory('ArtistCouch', function(cornercouch) {
   var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
       cloudUrl      = "https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/artists";
 
+  // Disable http credentials so CORS works
+  // FYI this is set to true in angular-cornercouch
+  $http.defaults.withCredentials = false;
+
   steroidsDB.replicateFrom({
     url: cloudUrl
   }, {
     onSuccess: function () {
       // alert('[replicateFrom] success');
+      console.log('[replicateFrom] success');
     },
     onFailure: function (response) {
       alert('[replicateFrom] fail ' + response);
@@ -30,7 +35,7 @@ module.factory('ArtistCouch', function(cornercouch) {
   });
 
   database.getInfo().success(function() {
-    alert("Database " + databaseName + " loaded:" + JSON.stringify(database.info));
+    // alert("Database " + databaseName + " loaded:" + JSON.stringify(database.info));
     console.log("Database " + databaseName + " loaded:" + JSON.stringify(database.info));
   });
 
@@ -52,12 +57,13 @@ module.factory('ArtistCouch', function(cornercouch) {
   var startOneWayReplication = function(onChangeCallback) {
     var options = {
       source: cloudUrl,
-      target: "artist"
+      target: databaseName
     };
 
     var callbacks = {
       onSuccess: function() {
-        alert("[startOneWayReplication] Replication started");
+        // alert("[startOneWayReplication] Replication started");
+        console.log("[startOneWayReplication] Replication started");
       },
       onFailure: function() {
         alert("[startOneWayReplication] Could not start replication");
@@ -71,7 +77,7 @@ module.factory('ArtistCouch', function(cornercouch) {
   };
 
   // Monitor changes
-  var startMonitoringChanges = function(onChangeCallback){
+  var startMonitoringChanges = function (onChangeCallback) {
     steroidsDB.startMonitoringChanges({}, {
       onChange: onChangeCallback
     });
@@ -100,7 +106,7 @@ module.factory('ArtistCouch', function(cornercouch) {
         }
       }
     });
-  }
+  };
 
   return {
     ensureDB: ensureDB,

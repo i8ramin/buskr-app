@@ -1,14 +1,9 @@
 <div ng-app="artistApp">
   <div ng-controller="IndexCtrl">
     <div class="topcoat-list__container">
-
-      <!-- <pre>server.userCtx = {{ server.userCtx | json }}</pre> -->
-      <pre>server.info = {{ server.info | json }}<pre>
-      <pre>server.databases = {{ server.databases | json }}</pre>
-
       <ul class="topcoat-list">
         <li class="topcoat-list__item" ng-click="open(artist._id)" ng-repeat="artist in artists">
-          Artist: {{artist.name}}
+          {{artist.name}}
         </li>
       </ul>
 

@@ -8,19 +8,13 @@ artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
   };
 
   ArtistCouch.ensureDB(function () {
-    ArtistCouch.keepInSync();
   });
-
-  $scope.server = ArtistCouch.server;
-  $scope.server.getInfo();
-  $scope.server.getDatabases();
 
   $scope.artists = [];
 
   ArtistCouch.steroidsDB.on('change', function() {
     ArtistCouch.cornerCouchDB.queryAll({ include_docs: true, descending: true, limit: 8 }).success(function(rows) {
       $scope.artists = ArtistCouch.cornerCouchDB.rows.map(function(row) {
-        alert(JSON.stringify(row.doc));
         return row.doc;
       });
     });
