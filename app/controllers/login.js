@@ -11,7 +11,7 @@ loginApp.controller('LoginCtrl', function ($scope) {
   var fbView = new steroids.views.WebView("/views/login/fb.html");
   var emailView = new steroids.views.WebView("/views/login/email.html");
 
-  // steroids.view.setBackgroundColor("#fbc26b");
+  steroids.view.setBackgroundColor("#d2cbc3");
   steroids.view.navigationBar.show("");
 
   $scope.appId = FB_APP_ID;
@@ -112,10 +112,12 @@ loginApp.controller('LoginCtrl', function ($scope) {
 });
 
 loginApp.controller('emailCtrl', function ($scope) {
+  steroids.view.setBackgroundColor("#d2cbc3");
   steroids.view.navigationBar.show("Sign In");
 });
 
 loginApp.controller('fbCtrl', function ($scope) {
+  steroids.view.setBackgroundColor("#d2cbc3");
   steroids.view.navigationBar.show("Sign In");
 });
 

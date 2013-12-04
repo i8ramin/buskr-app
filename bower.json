@@ -21,7 +21,6 @@
     "imgcache.js": "*",
     "reset-css": "~2.0.20110126",
     "restangular": "~1.1.8",
-    "topcoat": "~0.8.0",
     "lungo": "~2.2.1"
   },
   "resolutions": {

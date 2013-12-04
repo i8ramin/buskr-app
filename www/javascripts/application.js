@@ -27,6 +27,6 @@ steroids.on('ready', function() {
   // steroids.modal.show(loginView);
   // steroids.layers.push(loginView);
 
-  // steroids.view.setBackgroundColor("#fff");
+  steroids.view.setBackgroundColor("#d2cbc3");
   // steroids.view.bounceShadow.hide();
 });

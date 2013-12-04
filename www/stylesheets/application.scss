@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "Source Sans";
+  src: url("font/SourceSansPro-Regular.otf");
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url("font/SourceSansPro-Light.otf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url("font/SourceSansPro-Semibold.otf");
+  font-weight: 600;
+}
+
+
+* {
+  -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
+  -webkit-touch-callout: none; /* Disable touch callouts */
+
+  box-sizing: border-box;
+}
+
+input, textarea {
+  -webkit-user-select: text;  /* Allow selection for input elements */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #d2cbc3;
+  color: #000;
+  font: 16px "Source Sans", helvetica, arial, sans-serif;
+  font-weight: 400;
+}
+
+form {
+  display: block;
+  width: 100%;
+}
+
+.page {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+
+  min-height: 96vh;
+  margin: 2vh;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+}
+.page > .content-full {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+}

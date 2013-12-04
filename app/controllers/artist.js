@@ -20,6 +20,7 @@ artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
     });
   });
 
+  steroids.view.setBackgroundColor("#d2cbc3");
   steroids.view.navigationBar.show("Artist index");
 });
 
@@ -34,6 +35,7 @@ artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
     ArtistCouch.startPollingChanges(whenChanged);
   });
 
+  steroids.view.setBackgroundColor("#d2cbc3");
   steroids.view.navigationBar.show("Show " + steroids.view.params.id);
 });
 
