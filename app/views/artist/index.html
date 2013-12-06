@@ -10,8 +10,9 @@
 
           <div class="artist-name">{{artist.name}}</div>
           <div class="live-location">
-            <div class="loc">0.3 mi</div>
-            <button class="buskr-button button_live">Live now!</button>
+            <div class="loc">{{artist.distance}} mi</div>
+
+            <button class="buskr-button button_live" ng-if="artist.live">Live now!</button>
           </div>
         </li>
       </ul>

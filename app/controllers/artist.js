@@ -21,7 +21,7 @@ artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
   });
 
   steroids.view.setBackgroundColor("#d2cbc3");
-  steroids.view.navigationBar.show("Artist index");
+  steroids.view.navigationBar.show("Artists");
 });
 
 // Show: http://localhost/views/artist/show.html?id=<id>
@@ -29,14 +29,16 @@ artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
   ArtistCouch.ensureDB(function() {
     var whenChanged = function() {
       $scope.artist = ArtistCouch.cornerCouchDB.newDoc();
-      $scope.artist.load(steroids.view.params.id);
+      $scope.artist.load(steroids.view.params.id).then(function (response) {
+        var artist = response.data;
+        steroids.view.navigationBar.show(artist.name);
+      });
     };
 
     ArtistCouch.startPollingChanges(whenChanged);
   });
 
   steroids.view.setBackgroundColor("#d2cbc3");
-  steroids.view.navigationBar.show("Show " + steroids.view.params.id);
 });
 
 // document.addEventListener("deviceready", function () {
