@@ -1,4 +1,6 @@
-
+.text-centered {
+  text-align: center;
+}
 
 .list {
   padding: 0;
@@ -37,93 +39,6 @@
   }
   .buskr-list__item:first-child {
     border-top: 1px solid #d6dcdb;
-  }
-}
-
-.buskr-list-artists__container {
-  .buskr-list-artists__item {
-    position: relative;
-    min-height: 150px;
-    // padding: 1.25rem;
-    // border-top: 1px solid #fff;
-    // border-bottom: 1px solid #9daca9;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    &::before {
-      display: block;
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      background-color: rgba(0,0,0,.2);
-    }
-
-    &::after {
-      display: block;
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 55%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-    }
-
-    .artist-name {
-      position: absolute;
-      z-index: 2;
-      bottom: 50px;
-      left: 10px;
-      right: 10px;
-      color: white;
-      font-size: 18pt;
-      font-weight: bold;
-      text-align: center;
-      text-shadow: 1px 0 1px rgba(0,0,0,.5);
-    }
-
-    .live-location {
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 10px;
-      right: 10px;
-      padding: 10px 0;
-      border-top: 1px solid rgba(255,255,255,.5);
-      color: white;
-      line-height: 1.5rem;
-
-      .button_live {
-        position: relative;
-        float: left;
-        width: 40%;
-        box-shadow: 0 0 15px 4px rgba(24,201,124,.75);
-
-        &::before {
-          position: absolute;
-          left: 10px;
-          display: block;
-          content: '\b7';
-          color: #328059;
-          font-size: 50px;
-        }
-      }
-
-      .loc {
-        opacity: .85;
-        padding-left: 25px;
-        background: transparent url(../images/marker@2x.png) no-repeat;
-        background-size: 16px auto;
-        float: right;
-      }
-    }
-  }
-
-  .buskr-list-artists__item:first-child {
-    // border-top: 1px solid #d6dcdb;
   }
 }
 

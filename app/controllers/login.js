@@ -1,5 +1,8 @@
 var FB_APP_ID = 574303185975176;
-var loginApp = angular.module('loginApp', []);
+
+var loginApp = angular.module('loginApp', [
+  'buskrApp.directives'
+]);
 
 loginApp.run(function () {
   // steroids.view.setBackgroundColor("#d2cbc3");
@@ -108,7 +111,7 @@ loginApp.controller('LoginCtrl', function ($scope) {
       onSuccess: function () {
       }
     });
-  }
+  };
 });
 
 loginApp.controller('emailCtrl', function ($scope) {

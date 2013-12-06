@@ -2,13 +2,12 @@
 <html>
 <head>
   <meta charset="utf8">
-  <title>Buskr</title>
+  <title>Map</title>
 
   <link rel="stylesheet" href="/components/reset-css/reset.css" />
   <!-- <link rel="stylesheet" href="/vendor/topcoat/css/topcoat-buskr.css" /> -->
   <link rel="stylesheet" href="/stylesheets/application.css" />
   <link rel="stylesheet" href="/stylesheets/theme.css" />
-  <link rel="stylesheet" href="/stylesheets/login.css" />
 
   <script src="/javascripts/onerror.js"></script>
   <script src="/javascripts/console.log.js"></script>
@@ -16,25 +15,24 @@
   <script src="/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
-  <!--<script src="/javascripts/plugins/testflight.js"></script>-->
-  <script src="/javascripts/plugins/cdv-plugin-fb-connect.js"></script>
-  <script src="/javascripts/plugins/facebook-js-sdk.js"></script>
-
   <script src="/components/jquery/jquery.js"></script>
   <script src="/components/fastclick/lib/fastclick.js"></script>
-  <script src="/components/imgcache.js/js/imgcache.js"></script>
 
   <script src="/components/angular/angular.js"></script>
+  <script src="/components/angular-touch/angular-touch.js"></script>
 
   <script src="/components/lodash/dist/lodash.js"></script>
-  <script src="/components/restangular/dist/restangular.js"></script>
-
-  <script src="/javascripts/directives.js"></script>
 
   <script src="/models/models.js"></script>
-  <script src="/controllers/<%= yield.controller %>.js"></script>
 </head>
-<body>
-  <%= yield.view %>
+<body id="artistMap">
+  MAP!
+  <br><br>
+  <button onclick="steroids.modal.hide();">Close</button>
+
+<script type="text/javascript">
+  FastClick.attach(document.body);
+</script>
+
 </body>
 </html>

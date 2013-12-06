@@ -1,11 +1,13 @@
 // var app = angular.module('buskrApp', [
 // ]);
 
+DRAWER_OPEN = false;
+
 ImgCache.options.debug = true;
 ImgCache.options.usePersistentCache = true;
 
 document.addEventListener("deviceready", function () {
-  var tf;
+  // var tf;
 
   FastClick.attach(document.body);
   ImgCache.init();
@@ -28,5 +30,5 @@ steroids.on('ready', function() {
   // steroids.layers.push(loginView);
 
   steroids.view.setBackgroundColor("#d2cbc3");
-  // steroids.view.bounceShadow.hide();
+  steroids.view.bounceShadow.hide();
 });

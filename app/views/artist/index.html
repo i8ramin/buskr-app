@@ -1,19 +1,20 @@
-<div ng-app="artistApp">
+<div ng-app="artistApp" manage-drawer>
   <div ng-controller="IndexCtrl">
     <div class="list__container buskr-list-artists__container">
       <ul class="list buskr-list-artists">
         <li
           class="list__item buskr-list-artists__item"
-          ng-style="{'background-image':'url(' + artist.image_url + ')'}"
           ng-click="open(artist._id)"
-          ng-repeat="artist in artists">
+          ng-repeat="artist in artists | orderBy:'distance'">
 
-          <div class="artist-name">{{artist.name}}</div>
-          <div class="live-location">
-            <div class="loc">{{artist.distance}} mi</div>
-
-            <button class="buskr-button button_live" ng-if="artist.live">Live now!</button>
+          <div class="artist-card" ng-style="{'background-image':'url(' + artist.image_url + ')'}">
+            <div class="artist-name">{{artist.name}}</div>
+            <div class="live-location">
+              <div class="loc">{{artist.distance}} mi</div>
+              <button class="buskr-button button_live" ng-if="artist.live">Live now!</button>
+            </div>
           </div>
+
         </li>
       </ul>
 

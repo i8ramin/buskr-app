@@ -1,7 +1,16 @@
+$gutter-width: 2vh;
+
 @font-face {
   font-family: 'avenir';
-  src: url('font/avenir-roman-webfont.eot');
+  src: url('/stylesheets/font/avenir-webfont/avenir-roman-webfont.eot');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'avenir';
+  src: url('/stylesheets/font/avenir-webfont/avenir-heavy-webfont.eot');
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -38,6 +47,8 @@ input, textarea {
 html, body {
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar { display: none !important }
 }
 
 body {
@@ -61,7 +72,7 @@ form {
   box-orient: vertical;
 
   min-height: 96vh;
-  margin: 2vh;
+  margin: $gutter-width;
   padding: 10px;
   border-radius: 4px;
   background-color: white;

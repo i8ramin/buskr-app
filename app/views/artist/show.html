@@ -1,11 +1,62 @@
-<div ng-app="artistApp">
-
-  <div ng-controller="ShowCtrl">
-    <div class="content-padded">
-      <h2>{{artist.name}}</h2>
-      <p>{{artist.description}}</p>
+<div ng-app="artistApp" ng-controller="ShowCtrl">
+  <div class="artist-card" ng-style="{'background-image':'url(' + artist.image_url + ')'}">
+    <div class="artist-name">{{artist.name}}</div>
+    <div class="live-location">
+      <div class="loc">{{artist.distance}} mi</div>
+      <button class="buskr-button button_live" ng-if="artist.live">Live now!</button>
     </div>
-
   </div>
 
+  <div class="profile-sections">
+    <section class="bio">
+      <div class="body" class="text-centered">
+        {{artist.bio}}
+        <p>Sriracha qui adipisicing flexitarian reprehenderit, sed Neutra banh mi aesthetic. Artisan plaid single-origin coffee McSweeney's, dolore Helvetica veniam brunch aesthetic nulla fugiat distillery chambray slow-carb High Life. Seitan raw denim aliquip irony, Blue Bottle keffiyeh eu magna farm-to-table sint keytar. Next level semiotics keytar.</p>
+      </div>
+    </section>
+
+    <section class="media">
+      <header>
+        <h1>MEDIA</h1>
+      </header>
+      <div class="body">TODO</div>
+    </section>
+
+    <section class="location flow-column">
+      <header class="full">
+        <h1>LOCATION</h1>
+        <div class="info">
+          3 min diving / 10 min walking
+        </div>
+      </header>
+
+      <div class="body">
+        <div class="map"></div>
+        <div class="address">
+          568 Broadway 11th FL, New York, NY 10012
+        </div>
+      </div>
+    </section>
+
+    <section class="events">
+      <header>
+        <h1>EVENTS</h1>
+      </header>
+      <div class="body">TODO</div>
+    </section>
+
+    <section class="last-fm">
+      <header>
+        <h1>LAST.FM</h1>
+      </header>
+      <div class="body">TODO</div>
+    </section>
+
+    <section class="itunes">
+      <header>
+        <h1>iTUNES</h1>
+      </header>
+      <div class="body">TODO</div>
+    </section>
+  </div>
 </div>

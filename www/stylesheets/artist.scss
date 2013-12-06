@@ -1,0 +1,112 @@
+$gutter-width: 2vh;
+
+.artist-card {
+  position: relative;
+  min-height: 175px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.7) 100%);
+    // border-top: 1px solid rgba(255,255,255,.5);
+    border-bottom: 1px solid rgba(0,0,0,.75);
+  }
+
+  .artist-name {
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    left: $gutter-width;
+    right: $gutter-width;
+    color: white;
+    font-size: 16pt;
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 0 1px rgba(0,0,0,.5);
+  }
+
+  .live-location {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: $gutter-width;
+    right: $gutter-width;
+    padding: 8px 0;
+    border-top: 1px solid rgba(255,255,255,.5);
+    color: white;
+    line-height: 1.5rem;
+
+    .button_live {
+      position: relative;
+      float: left;
+      width: 40%;
+      box-shadow: 0 0 15px 4px rgba(24,201,124,.75);
+
+      &::before {
+        position: absolute;
+        left: 10px;
+        display: block;
+        content: '\b7';
+        color: #328059;
+        font-size: 48px;
+      }
+    }
+
+    .loc {
+      opacity: .85;
+      padding-left: 25px;
+      background: transparent url(/icons/marker@2x.png) no-repeat;
+      background-size: 15px auto;
+      float: right;
+    }
+  }
+}
+
+.profile-sections {
+  margin: $gutter-width;
+  background-color: white;
+  border-radius: 3px;
+
+  > section {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+
+    padding: 15px;
+    border-bottom: 1px solid #d1cfcd;
+
+    &.flow-column {
+      -webkit-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+    }
+
+    > header {
+      margin-bottom: 10px;
+
+      h1 {
+        color: #fbc16b;
+      }
+    }
+
+    > .body {
+      display: -webkit-inline-flex;
+      display: inline-flex;
+      -webkit-justify-content: flex-end;
+      justify-content: flex-end;
+
+      -webkit-flex: 1 auto;
+      flex: 1 auto;
+
+    }
+  }
+}
