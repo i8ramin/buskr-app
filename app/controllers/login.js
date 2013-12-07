@@ -124,14 +124,14 @@ loginApp.controller('fbCtrl', function ($scope) {
   steroids.view.navigationBar.show("Sign In");
 });
 
-ImgCache.options.debug = true;
-ImgCache.options.usePersistentCache = true;
+// ImgCache.options.debug = true;
+// ImgCache.options.usePersistentCache = true;
 
 document.addEventListener("deviceready", function () {
   var tf;
 
   FastClick.attach(document.body);
-  ImgCache.init();
+  // ImgCache.init();
 
   // tf = new TestFlight();
 

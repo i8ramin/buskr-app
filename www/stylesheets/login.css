@@ -1,0 +1,22 @@
+body {
+  /*background-color: #fbc26b;*/ }
+
+#login_page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fbc26b url(../images/splash.png) no-repeat;
+  background-size: 100%;
+  background-position: 0 20%; }
+
+#login_buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10%; }
+
+#login_buttons .buskr-button {
+  width: 100%; }

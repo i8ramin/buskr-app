@@ -1,0 +1,103 @@
+/* line 3, ../../app/scss/artist.scss */
+.artist-card {
+  position: relative;
+  min-height: 175px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 9, ../../app/scss/artist.scss */
+.artist-card::after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+}
+/* line 22, ../../app/scss/artist.scss */
+.artist-card .artist-name {
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  left: 2vh;
+  right: 2vh;
+  color: white;
+  font-size: 16pt;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
+}
+/* line 36, ../../app/scss/artist.scss */
+.artist-card .live-location {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 2vh;
+  right: 2vh;
+  padding: 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  line-height: 1.5rem;
+}
+/* line 47, ../../app/scss/artist.scss */
+.artist-card .live-location .button_live {
+  position: relative;
+  float: left;
+  width: 40%;
+  box-shadow: 0 0 15px 4px rgba(24, 201, 124, 0.75);
+}
+/* line 53, ../../app/scss/artist.scss */
+.artist-card .live-location .button_live::before {
+  position: absolute;
+  left: 10px;
+  display: block;
+  content: '\b7';
+  color: #328059;
+  font-size: 48px;
+}
+/* line 63, ../../app/scss/artist.scss */
+.artist-card .live-location .loc {
+  opacity: .85;
+  padding-left: 25px;
+  background: transparent url(/icons/marker@2x.png) no-repeat;
+  background-size: 15px auto;
+  float: right;
+}
+
+/* line 73, ../../app/scss/artist.scss */
+.profile-sections {
+  margin: 2vh;
+  background-color: white;
+  border-radius: 3px;
+}
+/* line 78, ../../app/scss/artist.scss */
+.profile-sections > section {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  padding: 15px 15px 8px;
+  border-bottom: 1px solid #d1cfcd;
+}
+/* line 88, ../../app/scss/artist.scss */
+.profile-sections > section.flow-column {
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+/* line 94, ../../app/scss/artist.scss */
+.profile-sections > section > header h1 {
+  color: #fbc16b;
+}
+/* line 99, ../../app/scss/artist.scss */
+.profile-sections > section > .body {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex: 1 auto;
+  flex: 1 auto;
+}

@@ -8,25 +8,15 @@ Currently, loading.html is supported by iOS only.
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta charset='utf-8'>
   <title>Loading...</title>
 
-  <link rel="stylesheet" href="/components/reset-css/reset.css" />
+  <link rel='stylesheet' href='/components/reset-css/reset.css' />
 
   <style>
-
-  @-webkit-keyframes rotate {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-
   html, body {
     height: 100%;
-    background-color: #fbc26b;
+    background-color: #d2cbc3;
   }
 
   .centered {
@@ -37,24 +27,50 @@ Currently, loading.html is supported by iOS only.
     -webkit-box-align: center;
   }
 
-  img#spinner {
+  #spinner {
     opacity: 0;
-    width: 36px;
 
-    -webkit-animation-name:            rotate;
-    -webkit-animation-duration:        1s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+
+    -webkit-transition-delay: 750ms;
+    transition-delay: 750ms;
   }
 
+  body.visible #spinner {
+    opacity: 1;
+  }
   </style>
 
 </head>
 
 <body>
-  <div class="centered">
-    <!-- <h1>Loading...</h1> -->
-    <img id="spinner" src="components/topcoat/img/spinner2x.png">
+  <div class='centered'>
+    <div id="spinner"></div>
   </div>
+
+  <script src='/components/spinjs/dist/spin.js'></script>
+  <script type='text/javascript'>
+    var target = document.getElementById('spinner');
+    var spinner = new Spinner({
+      lines: 11,
+      length: 8,
+      width: 4,
+      radius: 11,
+      speed: 1.2,
+      color: '#fff',
+      hwaccel: true
+    });
+
+    spinner.spin(target);
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        document.body.classList.remove('visible');
+      } else {
+        document.body.classList.add('visible');
+      }
+    }, false);
+  </script>
 </body>
 </html>

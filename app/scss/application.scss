@@ -1,37 +1,23 @@
-$gutter-width: 2vh;
+@import 'compass/css3/font-face';
+@import 'config';
 
-@font-face {
-  font-family: 'avenir';
-  src: url('/stylesheets/font/avenir-webfont/avenir-roman-webfont.eot');
-  font-weight: normal;
-  font-style: normal;
-}
+@include font-face('avenir',
+  inline-font-files(
+    'avenir-webfont/avenir-roman-webfont.woff', woff,
+    'avenir-webfont/avenir-roman-webfont.ttf', truetype
+  ),
+  $weight: normal,
+  $style: normal
+);
 
-@font-face {
-  font-family: 'avenir';
-  src: url('/stylesheets/font/avenir-webfont/avenir-heavy-webfont.eot');
-  font-weight: bold;
-  font-style: normal;
-}
-
-
-// @font-face {
-//   font-family: 'Source Sans';
-//   src: url('font/SourceSansPro-Regular.otf');
-// }
-
-// @font-face {
-//   font-family: 'Source Sans';
-//   src: url('font/SourceSansPro-Light.otf');
-//   font-weight: 200;
-// }
-
-// @font-face {
-//   font-family: 'Source Sans';
-//   src: url('font/SourceSansPro-Semibold.otf');
-//   font-weight: 600;
-// }
-
+@include font-face('avenir',
+  inline-font-files(
+    'avenir-webfont/avenir-heavy-webfont.woff', woff,
+    'avenir-webfont/avenir-heavy-webfont.ttf', truetype
+  ),
+  $weight: bold,
+  $style: normal
+);
 
 * {
   -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
@@ -54,8 +40,7 @@ html, body {
 body {
   background-color: #d2cbc3;
   color: #000;
-  font: 16px 'avenir', helvetica, arial, sans-serif;
-  font-weight: 400;
+  font: 11pt 'avenir', helvetica, arial, sans-serif;
 }
 
 form {

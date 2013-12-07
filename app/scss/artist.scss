@@ -1,4 +1,4 @@
-$gutter-width: 2vh;
+@import 'config';
 
 .artist-card {
   position: relative;
@@ -82,7 +82,7 @@ $gutter-width: 2vh;
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
 
-    padding: 15px;
+    padding: 15px 15px 8px;
     border-bottom: 1px solid #d1cfcd;
 
     &.flow-column {
@@ -91,8 +91,6 @@ $gutter-width: 2vh;
     }
 
     > header {
-      margin-bottom: 10px;
-
       h1 {
         color: #fbc16b;
       }
@@ -106,7 +104,6 @@ $gutter-width: 2vh;
 
       -webkit-flex: 1 auto;
       flex: 1 auto;
-
     }
   }
 }

@@ -1,5 +1,7 @@
+.sass-cache
 .DS_Store
 platforms/ios
 plugins/*
 !plugins/README.md
 dist
+node_modules

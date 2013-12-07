@@ -1,8 +1,8 @@
-/* @global angular */
 
 (function () {
   'use strict';
 
+  var gaPlugin;
   var artistApp = angular.module('artistApp', [
     'buskrApp.directives',
     'ArtistModel'
@@ -12,7 +12,6 @@
 
   menuView.preload({}, {
     onSuccess: function() {
-      // steroids.drawers.enableGesture(menuView);
     }
   });
 
@@ -76,12 +75,31 @@
     steroids.view.setBackgroundColor('#d2cbc3');
   };
 
+  document.addEventListener('deviceready', function () {
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(
+      function () {
+        // success
+      },
+      function () {
+        // error
+      },
+      'UA-46274077-1',
+      10
+    );
+
+    FastClick.attach(document.body);
+    angular.bootstrap(document, ['artistApp']);
+  });
+
   artistApp.run(function () {
     steroids.view.navigationBar.show('');
   });
 
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
+    gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
+
     initView();
 
     $scope.open = function(id) {
@@ -105,6 +123,8 @@
 
   // Show: http://localhost/views/artist/show.html?id=<id>
   artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
+    gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
+
     // remove navigationBar buttons
     steroids.view.navigationBar.setButtons({});
 
