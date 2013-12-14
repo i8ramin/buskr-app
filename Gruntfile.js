@@ -26,9 +26,7 @@ module.exports = function (grunt) {
                 cssDir: 'www/stylesheets',
                 imagesDir: 'www/images',
                 fontsDir: 'app/scss/fonts',
-                // importPath: 'www/components',
                 httpImagesPath: '/images',
-                // httpFontsPath: '/stylesheets/fonts',
                 relativeAssets: false,
                 debugInfo: false
             },
