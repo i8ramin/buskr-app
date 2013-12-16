@@ -20,9 +20,15 @@
 
   <script src="/components/angular/angular.js"></script>
   <script src="/components/lodash/dist/lodash.js"></script>
+
+  <script src="/javascripts/application.js"></script>
 </head>
 <body id="drawerMenu">
-  MENU!
+  <nav>
+    <ul>
+      <li><button ng-click="openLogin()">Login</button></li>
+    </ul>
+  </nav>
 
 <script type="text/javascript">
   FastClick.attach(document.body);

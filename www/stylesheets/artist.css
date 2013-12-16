@@ -88,11 +88,15 @@
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 94, ../../app/scss/artist.scss */
+/* line 92, ../../app/scss/artist.scss */
+.profile-sections > section.flow-column .body {
+  display: block;
+}
+/* line 98, ../../app/scss/artist.scss */
 .profile-sections > section > header h1 {
   color: #fbc16b;
 }
-/* line 99, ../../app/scss/artist.scss */
+/* line 103, ../../app/scss/artist.scss */
 .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -100,4 +104,8 @@
   justify-content: flex-end;
   -webkit-flex: 1 auto;
   flex: 1 auto;
+}
+/* line 115, ../../app/scss/artist.scss */
+.profile-sections .location .map {
+  margin: 0 -1rem;
 }

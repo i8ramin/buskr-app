@@ -35,6 +35,9 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', [
-        'watch'
+        'steroids-make',
+        // 'steroids-compile-sass',
+        'compass'
+        // 'watch'
     ]);
 };

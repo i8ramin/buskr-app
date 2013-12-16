@@ -4,22 +4,20 @@ var DRAWER_OPEN = false;
 // ImgCache.options.debug = true;
 // ImgCache.options.usePersistentCache = true;
 
-document.addEventListener('deviceready', function () {
-  // var tf;
 
-  // FastClick.attach(document.body);
-  // ImgCache.init();
+var buskrApp = angular.module('buskrApp', [
+  'buskrApp.directives'
+]);
 
-  // tf = new TestFlight();
+buskrApp.controller('MenuCtrl', function ($scope) {
+  $scope.openLogin = function () {
+    steroids.modal.show();
+  };
+});
 
-  // tf.takeOff(function (data) {
-  //   alert('TestFligh success! ' + data);
-  // }, function (error) {
-  //   alert('TestFlight error: ' + error);
-  // }, '32984304-6d9a-4bbf-913e-40246035a8ac');
-
-  // angular.bootstrap(document, ['buskrApp']);
-}, false);
+// document.addEventListener('deviceready', function () {
+//   angular.bootstrap(document, ['buskrApp']);
+// }, false);
 
 steroids.on('ready', function() {
   steroids.view.setBackgroundColor('#d2cbc3');

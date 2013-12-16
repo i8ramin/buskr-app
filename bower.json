@@ -11,20 +11,16 @@
     "tests"
   ],
   "dependencies": {
-    "steroids-js": "2.7.x",
+    "steroids-js": "3.1.x",
     "angular": "1.2.x",
+    "angular-touch": "1.2.x",
     "CornerCouch": "*",
-    "angular-touch": "~1.2.1",
     "fastclick": "~0.6.10",
     "jquery": "~2.0.3",
     "lodash": "~2.3.0",
     "imgcache.js": "*",
     "reset-css": "~2.0.20110126",
     "restangular": "~1.1.8",
-    "lungo": "~2.2.1",
     "spinjs": "~1.3.2"
-  },
-  "resolutions": {
-    "lodash": "~2.3.0"
   }
 }

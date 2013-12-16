@@ -5,3 +5,4 @@ plugins/*
 !plugins/README.md
 dist
 node_modules
+www/components

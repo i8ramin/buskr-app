@@ -5,75 +5,9 @@
   var gaPlugin;
   var artistApp = angular.module('artistApp', [
     'buskrApp.directives',
+    'buskrApp.services',
     'ArtistModel'
   ]);
-
-  var menuView = new steroids.views.WebView({location:'/menu.html'});
-
-  menuView.preload({}, {
-    onSuccess: function() {
-    }
-  });
-
-  var initView = function () {
-    var drawerButton = new steroids.buttons.NavigationBarButton();
-    var mapMarkerButton = new steroids.buttons.NavigationBarButton();
-
-    drawerButton.imagePath = '/icons/menu-trigger@2x.png';
-    mapMarkerButton.imagePath = '/icons/marker-map@2x.png';
-
-    drawerButton.onTap = function() {
-      if (DRAWER_OPEN) {
-        steroids.drawers.hide({}, {
-          onSuccess: function () {
-            DRAWER_OPEN = false;
-          },
-          onFailure: function(error) {
-            alert('Could not hide the drawer: ' + error.errorDescription);
-          }
-        });
-      } else {
-        steroids.drawers.show({
-          view: menuView
-        }, {
-          onSuccess: function() {
-            DRAWER_OPEN = true;
-          },
-          onFailure: function(error) {
-            alert('Could not show the drawer: ' + error.errorDescription);
-          }
-        });
-      }
-    };
-
-    mapMarkerButton.onTap = function() {
-      var mapView = new steroids.views.WebView({location:'/modal/map.html'});
-
-      steroids.modal.show( {
-        view: mapView
-      }, {
-        onSuccess: function() {
-        },
-        onFailure: function(error) {
-          alert("Could not present the modal: " + error.errorDescription);
-        }
-      });
-    };
-
-    steroids.view.navigationBar.setButtons({
-      left: [drawerButton],
-      right: [mapMarkerButton]
-    }, {
-      onSuccess: function() {
-        // alert('Buttons set!');
-      },
-      onFailure: function() {
-        alert('Failed to set buttons.');
-      }
-    });
-
-    steroids.view.setBackgroundColor('#d2cbc3');
-  };
 
   document.addEventListener('deviceready', function () {
     gaPlugin = window.plugins.gaPlugin;
@@ -92,15 +26,19 @@
     angular.bootstrap(document, ['artistApp']);
   });
 
-  artistApp.run(function () {
+  artistApp.run(function (ViewManager) {
     steroids.view.navigationBar.show('');
+
+    ViewManager.init(function () {
+      steroids.modal.show({
+        view: ViewManager.loginView
+      });
+    });
   });
 
   // Index: http://localhost/views/artist/index.html
-  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch) {
+  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, DrawerService) {
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
-
-    initView();
 
     $scope.open = function(id) {
       var webView = new steroids.views.WebView({location:'/views/artist/show.html?id=' + id});
@@ -125,6 +63,30 @@
   artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
 
+    $scope.openMap = function () {
+      steroids.openURL({
+        url: 'comgooglemaps://'
+      }, {
+        onSuccess: function(parameters) {
+          alert('Maps launched');
+        },
+        onFailure: function(error) {
+          steroids.openURL({
+            url: 'maps://'
+          }, {
+            onSuccess: function(parameters) {
+
+            },
+            onFailure: function(error) {
+              alert('[Apple] Failed to open: ' + error.errorDescription);
+            }
+          });
+
+          alert('[Gooogle] Failed to open: ' + error.errorDescription);
+        }
+      });
+    };
+
     // remove navigationBar buttons
     steroids.view.navigationBar.setButtons({});
 
@@ -139,6 +101,9 @@
 
       ArtistCouch.startPollingChanges(whenChanged);
     });
+  });
+
+  artistApp.factory('DrawerService', function DrawerService() {
   });
 
 })();
