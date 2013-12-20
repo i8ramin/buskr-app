@@ -21,18 +21,16 @@
   <script src="/components/angular/angular.js"></script>
   <script src="/components/lodash/dist/lodash.js"></script>
 
-  <script src="/javascripts/application.js"></script>
+  <script src="/javascripts/directives.js"></script>
+  <script src="/javascripts/services.js"></script>
+
+  <script src="/javascripts/drawer.js"></script>
 </head>
-<body id="drawerMenu">
+<body id="drawerMenu" ng-controller="DrawerCtrl">
   <nav>
     <ul>
       <li><button ng-click="openLogin()">Login</button></li>
     </ul>
   </nav>
-
-<script type="text/javascript">
-  FastClick.attach(document.body);
-</script>
-
 </body>
 </html>

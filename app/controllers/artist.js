@@ -26,18 +26,21 @@
     angular.bootstrap(document, ['artistApp']);
   });
 
-  artistApp.run(function (ViewManager) {
-    steroids.view.navigationBar.show('');
+  artistApp.run(function () {
+  });
 
-    ViewManager.init(function () {
+  // Index: http://localhost/views/artist/index.html
+  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, ViewManager) {
+    ViewManager.initViews(function () {
+      ViewManager.initNavbar();
+
       steroids.modal.show({
         view: ViewManager.loginView
       });
     });
-  });
 
-  // Index: http://localhost/views/artist/index.html
-  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, DrawerService) {
+    steroids.view.navigationBar.show('');
+
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
     $scope.open = function(id) {
@@ -102,8 +105,4 @@
       ArtistCouch.startPollingChanges(whenChanged);
     });
   });
-
-  artistApp.factory('DrawerService', function DrawerService() {
-  });
-
 })();

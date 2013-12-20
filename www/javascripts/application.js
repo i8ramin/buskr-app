@@ -9,17 +9,12 @@ var buskrApp = angular.module('buskrApp', [
   'buskrApp.directives'
 ]);
 
-buskrApp.controller('MenuCtrl', function ($scope) {
-  $scope.openLogin = function () {
-    steroids.modal.show();
-  };
-});
-
 // document.addEventListener('deviceready', function () {
 //   angular.bootstrap(document, ['buskrApp']);
 // }, false);
 
 steroids.on('ready', function() {
-  steroids.view.setBackgroundColor('#d2cbc3');
-  steroids.view.bounceShadow.hide();
+  // steroids.view.setBackgroundColor('#d2cbc3');
+  // steroids.view.setBackgroundColor('#fbc26b');
+  // steroids.view.bounceShadow.hide();
 });

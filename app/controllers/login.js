@@ -5,20 +5,14 @@ var loginApp = angular.module('loginApp', [
 ]);
 
 loginApp.run(function () {
-  // steroids.view.setBackgroundColor('#d2cbc3');
+  steroids.view.setBackgroundColor('#fbc26b');
   // steroids.view.bounceShadow.hide();
 });
 
 // Index: http://localhost/views/login/index.html
 loginApp.controller('LoginCtrl', function ($scope) {
-  var fbView = new steroids.views.WebView('/views/login/fb.html');
-  var emailView = new steroids.views.WebView('/views/login/email.html');
-  var artistView = new steroids.views.WebView('/views/artist/index.html');
-
-  artistView.preload({id: 'artist-list'});
-
-  steroids.view.setBackgroundColor('#d2cbc3');
-  steroids.view.navigationBar.show('');
+  // steroids.view.setBackgroundColor('#d2cbc3');
+  // steroids.view.navigationBar.show('');
 
   $scope.appId = FB_APP_ID;
   $scope.facebookLoginStatus = 'FB not initialized';
@@ -113,21 +107,16 @@ loginApp.controller('LoginCtrl', function ($scope) {
   };
 
   $scope.emailLogin = function () {
-    steroids.layers.push({
-      view: emailView
-    }, {
-      onSuccess: function () {
-      }
-    });
+    $scope.view = 'email';
   };
 });
 
-loginApp.controller('emailCtrl', function ($scope) {
+loginApp.controller('EmailCtrl', function ($scope) {
   steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign In');
 });
 
-loginApp.controller('fbCtrl', function ($scope) {
+loginApp.controller('FBCtrl', function ($scope) {
   steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign In');
 });

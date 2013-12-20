@@ -1,6 +1,9 @@
+/* line 3, ../../app/scss/login.scss */
 body {
-  /*background-color: #fbc26b;*/ }
+  /*background-color: #fbc26b;*/
+}
 
+/* line 7, ../../app/scss/login.scss */
 #login_page {
   position: absolute;
   top: 0;
@@ -9,14 +12,27 @@ body {
   left: 0;
   background: #fbc26b url(../images/splash.png) no-repeat;
   background-size: 100%;
-  background-position: 0 20%; }
-
-#login_buttons {
+  background-position: 0 20%;
+}
+/* line 18, ../../app/scss/login.scss */
+#login_page footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10%; }
+  padding: 15px;
+}
 
+/* line 27, ../../app/scss/login.scss */
+#login_buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  padding: 10%;
+}
+
+/* line 34, ../../app/scss/login.scss */
 #login_buttons .buskr-button {
-  width: 100%; }
+  width: 100%;
+}
