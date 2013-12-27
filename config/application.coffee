@@ -4,7 +4,7 @@
 steroids.config.name = "Buskr"
 
 # -- Initial Location --
-steroids.config.location = "http://localhost/views/artist/index.html"
+steroids.config.location = "http://localhost/index.html"
 
 # -- Tab Bar --
 # steroids.config.tabBar.enabled = true
@@ -29,7 +29,7 @@ steroids.config.location = "http://localhost/views/artist/index.html"
 # steroids.config.tabBar.backgroundImage = ""
 
 # -- Navigation Bar --
-steroids.config.navigationBar.tintColor = "#FBC26B"
+steroids.config.navigationBar.tintColor = "#fbc26b"
 steroids.config.navigationBar.titleColor = "#ffffff"
 steroids.config.navigationBar.buttonTintColor = "#ffffff"
 steroids.config.navigationBar.buttonTitleColor = "#ffffff"

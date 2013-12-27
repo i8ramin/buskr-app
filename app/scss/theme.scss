@@ -81,6 +81,10 @@
   vertical-align: top;
   background-color: #f1b150;
   border-radius: 3px;
+
+  // &:last-of-type {
+  //   margin-bottom: 0;
+  // }
 }
 .buskr-button.button_secondary {
   background-color: #CECECE;
@@ -129,10 +133,10 @@
 
 .buskr-text-input,
 .buskr-text-input--large {
-  line-height: 3rem;
+  // line-height: 3rem;
   font-size: 16px;
   letter-spacing: 1px;
-  padding: 0 1.25rem;
+  padding: .75rem 1rem .5rem;
   border: 1px solid #D6D3D0;
   border-radius: 3px;
   background-color: #fff;

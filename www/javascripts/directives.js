@@ -3,25 +3,28 @@
 
   var directives = angular.module('buskrApp.directives', []);
 
-  directives.directive('manageDrawer', function ManageDrawer(ViewManager) {
+  directives.directive('manageDrawer', function ManageDrawer(NavbarService) {
     return {
       restrict: 'A',
       link: function (scope, element, attr) {
-        element.on('touchstart', function (e) {
-          if (ViewManager.navBar.drawer.open) {
-            e.preventDefault();
-            e.stopPropagation();
+        // element.on('touchstart', function (e) {
+        //   if (NavbarService.navBar.drawer.visible) {
+        //     e.preventDefault();
+        //     e.stopPropagation();
 
-            steroids.drawers.hide({}, {
-              onSuccess: function () {
-                ViewManager.navBar.drawer.open = false;
-              },
-              onFailure: function(error) {
-                alert('Could not hide the drawer: ' + error.errorDescription);
-              }
-            });
-          }
-        });
+        //     window.postMessage({
+        //       action: 'toggleDrawer'
+        //     }, '*');
+
+        //     // steroids.drawers.hide({}, {
+        //     //   onSuccess: function () {
+        //     //   },
+        //     //   onFailure: function(error) {
+        //     //     alert('Could not hide the drawer: ' + error.errorDescription);
+        //     //   }
+        //     // });
+        //   }
+        // });
       }
     };
   });

@@ -22,29 +22,41 @@
       10
     );
 
-    FastClick.attach(document.body);
     angular.bootstrap(document, ['artistApp']);
   });
 
+  // window.addEventListener('message', function (event) {
+  //   if (event.data.action === 'openLogin') {
+  //     steroids.layers.pop({}, {
+  //       onSuccess: function () {
+  //         setTimeout(function () {
+  //           steroids.drawers.hide({}, {
+  //             onSuccess: function () {
+  //             },
+  //             onFailure: function (error) {
+  //             }
+  //           });
+  //         }, 300);
+  //       }
+  //     });
+  //   }
+  // });
+
   artistApp.run(function () {
+    document.addEventListener('visibilitychange', function (event) {
+    }, false);
   });
 
   // Index: http://localhost/views/artist/index.html
-  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, ViewManager) {
-    ViewManager.initViews(function () {
-      ViewManager.initNavbar();
-
-      steroids.modal.show({
-        view: ViewManager.loginView
-      });
+  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, NavbarService) {
+    NavbarService.navBar.init(function () {
     });
-
     steroids.view.navigationBar.show('');
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
     $scope.open = function(id) {
-      var webView = new steroids.views.WebView({location:'/views/artist/show.html?id=' + id});
+      var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
       steroids.layers.push(webView);
     };
 

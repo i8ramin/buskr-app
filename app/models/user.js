@@ -4,19 +4,19 @@
 
 // Protects views where AngularJS is not loaded from errors
 if (typeof angular === 'undefined') {
-	return;
+  return;
 }
 
-var module = angular.module('ArtistModel', ['CornerCouch']);
+var module = angular.module('UserModel', ['CornerCouch']);
 
-module.factory('ArtistCouch', function ($http, cornercouch) {
-  var databaseName  = 'artists',
+module.factory('UserCouch', function ($http, cornercouch) {
+  var databaseName  = 'users',
       server        = cornercouch('http://.touchdb.', 'GET'),
       database      = server.getDB(databaseName);
 
   // Set up two way replication with server and monitoring of the local database
   var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
-      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/artists';
+      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/users';
 
   // Disable http credentials so CORS works
   // FYI this is set to true in angular-cornercouch

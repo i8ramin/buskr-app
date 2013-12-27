@@ -1,40 +1,11 @@
-<div id="login_page" ng-controller="LoginCtrl">
 
-  <div class="animate-switch-container"
-    ng-switch on="view">
+<article class="view" id="loginPage" ng-controller="LoginCtrl">
+  <div class="content content-bottom login-buttons">
+    <button class="buskr-button button_facebook" ng-click="facebookLogin()">Login with Facebook</button>
+    <button class="buskr-button" ng-click="emailLogin()">Login/Sign Up with Email</button>
 
-    <div class="animate-switch" ng-switch-default>
-      <div id="login_buttons">
-        <button class="buskr-button button_facebook" ng-click="facebookLogin()">Login with Facebook</button>
-        <button class="buskr-button" ng-click="emailLogin()">Login/Sign Up with Email</button>
-      </div>
-    </div>
+    <div class="skip-login" ng-click="skipLogin()">Skip For Now</div>
 
-    <div class="animate-switch" ng-switch-when="email">
-      <div class="page" ng-controller="EmailCtrl">
-        <div class="content content-full">
-          <form>
-            <input type="email" placeholder="Email" class="buskr-text-input input-full">
-            <input type="password" placeholder="Password" class="buskr-text-input input-full">
-            <br>
-            <button class="buskr-button">Sign In</button>
-          </form>
-        </div>
-
-        <footer class="footer footer-bottom">
-          <button class="buskr-button">New User</button>
-          <button class="buskr-button button_secondary">Forgot Password</button>
-        </footer>
-      </div>
-    </div>
-
+    <!-- <p>{{facebookLoginStatus}}</p> -->
   </div>
-
-  <footer>
-    <center>
-      <p>{{facebookLoginStatus}}</p>
-      <p><a href="#skip" ng-click="skipLogin()">Skip Login</a></p>
-    <center>
-  </footer>
-
-</div>
+</article>

@@ -1,10 +1,10 @@
 @import 'config';
 
-body {
-  /*background-color: #fbc26b;*/
+html, body {
+  height: 100%;
 }
 
-#login_page {
+#loginPage {
   position: absolute;
   top: 0;
   right: 0;
@@ -15,22 +15,16 @@ body {
   background-size: 100%;
   background-position: 0 20%;
 
-  footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px;
+  .login-buttons {
+    -webkit-align-self: flex-end;
+    align-self: flex-end;
   }
-}
 
-#login_buttons {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  right: 0;
-  padding: 10%;
-}
-#login_buttons .buskr-button {
-  width: 100%;
+  .skip-login {
+    width: 85%;
+    margin: auto;
+    text-align: right;
+    padding: 10px 0;
+    color: #bf8c3f;
+  }
 }

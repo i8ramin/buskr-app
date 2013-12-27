@@ -1,25 +1,41 @@
 var FB_APP_ID = 574303185975176;
 
 var loginApp = angular.module('loginApp', [
+  'buskrApp.services',
   'buskrApp.directives'
 ]);
 
+var emailView = new steroids.views.WebView({location:'views/login/email.html'});
+
+
 loginApp.run(function () {
-  steroids.view.setBackgroundColor('#fbc26b');
+  // steroids.view.setBackgroundColor('#fbc26b');
   // steroids.view.bounceShadow.hide();
 });
 
 // Index: http://localhost/views/login/index.html
 loginApp.controller('LoginCtrl', function ($scope) {
-  // steroids.view.setBackgroundColor('#d2cbc3');
-  // steroids.view.navigationBar.show('');
+
+  steroids.view.setBackgroundColor('#fbc26b');
+  steroids.view.navigationBar.setButtons({
+    overrideBackButton: true
+  }, {
+    onSuccess: function() {
+    },
+    onFailure: function() {
+    }
+  });
+
+  steroids.view.navigationBar.show('');
 
   $scope.appId = FB_APP_ID;
   $scope.facebookLoginStatus = 'FB not initialized';
   $scope.facebookInitialized = false;
 
   $scope.skipLogin = function () {
-    steroids.modal.hide();
+    window.postMessage({
+      action: 'skipLogin'
+    }, '*');
   };
 
   $scope.facebookLogin = function() {
@@ -107,25 +123,32 @@ loginApp.controller('LoginCtrl', function ($scope) {
   };
 
   $scope.emailLogin = function () {
-    $scope.view = 'email';
+    steroids.layers.push(emailView);
   };
 });
 
 loginApp.controller('EmailCtrl', function ($scope) {
   steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign In');
+
+  $scope.signUp = function () {
+    var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
+    steroids.layers.push(signUpView);
+  };
+});
+
+loginApp.controller('SignUpCtrl', function ($scope) {
+  steroids.view.setBackgroundColor('#d2cbc3');
+  steroids.view.navigationBar.show('Sign Up');
 });
 
 loginApp.controller('FBCtrl', function ($scope) {
-  steroids.view.setBackgroundColor('#d2cbc3');
+  // steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign In');
 });
 
-// ImgCache.options.debug = true;
-// ImgCache.options.usePersistentCache = true;
-
 document.addEventListener('deviceready', function () {
-  var tf;
+  // var tf;
 
   FastClick.attach(document.body);
   // ImgCache.init();
@@ -140,3 +163,6 @@ document.addEventListener('deviceready', function () {
 
   angular.bootstrap(document, ['loginApp']);
 }, false);
+
+// document.addEventListener('visibilitychange', function (event) {
+// }, false);

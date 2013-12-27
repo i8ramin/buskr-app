@@ -1,33 +1,17 @@
 
-var DRAWER_OPEN = false;
-
-// ImgCache.options.debug = true;
-// ImgCache.options.usePersistentCache = true;
-
-
 var drawerApp = angular.module('drawerApp', [
   'buskrApp.directives',
   'buskrApp.services'
 ]);
 
-drawerApp.run(function (ViewManager) {
-  // ViewManager.init();
+drawerApp.run(function () {
 });
 
-drawerApp.controller('DrawerCtrl', function ($scope, ViewManager) {
+drawerApp.controller('DrawerCtrl', function ($scope) {
   $scope.openLogin = function () {
-    steroids.drawers.hide({}, {
-      onSuccess: function () {
-        ViewManager.navBar.drawer.open = false;
-
-        steroids.modal.show({
-          view: ViewManager.loginView
-        });
-      },
-      onFailure: function(error) {
-        alert('Could not hide the drawer: ' + error.errorDescription);
-      }
-    });
+    window.postMessage({
+      action: 'openLogin'
+    }, '*');
   };
 });
 

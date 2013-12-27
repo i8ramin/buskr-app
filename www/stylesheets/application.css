@@ -32,40 +32,66 @@ html, body {
   margin: 0;
   padding: 0;
 }
-/* line 37, ../../app/scss/application.scss */
+/* line 38, ../../app/scss/application.scss */
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none !important;
 }
 
-/* line 40, ../../app/scss/application.scss */
+/* line 41, ../../app/scss/application.scss */
 body {
   background-color: #d2cbc3;
   color: #000;
   font: 11pt 'avenir', helvetica, arial, sans-serif;
 }
 
-/* line 46, ../../app/scss/application.scss */
+/* line 47, ../../app/scss/application.scss */
 form {
   display: block;
   width: 100%;
 }
 
-/* line 51, ../../app/scss/application.scss */
-.page {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  -webkit-box-orient: vertical;
-  box-orient: vertical;
-  min-height: 96vh;
-  margin: 2vh;
-  padding: 10px;
-  border-radius: 4px;
+/* line 52, ../../app/scss/application.scss */
+article.view {
+  min-height: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 64, ../../app/scss/application.scss */
+article.view > .content {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+}
+/* line 74, ../../app/scss/application.scss */
+article.view > .content.content-padded {
+  margin: 2vw;
+  padding: 20px 15px;
   background-color: white;
+  border-radius: 4px;
+}
+/* line 81, ../../app/scss/application.scss */
+article.view > .content > *:not(footer) {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-/* line 65, ../../app/scss/application.scss */
-.page > .content-full {
-  -webkit-box-flex: 1;
-  box-flex: 1;
+/* line 119, ../../app/scss/application.scss */
+.animate-switch.ng-animate {
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+}
+
+/* line 124, ../../app/scss/application.scss */
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  top: -50px;
+}
+
+/* line 128, ../../app/scss/application.scss */
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  top: 0;
 }
