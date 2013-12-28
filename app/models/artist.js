@@ -16,7 +16,7 @@ module.factory('ArtistCouch', function ($http, cornercouch) {
 
   // Set up two way replication with server and monitoring of the local database
   var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
-      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/artists';
+      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/' + databaseName;
 
   // Disable http credentials so CORS works
   // FYI this is set to true in angular-cornercouch
@@ -35,7 +35,6 @@ module.factory('ArtistCouch', function ($http, cornercouch) {
   });
 
   database.getInfo().success(function() {
-    // alert('Database ' + databaseName + ' loaded:' + JSON.stringify(database.info));
     console.log('Database ' + databaseName + ' loaded:' + JSON.stringify(database.info));
   });
 
@@ -54,7 +53,7 @@ module.factory('ArtistCouch', function ($http, cornercouch) {
     });
   };
 
-  var startOneWayReplication = function(onChangeCallback) {
+  var startOneWayReplication = function (onChangeCallback) {
     var options = {
       source: cloudUrl,
       target: databaseName
@@ -86,7 +85,7 @@ module.factory('ArtistCouch', function ($http, cornercouch) {
   var ensureDB = function(onEnsuredCallback) {
     steroidsDB.createDB({}, {
       onSuccess: function () {
-        // alert('[ensureDB] Database has been created.');
+        console.log('Database has been created.');
 
         if (onEnsuredCallback) {
           onEnsuredCallback.call();
@@ -94,10 +93,6 @@ module.factory('ArtistCouch', function ($http, cornercouch) {
       },
       onFailure: function (error) {
         if (error.status === 412) {
-          // Already exists
-          // onEnsuredCallback()
-          // alert('[ensureDB] Already exists!');
-
           if (onEnsuredCallback) {
             onEnsuredCallback.call();
           }

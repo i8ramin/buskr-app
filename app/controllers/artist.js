@@ -1,12 +1,14 @@
 
-(function () {
+(function (Firebase) {
   'use strict';
 
   var gaPlugin;
   var artistApp = angular.module('artistApp', [
+    'UserModel',
+    'ArtistModel',
+    'firebase',
     'buskrApp.directives',
-    'buskrApp.services',
-    'ArtistModel'
+    'buskrApp.services'
   ]);
 
   document.addEventListener('deviceready', function () {
@@ -48,34 +50,26 @@
   });
 
   // Index: http://localhost/views/artist/index.html
-  artistApp.controller('IndexCtrl', function ($scope, ArtistCouch, NavbarService) {
+  artistApp.controller('IndexCtrl', function ($scope, $firebase, NavbarService) {
     NavbarService.navBar.init(function () {
     });
     steroids.view.navigationBar.show('');
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
-    $scope.open = function(id) {
-      var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
+    $scope.open = function (artist) {
+      var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + artist.$id});
       steroids.layers.push(webView);
     };
 
-    ArtistCouch.ensureDB(function () {
-    });
-
-    $scope.artists = [];
-
-    ArtistCouch.steroidsDB.on('change', function() {
-      ArtistCouch.cornerCouchDB.queryAll({ include_docs: true, descending: true, limit: 8 }).success(function(rows) {
-        $scope.artists = ArtistCouch.cornerCouchDB.rows.map(function(row) {
-          return row.doc;
-        });
-      });
-    });
+    $scope.artists = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists'));
   });
 
   // Show: http://localhost/views/artist/show.html?id=<id>
-  artistApp.controller('ShowCtrl', function ($scope, ArtistCouch) {
+  artistApp.controller('ShowCtrl', function ($scope, $firebase) {
+    var id = steroids.view.params.id;
+    var artistPromise;
+
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
 
     $scope.openMap = function () {
@@ -105,16 +99,6 @@
     // remove navigationBar buttons
     steroids.view.navigationBar.setButtons({});
 
-    ArtistCouch.ensureDB(function() {
-      var whenChanged = function() {
-        $scope.artist = ArtistCouch.cornerCouchDB.newDoc();
-        $scope.artist.load(steroids.view.params.id).then(function (response) {
-          var artist = response.data;
-          steroids.view.navigationBar.show('Artist');
-        });
-      };
-
-      ArtistCouch.startPollingChanges(whenChanged);
-    });
+    $scope.artist = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists/' + id));
   });
-})();
+})(window.Firebase);

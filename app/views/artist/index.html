@@ -4,8 +4,8 @@
       <ul class="list buskr-list-artists">
         <li
           class="list__item buskr-list-artists__item"
-          ng-click="open(artist._id)"
-          ng-repeat="artist in artists | orderBy:'distance'">
+          ng-click="open(artist)"
+          ng-repeat="artist in artists | orderByPriority | orderBy:'distance'">
 
           <div class="artist-card" ng-style="{'background-image':'url(' + artist.image_url + ')'}">
             <div class="artist-name">{{artist.name}}</div>

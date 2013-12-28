@@ -1,6 +1,7 @@
 var FB_APP_ID = 574303185975176;
 
 var loginApp = angular.module('loginApp', [
+  'UserModel',
   'buskrApp.services',
   'buskrApp.directives'
 ]);
@@ -33,9 +34,9 @@ loginApp.controller('LoginCtrl', function ($scope) {
   $scope.facebookInitialized = false;
 
   $scope.skipLogin = function () {
-    window.postMessage({
-      action: 'skipLogin'
-    }, '*');
+    // window.postMessage({
+    //   action: 'skipLogin'
+    // }, '*');
   };
 
   $scope.facebookLogin = function() {
@@ -127,9 +128,27 @@ loginApp.controller('LoginCtrl', function ($scope) {
   };
 });
 
-loginApp.controller('EmailCtrl', function ($scope) {
+loginApp.controller('EmailCtrl', function ($scope, UserCouch) {
   steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign In');
+
+  $scope.submitLogin = function () {
+    UserCouch.server.login($scope.loginUser, $scope.loginPass).then(
+      function () {
+        $scope.showInfo = true;
+        // $scope.loginPass = $scope.loginUser = '';
+        $scope.server.getInfo();
+        $scope.server.getDatabases();
+        $scope.server.getUUIDs(3);
+        $scope.server.getUserDoc();
+
+        console.log($scope);
+      },
+      function (res) {
+        console.error(res.data);
+      }
+    );
+  };
 
   $scope.signUp = function () {
     var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
@@ -137,9 +156,31 @@ loginApp.controller('EmailCtrl', function ($scope) {
   };
 });
 
-loginApp.controller('SignUpCtrl', function ($scope) {
+loginApp.controller('SignUpCtrl', function ($scope, UserCouch) {
   steroids.view.setBackgroundColor('#d2cbc3');
   steroids.view.navigationBar.show('Sign Up');
+
+  $scope.user = UserCouch.cornerCouchDB.newDoc();
+
+  $scope.submitSignup = function () {
+    // $scope.user.save().then(
+    //   function (res) {
+    //     var user = res.data;
+    //     console.log(user);
+    //   },
+    //   function (res) {
+    //     console.error(res.data);
+    //   }
+    // );
+  };
+
+  UserCouch.ensureDB(function() {
+    var whenChanged = function(arg) {
+      alert('something changed!');
+    };
+
+    UserCouch.startPollingChanges(whenChanged);
+  });
 });
 
 loginApp.controller('FBCtrl', function ($scope) {
