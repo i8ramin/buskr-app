@@ -1,15 +1,14 @@
 <article class="view" ng-controller="SignUpCtrl">
   <div class="content content-padded">
-    <form name="signup" ng-submit="submitSignup()">
+    <form name="newUserForm" ng-submit="createUser()">
       <h2>Select Your User Type</h2>
       <div class="panel"></div>
 
-      <input type="text" ng-model="user.first_name" placeholder="First Name" class="buskr-text-input input-full">
-      <input type="text" ng-model="user.last_name" placeholder="Last Name" class="buskr-text-input input-full">
-      <input type="email" ng-model="user.email" placeholder="Email" class="buskr-text-input input-full">
-      <input type="password" ng-model="user.password" placeholder="Password" class="buskr-text-input input-full">
-      <input type="text" ng-model="user.location" placeholder="Home Location" class="buskr-text-input input-full">
-      <input type="text" ng-model="user.dob" placeholder="Date of Birth" class="buskr-text-input input-full">
+      <input type="text" ng-model="newUser.name" placeholder="Full Name" class="buskr-text-input input-full">
+      <input type="email" ng-model="newUser.email" placeholder="Email" class="buskr-text-input input-full">
+      <input type="password" ng-model="newUser.password" placeholder="Password" class="buskr-text-input input-full">
+      <input type="text" ng-model="newUser.zipcode" placeholder="Zipcode" class="buskr-text-input input-full">
+      <input type="date" ng-model="newUser.dob" placeholder="Date of Birth" class="buskr-text-input input-full">
 
       <button type="submit" class="buskr-button">Sign Up</button>
       <!--<button class="buskr-button button_facebook">Login with Facebook</button>-->

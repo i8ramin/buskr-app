@@ -101,4 +101,5 @@
 
     $scope.artist = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists/' + id));
   });
+
 })(window.Firebase);

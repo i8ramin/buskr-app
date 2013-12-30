@@ -2,26 +2,18 @@
   <div class="content content-padded">
     <form ng-submit="submitLogin()">
       <input type="email"
-        ng-model="loginUser"
+        ng-model="email"
         placeholder="Email"
         class="buskr-text-input input-full">
 
       <input type="password"
-        ng-model="loginPass"
+        ng-model="password"
         placeholder="Password"
         class="buskr-text-input input-full">
 
       <br>
       <button type="submit" class="buskr-button">Sign In</button>
     </form>
-
-    <div class='alert alert-info' ng-show='showInfo'>
-      <pre>server.userCtx = {{ server.userCtx | json }}</pre>
-      <pre>server.info = {{ server.info | json }}<pre>
-      <pre>server.databases = {{ server.databases | json }}</pre>
-      <pre>server.uuids = {{ server.uuids | json }}</pre>
-      <pre>server.userDoc = {{ server.userDoc | json }}</pre>
-    </div>
 
     <footer class="footer-bottom">
       <button class="buskr-button" ng-click="signUp()">New User</button>
