@@ -19,17 +19,24 @@
   <script src="/components/fastclick/lib/fastclick.js"></script>
 
   <script src="/components/angular/angular.js"></script>
+
+  <script src="/vendor/firebase/firebase.js"></script>
+  <script src="/vendor/firebase/firebase-simple-login.js"></script>
+  <script src="/vendor/firebase/angularfire.js"></script>
+
   <script src="/components/lodash/dist/lodash.js"></script>
 
   <script src="/javascripts/directives.js"></script>
   <script src="/javascripts/services.js"></script>
 
+  <script src="/models/models.js"></script>
   <script src="/javascripts/drawer.js"></script>
 </head>
 <body id="drawerMenu" ng-controller="DrawerCtrl">
+  <p>{{$root.user.name}}</p>
   <nav>
     <ul>
-      <li><button ng-click="openLogin()">Login</button></li>
+      <li><button ng-click="logout()">Logout</button></li>
     </ul>
   </nav>
 </body>

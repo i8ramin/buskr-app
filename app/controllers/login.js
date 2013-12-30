@@ -51,9 +51,9 @@ var FB_APP_ID = 574303185975176;
     $scope.facebookInitialized = false;
 
     $scope.skipLogin = function () {
-      // window.postMessage({
-      //   action: 'skipLogin'
-      // }, '*');
+      window.postMessage({
+        action: 'skipLogin'
+      }, '*');
     };
 
     $scope.facebookLogin = function() {

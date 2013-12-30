@@ -92,16 +92,14 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       return deferred.promise;
     },
     logout: function () {
+      $auth.$logout();
+
+      delete $rootScope.user;
       $window.localStorage.removeItem('user');
 
-      $auth.$logout().then(
-        function () {
-          delete $rootScope.user;
-        },
-        function (error) {
-          console.error(error);
-        }
-      );
+      window.postMessage({
+        action: 'userLogout'
+      }, '*');
     }
   };
 });

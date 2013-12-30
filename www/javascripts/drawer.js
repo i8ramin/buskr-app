@@ -1,5 +1,6 @@
 
 var drawerApp = angular.module('drawerApp', [
+  'UserModel',
   'buskrApp.directives',
   'buskrApp.services'
 ]);
@@ -7,7 +8,13 @@ var drawerApp = angular.module('drawerApp', [
 drawerApp.run(function () {
 });
 
-drawerApp.controller('DrawerCtrl', function ($scope) {
+drawerApp.controller('DrawerCtrl', function ($rootScope, $scope, User) {
+  $rootScope.user = User.load();
+
+  $scope.logout = function () {
+    User.logout();
+  };
+
   $scope.openLogin = function () {
     window.postMessage({
       action: 'openLogin'
