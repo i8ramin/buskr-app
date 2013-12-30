@@ -4,7 +4,7 @@
 steroids.config.name = "Buskr"
 
 # -- Initial Location --
-steroids.config.location = "http://localhost/views/login/index.html"
+steroids.config.location = "http://localhost/index.html"
 
 # -- Tab Bar --
 # steroids.config.tabBar.enabled = true

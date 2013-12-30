@@ -1,6 +1,9 @@
 <article class="view" ng-controller="EmailCtrl">
   <div class="content content-padded">
-    <form ng-submit="submitLogin()">
+    <form
+      name="loginForm"
+      ng-submit="submitLogin()"
+      ng-class="{'animated invalid invalid-shake':hasErrors}">
       <input type="email"
         ng-model="email"
         placeholder="Email"

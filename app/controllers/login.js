@@ -4,22 +4,36 @@ var FB_APP_ID = 574303185975176;
 
   var loginApp = angular.module('loginApp', [
     'UserModel',
-    'firebase',
     'buskrApp.services',
     'buskrApp.directives'
   ]);
 
   var emailView = new steroids.views.WebView({location:'views/login/email.html'});
+  var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
-
-  loginApp.run(function () {
+  loginApp.run(function (User) {
     // steroids.view.setBackgroundColor('#fbc26b');
     // steroids.view.bounceShadow.hide();
+
+    var user = User.load();
+
+    if (user) {
+      artistView.preload({}, {
+        onSuccess: function () {
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
+          });
+        },
+        onFailure: function (error) {
+          console.error(error.errorDescription);
+        }
+      });
+    }
   });
 
   // Index: http://localhost/views/login/index.html
   loginApp.controller('LoginCtrl', function ($scope) {
-
     steroids.view.setBackgroundColor('#fbc26b');
     steroids.view.navigationBar.setButtons({
       overrideBackButton: true
@@ -131,27 +145,38 @@ var FB_APP_ID = 574303185975176;
     };
   });
 
-  loginApp.controller('EmailCtrl', function ($scope, $firebaseAuth) {
+  loginApp.controller('EmailCtrl', function ($scope, $window, User) {
     steroids.view.setBackgroundColor('#d2cbc3');
     steroids.view.navigationBar.show('Sign In');
 
-    var rootRef = new Firebase('https://buskrapp.firebaseio.com');
-    var profilesRef = rootRef.child('profiles');
-
-    var $auth = $firebaseAuth(rootRef);
-
     $scope.submitLogin = function () {
-      $auth.$login('password', {email:$scope.email, password:$scope.password}).then(
-        function (user) {
-          console.log(user);
+      $scope.hasErrors = false;
+      $scope.loading = true;
 
-          profilesRef.child(user.uid).on('value', function (profile) {
-            console.log(profile);
-            console.log(profile.val());
+      User.login($scope.email, $scope.password).then(
+        function (user) {
+          artistView.preload({}, {
+            onSuccess: function () {
+              steroids.layers.push({
+                view: artistView,
+                navigationBar: false
+              });
+            },
+            onFailure: function (error) {
+              console.error(error.errorDescription);
+              $scope.loading = false;
+            }
           });
         },
         function (error) {
-          console.error(error);
+          $scope.hasErrors = true;
+          $scope.loading = false;
+
+          $window.setTimeout(function () {
+            $scope.$apply(function () {
+              $scope.hasErrors = false;
+            });
+          }, 1000);
         }
       );
     };
@@ -162,49 +187,44 @@ var FB_APP_ID = 574303185975176;
     };
   });
 
-  loginApp.controller('SignUpCtrl', function ($scope, $firebase, $firebaseAuth) {
+  loginApp.controller('SignUpCtrl', function ($scope, User) {
     steroids.view.setBackgroundColor('#d2cbc3');
     steroids.view.navigationBar.show('Sign Up');
 
-    var rootRef = new Firebase('https://buskrapp.firebaseio.com');
-    var profilesRef = rootRef.child('profiles');
+    // var rootRef = new Firebase('https://buskrapp.firebaseio.com');
+    // var profilesRef = rootRef.child('profiles');
 
-    var $auth = $firebaseAuth(rootRef);
+    // var $auth = $firebaseAuth(rootRef);
     // var $profiles = $firebase(profilesRef);
 
     $scope.createUser = function () {
-      var email = $scope.newUser.email;
-      var password = $scope.newUser.password;
+      $scope.hasErrors = false;
+      $scope.loading = true;
 
-      // $firebase;
-      // $firebaseAuth;
-      // $auth;
-      // $profiles;
-      // rootRef;
-      // profilesRef;
-
-      $auth.$createUser(email, password, function (error, user) {
-        var newProfileObj = {};
-
-        if (error) {
+      User.create($scope.newUser).then(
+        function (newUser) {
+          // User.save(newUser);
+          artistView.preload({}, {
+            onSuccess: function () {
+              steroids.layers.push({
+                view: artistView,
+                navigationBar: false
+              });
+            },
+            onFailure: function (error) {
+              alert(error.errorDescription);
+              console.error(error.errorDescription);
+              $scope.loading = false;
+            }
+          });
+        },
+        function (error) {
+          alert(error);
           console.error(error);
-        } else {
-          newProfileObj[user.uid] = {
-            email: user.email,
-            name: $scope.newUser.name,
-            zipcode: $scope.newUser.zipcode,
-            dob: $scope.newUser.dob
-          };
-
-          profilesRef.set(newProfileObj);
+          $scope.loading = false;
         }
-      });
+      );
     };
-  });
-
-  loginApp.controller('FBCtrl', function ($scope) {
-    // steroids.view.setBackgroundColor('#d2cbc3');
-    steroids.view.navigationBar.show('Sign In');
   });
 
   document.addEventListener('deviceready', function () {

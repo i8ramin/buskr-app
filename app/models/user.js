@@ -1,117 +1,109 @@
 // The contents of individual model .js files will be concatenated into dist/models.js
 
-(function() {
+(function(Firebase) {
 
 // Protects views where AngularJS is not loaded from errors
 if (typeof angular === 'undefined') {
 	return;
 }
 
-var module = angular.module('UserModel', ['CornerCouch']);
+var module = angular.module('UserModel', [
+  'firebase'
+]);
 
-module.factory('UserCouch', function ($http, cornercouch) {
-  var databaseName  = 'users',
-      server        = cornercouch('http://.touchdb.', 'GET'),
-      database      = server.getDB(databaseName);
+module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
+  var rootRef = new Firebase('https://buskrapp.firebaseio.com');
+  var profilesRef = rootRef.child('profiles');
 
-  // Set up two way replication with server and monitoring of the local database
-  var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
-      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/' + databaseName;
-
-  // Disable http credentials so CORS works
-  // FYI this is set to true in angular-cornercouch
-  $http.defaults.withCredentials = false;
-
-  // steroidsDB.replicateFrom({
-  //   url: cloudUrl
-  // }, {
-  //   onSuccess: function () {
-  //     // alert('[replicateFrom] success');
-  //     console.log('[replicateFrom] success');
-  //   },
-  //   onFailure: function (response) {
-  //     alert('[replicateFrom] fail ' + response);
-  //   }
-  // });
-
-  database.getInfo().success(function () {
-    console.log('Database ' + databaseName + ' loaded:' + JSON.stringify(database.info));
-  });
-
-  // Only run this once
-  var startTwoWayReplication = function () {
-    steroidsDB.addTwoWayReplica({
-      url: cloudUrl
-    }, {
-      onSuccess: function() {
-        // alert('[startTwoWayReplication] Database ' + databaseName + ' replication was successful.');
-        console.log('[startTwoWayReplication]Database ' + databaseName + ' replication was successful.');
-      }, onFailure: function() {
-        alert('[startTwoWayReplication] Database ' + databaseName + ' replication failed.');
-        console.log('[startTwoWayReplication] Database ' + databaseName + ' replication failed.');
-      }
-    });
-  };
-
-  var startOneWayReplication = function (onChangeCallback) {
-    var options = {
-      source: databaseName,
-      target: cloudUrl
-    };
-
-    var callbacks = {
-      onSuccess: function() {
-        // alert('[startOneWayReplication] Replication started');
-        console.log('[startOneWayReplication] Replication started');
-      },
-      onFailure: function() {
-        alert('[startOneWayReplication] Could not start replication');
-      }
-    };
-
-    steroidsDB.startReplication(options, callbacks);
-    steroidsDB.startMonitoringChanges({}, {
-      onChange: onChangeCallback
-    });
-  };
-
-  // Monitor changes
-  var startMonitoringChanges = function (onChangeCallback) {
-    steroidsDB.startMonitoringChanges({}, {
-      onChange: onChangeCallback
-    });
-  };
-
-  var ensureDB = function (onEnsuredCallback) {
-    steroidsDB.createDB({}, {
-      onSuccess: function() {
-        console.log('Database has been created.');
-
-        if (onEnsuredCallback) {
-          onEnsuredCallback.call();
-        }
-      },
-      onFailure: function(error) {
-        if (error.status === 412) {
-          if (onEnsuredCallback) {
-            onEnsuredCallback.call();
-          }
-        } else {
-          alert('[ensureDB] Unable to create database: ' + error.error);
-        }
-      }
-    });
-  };
+  var $auth = $firebaseAuth(rootRef);
 
   return {
-    ensureDB: ensureDB,
-    server: server,
-    cornerCouchDB: database,
-    keepInSync: startTwoWayReplication,
-    startPollingChanges: startOneWayReplication,
-    onChange: startMonitoringChanges,
-    steroidsDB: steroidsDB
+    load: function () {
+      var localUser = JSON.parse($window.localStorage.getItem('user'));
+      $rootScope.user = localUser;
+
+      return $rootScope.user;
+    },
+    save: function (user) {
+      $window.localStorage.setItem('user', JSON.stringify(user));
+      $rootScope.user = user;
+    },
+    create: function (newUser) {
+      var _this = this;
+      var deferred = $q.defer();
+
+      $auth.$createUser(newUser.email, newUser.password, function (error, user) {
+        var newProfileObj = {};
+
+        if (error) {
+          deferred.reject(error);
+        } else {
+          newProfileObj[user.uid] = {
+            email: user.email,
+            name: newUser.name || '',
+            zipcode: newUser.zipcode || '',
+            dob: newUser.dob || ''
+          };
+
+          profilesRef.set(newProfileObj, function (error) {
+            if (error) {
+              deferred.reject(new Error(error));
+            } else {
+              _this.save(newUser);
+              deferred.resolve(newUser);
+            }
+          });
+        }
+      });
+
+      return deferred.promise;
+    },
+    login: function (email, password) {
+      email = email || '';
+      password = password || '';
+
+      var _this = this;
+      var deferred = $q.defer();
+
+      if (!email.length || !password.length) {
+        deferred.reject(new Error('Please enter email and password'));
+      } else {
+        $auth.$login('password', {email:email, password:password}).then(
+          function (userDetails) {
+            profilesRef.child(userDetails.uid).on('value', function (profileDetails) {
+              var user = {
+                uid: userDetails.uid,
+                email: userDetails.email,
+                name: profileDetails.val().name,
+                dob: profileDetails.val().dob,
+                zipcode: profileDetails.val().zipcode
+              };
+
+              _this.save(user);
+              deferred.resolve(user);
+            });
+          },
+          function (error) {
+            deferred.reject(error);
+          }
+        );
+      }
+
+      return deferred.promise;
+    },
+    logout: function () {
+      $window.localStorage.removeItem('user');
+
+      $auth.$logout().then(
+        function () {
+          delete $rootScope.user;
+        },
+        function (error) {
+          console.error(error);
+        }
+      );
+    }
   };
 });
 
-})();
+})(window.Firebase);
