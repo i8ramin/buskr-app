@@ -25,7 +25,9 @@
     "FB",
     "CDV",
     "require",
-    "module"
+    "module",
+    "moment",
+    "Firebase"
   ],
   "curly": true,
   "eqeqeq": true,

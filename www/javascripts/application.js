@@ -21,10 +21,19 @@ drawerView.preload({}, {
   }
 });
 
-buskrApp.run(function (User) {
+buskrApp.run(function (User, $window) {
   steroids.view.setBackgroundColor('#fbc26b');
 
   var user = User.load();
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      $window.localStorage.setItem('position', JSON.stringify(position.coords));
+    },
+    function (error) {
+      console.error(error);
+    }
+  );
 
   if (user) {
     artistView.preload({}, {
@@ -67,6 +76,17 @@ buskrApp.run(function (User) {
 
 document.addEventListener('deviceready', function () {
   angular.bootstrap(document, ['buskrApp']);
+}, false);
+
+document.addEventListener('resume', function () {
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      window.localStorage.setItem('position', JSON.stringify(position.coords));
+    },
+    function (error) {
+      console.error(error);
+    }
+  );
 }, false);
 
 window.addEventListener('message', function (event) {

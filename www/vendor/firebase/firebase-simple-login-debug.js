@@ -1840,7 +1840,7 @@ FirebaseSimpleLogin = function(ref, callback, context) {
     throw new Error("new FirebaseSimpleLogin(): First argument must be a valid Firebase reference (i.e. new Firebase(<firebaseURL>)).");
   }
   if(window.location.protocol === "file:" && !this.isMobilePhoneGap() && !this.isMobileTriggerIo() && console && console.log) {
-    var message = "FirebaseSimpleLogin(): Due to browser security restrictions, " + "loading applications via `file://*` URLs will prevent popup-based authentication " + "providers from working properly. When testing locally, you'll need to run a " + "barebones webserver on your machine rather than loading your test files via " + "`file://*`. The easiest way to run a barebones server on your local machine is to " + "`cd` to the root directory of your code and run `python -m SimpleHTTPServer`, " + 
+    var message = "FirebaseSimpleLogin(): Due to browser security restrictions, " + "loading applications via `file://*` URLs will prevent popup-based authentication " + "providers from working properly. When testing locally, you'll need to run a " + "barebones webserver on your machine rather than loading your test files via " + "`file://*`. The easiest way to run a barebones server on your local machine is to " + "`cd` to the root directory of your code and run `python -m SimpleHTTPServer`, " +
     "which will allow you to access your content via `http://127.0.0.1:8000/*`.";
     console.log(message)
   }
@@ -1851,7 +1851,7 @@ FirebaseSimpleLogin = function(ref, callback, context) {
   this.mLoginStateChange = function() {
     var args = Array.prototype.slice.apply(arguments);
     var isProxyEnabled = typeof window["Proxy"] === "function" && window["Proxy"].length === 2;
-    var publicAttributes = {"anonymous":["uid", "firebaseAuthToken", "id", "provider"], "password":["uid", "email", "firebaseAuthToken", "id", "md5_hash", "provider"], "facebook":["uid", "accessToken", "displayName", "firebaseAuthToken", "id", "provider"], "github":["uid", "accessToken", "displayName", "firebaseAuthToken", "id", "provider", "username"], "persona":["uid", "email", "firebaseAuthToken", "id", "md5_hash", "provider"], "twitter":["uid", "accessToken", "accessTokenSecret", "displayName", 
+    var publicAttributes = {"anonymous":["uid", "firebaseAuthToken", "id", "provider"], "password":["uid", "email", "firebaseAuthToken", "id", "md5_hash", "provider"], "facebook":["uid", "accessToken", "displayName", "firebaseAuthToken", "id", "provider"], "github":["uid", "accessToken", "displayName", "firebaseAuthToken", "id", "provider", "username"], "persona":["uid", "email", "firebaseAuthToken", "id", "md5_hash", "provider"], "twitter":["uid", "accessToken", "accessTokenSecret", "displayName",
     "firebaseAuthToken", "id", "provider", "username"]};
     if(isProxyEnabled && args[1] && args[1]["provider"]) {
       var provider = args[1]["provider"];
@@ -2079,7 +2079,7 @@ FirebaseSimpleLogin.prototype.parseURL = function(url) {
   }(), hash:a.hash.replace("#", ""), path:a.pathname.replace(/^([^\/])/, "/$1")}
 };
 FirebaseSimpleLogin.prototype.isMobilePhoneGap = function() {
-  return(window["cordova"] || window["PhoneGap"] || window["phonegap"]) && /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)
+  return(window["cordova"] || window["PhoneGap"] || window["phonegap"]) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)
 };
 FirebaseSimpleLogin.prototype.isMobileTriggerIo = function() {
   return window["forge"] && /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent)

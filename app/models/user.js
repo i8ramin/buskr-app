@@ -39,10 +39,9 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
           deferred.reject(error);
         } else {
           newProfileObj[user.uid] = {
-            email: user.email,
+            email: newUser.email,
             name: newUser.name || '',
-            zipcode: newUser.zipcode || '',
-            dob: newUser.dob || ''
+            dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : ''
           };
 
           profilesRef.set(newProfileObj, function (error) {
@@ -58,12 +57,47 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
       return deferred.promise;
     },
-    login: function (email, password) {
-      email = email || '';
-      password = password || '';
-
+    fbLogin: function () {
       var _this = this;
       var deferred = $q.defer();
+
+      $auth.$login('facebook', {
+        rememberMe: true,
+        scope: 'email,user_birthday,user_location,manage_pages'
+      }).then(
+        function (fbUser) {
+          // _this.save({
+          // });
+          var password = window.prompt('Please provide a password:');
+          var newUser = {
+            email:fbUser.email,
+            name: fbUser.displayName,
+            password:password,
+            dob: fbUser.birthday
+          };
+
+          _this.create(newUser).then(
+            function (user) {
+              deferred.resolve(user);
+            },
+            function (error) {
+              deferred.reject(error);
+            }
+          );
+        },
+        function (error) {
+          deferred.reject(error);
+        }
+      );
+
+      return deferred.promise;
+    },
+    emailLogin: function (email, password) {
+      var _this = this;
+      var deferred = $q.defer();
+
+      email = email || '';
+      password = password || '';
 
       if (!email.length || !password.length) {
         deferred.reject(new Error('Please enter email and password'));
@@ -75,8 +109,7 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
                 uid: userDetails.uid,
                 email: userDetails.email,
                 name: profileDetails.val().name,
-                dob: profileDetails.val().dob,
-                zipcode: profileDetails.val().zipcode
+                dob: profileDetails.val().dob
               };
 
               _this.save(user);
