@@ -124,6 +124,9 @@ window.addEventListener('message', function (event) {
         });
         break;
       case 'userLogout':
+        steroids.nativeBridge.nativeCall({
+          method: 'restartApplication'
+        });
         break;
 
       default:

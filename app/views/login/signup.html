@@ -1,6 +1,6 @@
 <article class="view" ng-controller="SignUpCtrl">
   <div class="content content-padded">
-    <form name="newUserForm" ng-submit="createUser()">
+    <form name="newUserForm">
       <h2>Select Your User Type</h2>
       <div class="panel"></div>
 
@@ -9,8 +9,8 @@
       <input type="password" ng-model="newUser.password" placeholder="Password" class="buskr-text-input input-full">
       <input type="date" ng-model="newUser.dob" placeholder="Date of Birth" class="buskr-text-input input-full">
 
-      <button type="submit" class="buskr-button">Sign Up</button>
-      <!--<button class="buskr-button button_facebook">Login with Facebook</button>-->
+      <button class="buskr-button" ng-click="createUser()">Sign Up</button>
+      <button class="buskr-button button_facebook" ng-click="facebookLogin()">Login with Facebook</button>
     </form>
   </div>
 </article>

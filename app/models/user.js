@@ -34,6 +34,13 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
       $auth.$createUser(newUser.email, newUser.password, function (error, user) {
         var newProfileObj = {};
+        var userToSave = {
+          id: user.id,
+          uid: user.uid,
+          email: user.email,
+          name: newUser.name,
+          dob: newUser.dob
+        };
 
         if (error) {
           deferred.reject(error);
@@ -46,10 +53,10 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
           profilesRef.set(newProfileObj, function (error) {
             if (error) {
-              deferred.reject(new Error(error));
+              deferred.reject(error);
             } else {
-              _this.save(newUser);
-              deferred.resolve(newUser);
+              _this.save(userToSave);
+              deferred.resolve(userToSave);
             }
           });
         }
@@ -66,22 +73,27 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
         scope: 'email,user_birthday,user_location,manage_pages'
       }).then(
         function (fbUser) {
-          // _this.save({
-          // });
-          var password = window.prompt('Please provide a password:');
+          var password = fbUser.uid;
           var newUser = {
-            email:fbUser.email,
+            email: fbUser.email,
+            password: password,
             name: fbUser.displayName,
-            password:password,
             dob: fbUser.birthday
           };
 
-          _this.create(newUser).then(
+          _this.emailLogin(newUser.email, newUser.password).then(
             function (user) {
               deferred.resolve(user);
             },
             function (error) {
-              deferred.reject(error);
+              _this.create(newUser).then(
+                function (user) {
+                  deferred.resolve(user);
+                },
+                function (error) {
+                  deferred.reject(error);
+                }
+              );
             }
           );
         },

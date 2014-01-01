@@ -44,8 +44,6 @@ var FB_APP_ID = 574303185975176;
       }
     });
 
-    steroids.view.navigationBar.show('');
-
     $scope.appId = FB_APP_ID;
     $scope.facebookLoginStatus = 'FB not initialized';
     $scope.facebookInitialized = false;
