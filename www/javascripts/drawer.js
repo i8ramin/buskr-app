@@ -6,6 +6,7 @@ var drawerApp = angular.module('drawerApp', [
 ]);
 
 drawerApp.run(function () {
+  steroids.view.setBackgroundColor('#f0b059');
 });
 
 drawerApp.controller('DrawerCtrl', function ($rootScope, $scope, User) {

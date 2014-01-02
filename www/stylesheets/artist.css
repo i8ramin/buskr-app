@@ -1,11 +1,11 @@
-/* line 3, ../../app/scss/artist.scss */
+/* line 7, ../../app/scss/artist.scss */
 .artist-card {
   position: relative;
   min-height: 175px;
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* line 9, ../../app/scss/artist.scss */
+/* line 13, ../../app/scss/artist.scss */
 .artist-card::after {
   display: block;
   content: '';
@@ -17,7 +17,7 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
-/* line 22, ../../app/scss/artist.scss */
+/* line 26, ../../app/scss/artist.scss */
 .artist-card .artist-name {
   position: absolute;
   z-index: 2;
@@ -31,7 +31,7 @@
   text-align: center;
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
 }
-/* line 36, ../../app/scss/artist.scss */
+/* line 40, ../../app/scss/artist.scss */
 .artist-card .live-location {
   position: absolute;
   z-index: 1;
@@ -43,14 +43,14 @@
   color: white;
   line-height: 1.5rem;
 }
-/* line 47, ../../app/scss/artist.scss */
+/* line 51, ../../app/scss/artist.scss */
 .artist-card .live-location .button_live {
   position: relative;
   float: left;
   width: 40%;
   box-shadow: 0 0 15px 4px rgba(24, 201, 124, 0.75);
 }
-/* line 53, ../../app/scss/artist.scss */
+/* line 57, ../../app/scss/artist.scss */
 .artist-card .live-location .button_live::before {
   position: absolute;
   left: 10px;
@@ -59,7 +59,7 @@
   color: #328059;
   font-size: 48px;
 }
-/* line 63, ../../app/scss/artist.scss */
+/* line 67, ../../app/scss/artist.scss */
 .artist-card .live-location .loc {
   opacity: .85;
   padding-left: 25px;
@@ -68,13 +68,13 @@
   float: right;
 }
 
-/* line 73, ../../app/scss/artist.scss */
+/* line 77, ../../app/scss/artist.scss */
 .profile-sections {
   margin: 2vh;
   background-color: white;
   border-radius: 3px;
 }
-/* line 78, ../../app/scss/artist.scss */
+/* line 82, ../../app/scss/artist.scss */
 .profile-sections > section {
   display: -webkit-flex;
   display: flex;
@@ -83,20 +83,20 @@
   padding: 15px 15px 8px;
   border-bottom: 1px solid #d1cfcd;
 }
-/* line 88, ../../app/scss/artist.scss */
+/* line 92, ../../app/scss/artist.scss */
 .profile-sections > section.flow-column {
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 92, ../../app/scss/artist.scss */
+/* line 96, ../../app/scss/artist.scss */
 .profile-sections > section.flow-column .body {
   display: block;
 }
-/* line 98, ../../app/scss/artist.scss */
+/* line 102, ../../app/scss/artist.scss */
 .profile-sections > section > header h1 {
   color: #fbc16b;
 }
-/* line 103, ../../app/scss/artist.scss */
+/* line 107, ../../app/scss/artist.scss */
 .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -105,7 +105,7 @@
   -webkit-flex: 1 auto;
   flex: 1 auto;
 }
-/* line 115, ../../app/scss/artist.scss */
+/* line 119, ../../app/scss/artist.scss */
 .profile-sections .location .map {
   margin: 0 -1rem;
 }

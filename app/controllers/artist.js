@@ -45,6 +45,8 @@
   // });
 
   artistApp.run(function () {
+    steroids.view.setBackgroundColor('#d2cbc3');
+
     document.addEventListener('visibilitychange', function (event) {
     }, false);
   });
@@ -53,6 +55,7 @@
   artistApp.controller('IndexCtrl', function ($scope, $firebase, NavbarService) {
     NavbarService.navBar.init(function () {
     });
+
     steroids.view.navigationBar.show('');
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
