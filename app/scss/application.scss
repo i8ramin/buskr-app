@@ -31,7 +31,6 @@ input, textarea {
 }
 
 html, body {
-  // height: 100%;
   margin: 0;
   padding: 0;
 
@@ -92,24 +91,6 @@ article.view {
   }
 }
 
-// .page {
-//   display: -webkit-box;
-//   display: -moz-box;
-//   display: box;
-
-//   -webkit-box-orient: vertical;
-//   box-orient: vertical;
-
-//   min-height: 96vh;
-//   margin: $gutter-width;
-//   padding: 10px;
-//   border-radius: 4px;
-//   background-color: white;
-// }
-// .page > .content-full {
-//   -webkit-box-flex: 1;
-//   box-flex: 1;
-// }
 
 @-webkit-keyframes invalidshake {
   8%, 41%  {-webkit-transform: translateX(-10px);}

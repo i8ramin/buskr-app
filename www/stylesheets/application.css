@@ -32,31 +32,31 @@ html, body {
   margin: 0;
   padding: 0;
 }
-/* line 38, ../../app/scss/application.scss */
+/* line 37, ../../app/scss/application.scss */
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none !important;
 }
 
-/* line 41, ../../app/scss/application.scss */
+/* line 40, ../../app/scss/application.scss */
 body {
   background-color: #d2cbc3;
   color: #000;
   font: 11pt 'avenir', helvetica, arial, sans-serif;
 }
 
-/* line 47, ../../app/scss/application.scss */
+/* line 46, ../../app/scss/application.scss */
 form {
   display: block;
   width: 100%;
 }
 
-/* line 52, ../../app/scss/application.scss */
+/* line 51, ../../app/scss/application.scss */
 article.view {
   min-height: 100%;
   display: -webkit-flex;
   display: flex;
 }
-/* line 64, ../../app/scss/application.scss */
+/* line 63, ../../app/scss/application.scss */
 article.view > .content {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -65,92 +65,92 @@ article.view > .content {
   -webkit-flex-flow: column;
   flex-flow: column;
 }
-/* line 74, ../../app/scss/application.scss */
+/* line 73, ../../app/scss/application.scss */
 article.view > .content.content-padded {
   margin: 2vw;
   padding: 20px 15px;
   background-color: white;
   border-radius: 4px;
 }
-/* line 81, ../../app/scss/application.scss */
+/* line 80, ../../app/scss/application.scss */
 article.view > .content > *:not(footer) {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
 @-webkit-keyframes invalidshake {
-  /* line 115, ../../app/scss/application.scss */
+  /* line 96, ../../app/scss/application.scss */
   8%, 41% {
     -webkit-transform: translateX(-10px);
   }
 
-  /* line 116, ../../app/scss/application.scss */
+  /* line 97, ../../app/scss/application.scss */
   25%, 58% {
     -webkit-transform: translateX(10px);
   }
 
-  /* line 117, ../../app/scss/application.scss */
+  /* line 98, ../../app/scss/application.scss */
   75% {
     -webkit-transform: translateX(-5px);
   }
 
-  /* line 118, ../../app/scss/application.scss */
+  /* line 99, ../../app/scss/application.scss */
   92% {
     -webkit-transform: translateX(5px);
   }
 
-  /* line 119, ../../app/scss/application.scss */
+  /* line 100, ../../app/scss/application.scss */
   0%, 100% {
     -webkit-transform: translateX(0);
   }
 }
 
 @keyframes invalidshake {
-  /* line 122, ../../app/scss/application.scss */
+  /* line 103, ../../app/scss/application.scss */
   8%, 41% {
     transform: translateX(-10px);
   }
 
-  /* line 123, ../../app/scss/application.scss */
+  /* line 104, ../../app/scss/application.scss */
   25%, 58% {
     transform: translateX(10px);
   }
 
-  /* line 124, ../../app/scss/application.scss */
+  /* line 105, ../../app/scss/application.scss */
   75% {
     transform: translateX(-5px);
   }
 
-  /* line 125, ../../app/scss/application.scss */
+  /* line 106, ../../app/scss/application.scss */
   92% {
     transform: translateX(5px);
   }
 
-  /* line 126, ../../app/scss/application.scss */
+  /* line 107, ../../app/scss/application.scss */
   0%, 100% {
     transform: translateX(0);
   }
 }
 
-/* line 129, ../../app/scss/application.scss */
+/* line 110, ../../app/scss/application.scss */
 .animated.invalid-shake {
   -webkit-animation: invalidshake .5s linear;
   animation: invalidshake .5s linear;
 }
 
-/* line 139, ../../app/scss/application.scss */
+/* line 120, ../../app/scss/application.scss */
 .animate-switch.ng-animate {
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
   transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
 }
 
-/* line 144, ../../app/scss/application.scss */
+/* line 125, ../../app/scss/application.scss */
 .animate-switch.ng-leave.ng-leave-active,
 .animate-switch.ng-enter {
   top: -50px;
 }
 
-/* line 148, ../../app/scss/application.scss */
+/* line 129, ../../app/scss/application.scss */
 .animate-switch.ng-leave,
 .animate-switch.ng-enter.ng-enter-active {
   top: 0;

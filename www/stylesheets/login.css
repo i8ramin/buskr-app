@@ -27,3 +27,14 @@ html, body {
   padding: 10px 0;
   color: #bf8c3f;
 }
+
+/* line 32, ../../app/scss/login.scss */
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 37, ../../app/scss/login.scss */
+.submit-area {
+  margin-top: 20px;
+}

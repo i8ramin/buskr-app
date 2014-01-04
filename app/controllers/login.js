@@ -9,27 +9,10 @@ var FB_APP_ID = 574303185975176;
   ]);
 
   var emailView = new steroids.views.WebView({location:'views/login/email.html'});
+  var typeSelectView = new steroids.views.WebView({location:'views/login/type-select.html'});
   var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
-  loginApp.run(function (User) {
-    // steroids.view.setBackgroundColor('#fbc26b');
-    // steroids.view.bounceShadow.hide();
-
-    var user = User.load();
-
-    if (user) {
-      artistView.preload({}, {
-        onSuccess: function () {
-          steroids.layers.push({
-            view: artistView,
-            navigationBar: false
-          });
-        },
-        onFailure: function (error) {
-          console.error(error.errorDescription);
-        }
-      });
-    }
+  loginApp.run(function () {
   });
 
   // Index: http://localhost/views/login/index.html
@@ -37,16 +20,7 @@ var FB_APP_ID = 574303185975176;
     steroids.view.setBackgroundColor('#fbc26b');
     steroids.view.navigationBar.setButtons({
       overrideBackButton: true
-    }, {
-      onSuccess: function() {
-      },
-      onFailure: function() {
-      }
     });
-
-    $scope.appId = FB_APP_ID;
-    $scope.facebookLoginStatus = 'FB not initialized';
-    $scope.facebookInitialized = false;
 
     $scope.skipLogin = function () {
       window.postMessage({
@@ -55,101 +29,8 @@ var FB_APP_ID = 574303185975176;
     };
 
     $scope.facebookLogin = function() {
-      // $scope.facebookInit();
-
-      User.fbLogin().then(
-        function (user) {
-          steroids.layers.push({
-            view: artistView,
-            navigationBar: false
-          });
-        },
-        function (error) {
-          alert(error);
-          console.error(error);
-        }
-      );
-
-      // if ($scope.facebookLoginStatus === 'Logged in') {
-      //   alert('Already logged in!');
-      // } else {
-      //   return FB.login(function (response) {
-      //     if (response.authResponse) {
-      //       FB.api('/me', function(response) {
-      //         alert('Good to see you, ' + response.name + '.');
-      //       });
-      //     } else {
-      //       alert('User cancelled login or did not fully authorize.');
-      //     }
-
-      //     return $scope.getFacebookLoginStatus();
-      //   }, {
-      //     scope: 'email'
-      //   });
-      // }
+      steroids.layers.push(typeSelectView);
     };
-
-    // $scope.facebookInit = function () {
-    //   FB.init({
-    //     appId: FB_APP_ID,
-    //     nativeInterface: CDV.FB
-    //   });
-
-    //   $scope.facebookInitialized = true;
-    //   $scope.getFacebookLoginStatus();
-    // };
-
-    // $scope.getFacebookLoginStatus = function() {
-    //   FB.getLoginStatus(function (response) {
-    //     var accessToken, uid;
-
-    //     if (response.status === 'connected') {
-    //       uid = response.authResponse.userID;
-    //       accessToken = response.authResponse.accessToken;
-    //       $scope.facebookLoginStatus = 'Logged in';
-    //     } else if (response.status === 'not_authorized') {
-    //       $scope.facebookLoginStatus = 'App not authorized';
-    //     } else {
-    //       $scope.facebookLoginStatus = 'Not logged in';
-    //     }
-
-    //     $scope.$apply();
-    //   });
-    // };
-
-    // $scope.facebookFetch = function() {
-    //   return FB.api('/me/friends', {
-    //     fields: 'id, name, picture'
-    //   }, function(response) {
-    //     if (response.error) {
-    //       return alert('Error! \n\n' + JSON.stringify(response.error));
-    //     } else {
-    //       return alert(JSON.stringify(response.data));
-    //     }
-    //   });
-    // };
-
-    // $scope.facebookDialog = function() {
-    //   var params = {
-    //     method: 'feed',
-    //     name: 'Facebook Dialogs',
-    //     link: 'https://developers.facebook.com/docs/reference/dialogs/',
-    //     picture: 'http://fbrell.com/f8.jpg',
-    //     caption: 'Reference Documentation',
-    //     description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
-    //   };
-
-    //   return FB.ui(params, function(obj) {
-    //     return alert('Dialog response: ' + JSON.stringify(obj));
-    //   });
-    // };
-
-    // $scope.facebookLogout = function() {
-    //   return FB.logout(function(response) {
-    //     alert('Logged out: ' + JSON.stringify(response));
-    //     return $scope.getFacebookLoginStatus();
-    //   });
-    // };
 
     $scope.emailLogin = function () {
       steroids.layers.push(emailView);
@@ -233,6 +114,27 @@ var FB_APP_ID = 574303185975176;
           alert(error);
           console.error(error);
           $scope.loading = false;
+        }
+      );
+    };
+
+    $scope.facebookLogin = function () {
+      steroids.layers.push(typeSelectView);
+    };
+  });
+
+  loginApp.controller('TypeSelectCtrl', function ($scope, User) {
+    $scope.selectAudience = function () {
+      User.fbLogin().then(
+        function (user) {
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
+          });
+        },
+        function (error) {
+          alert(error);
+          console.error(error);
         }
       );
     };

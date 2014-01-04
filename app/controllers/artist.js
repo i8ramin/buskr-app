@@ -80,7 +80,6 @@
         url: 'comgooglemaps://'
       }, {
         onSuccess: function(parameters) {
-          alert('Maps launched');
         },
         onFailure: function(error) {
           steroids.openURL({
@@ -93,8 +92,6 @@
               alert('[Apple] Failed to open: ' + error.errorDescription);
             }
           });
-
-          alert('[Gooogle] Failed to open: ' + error.errorDescription);
         }
       });
     };
