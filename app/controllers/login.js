@@ -13,6 +13,10 @@ var FB_APP_ID = 574303185975176;
   var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
   loginApp.run(function () {
+    FB.init({
+      appId: 574303185975176,
+      nativeInterface: CDV.FB
+    });
   });
 
   // Index: http://localhost/views/login/index.html
@@ -29,7 +33,24 @@ var FB_APP_ID = 574303185975176;
     };
 
     $scope.facebookLogin = function() {
-      steroids.layers.push(typeSelectView);
+      // steroids.layers.push(typeSelectView);
+
+      $scope.loading = true;
+
+      User.fbLogin().then(
+        function (user) {
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
+          });
+        },
+        function (error) {
+          alert('ERROR: ' + error);
+          console.error(error);
+        }
+      ).finally(function () {
+        $scope.loading = false;
+      });
     };
 
     $scope.emailLogin = function () {
@@ -82,12 +103,6 @@ var FB_APP_ID = 574303185975176;
   loginApp.controller('SignUpCtrl', function ($scope, User) {
     steroids.view.setBackgroundColor('#d2cbc3');
     steroids.view.navigationBar.show('Sign Up');
-
-    // var rootRef = new Firebase('https://buskrapp.firebaseio.com');
-    // var profilesRef = rootRef.child('profiles');
-
-    // var $auth = $firebaseAuth(rootRef);
-    // var $profiles = $firebase(profilesRef);
 
     $scope.createUser = function () {
       $scope.hasErrors = false;

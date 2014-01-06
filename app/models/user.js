@@ -39,7 +39,8 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
           uid: user.uid,
           email: user.email,
           name: newUser.name,
-          dob: newUser.dob
+          dob: newUser.dob,
+          provider: newUser.provider
         };
 
         if (error) {
@@ -48,7 +49,8 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
           newProfileObj[user.uid] = {
             email: newUser.email,
             name: newUser.name || '',
-            dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : ''
+            dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : '',
+            provider: newUser.provider || 'email'
           };
 
           profilesRef.set(newProfileObj, function (error) {
@@ -68,39 +70,77 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       var _this = this;
       var deferred = $q.defer();
 
-      $auth.$login('facebook', {
-        rememberMe: true,
-        scope: 'email,user_birthday,user_location,manage_pages'
-      }).then(
-        function (fbUser) {
-          var password = fbUser.uid;
-          var newUser = {
-            email: fbUser.email,
-            password: password,
-            name: fbUser.displayName,
-            dob: fbUser.birthday
-          };
+      FB.login(function (response) {
+        if (response.authResponse) {
+          FB.api('/me', function (response) {
+            var password = response.id;
+            var newUser = {
+              provider: 'facebook',
+              username: response.username,
+              email: response.email,
+              password: password,
+              name: response.name,
+              dob: response.birthday
+            };
 
-          _this.emailLogin(newUser.email, newUser.password).then(
-            function (user) {
-              deferred.resolve(user);
-            },
-            function (error) {
-              _this.create(newUser).then(
-                function (user) {
-                  deferred.resolve(user);
-                },
-                function (error) {
-                  deferred.reject(error);
-                }
-              );
-            }
-          );
-        },
-        function (error) {
-          deferred.reject(error);
+            _this.emailLogin(newUser.email, newUser.password).then(
+              function (user) {
+                alert('logged in..');
+                deferred.resolve(user);
+              },
+              function (error) {
+                _this.create(newUser).then(
+                  function (user) {
+                    deferred.resolve(user);
+                  },
+                  function (error) {
+                    deferred.reject(error);
+                  }
+                );
+              }
+            );
+
+          });
+        } else {
+          deferred.reject('User cancelled login or did not fully authorize.');
         }
-      );
+      }, {
+        scope: 'email,user_birthday,user_location'
+      });
+
+      // $auth.$login('facebook', {
+      //   rememberMe: true,
+      //   scope: 'email,user_birthday,user_location,manage_pages'
+      // }).then(
+      //   function (fbUser) {
+      //     var password = fbUser.uid;
+      //     var newUser = {
+      //       email: fbUser.email,
+      //       password: password,
+      //       name: fbUser.displayName,
+      //       dob: fbUser.birthday
+      //     };
+
+      //     _this.emailLogin(newUser.email, newUser.password).then(
+      //       function (user) {
+      //         deferred.resolve(user);
+      //       },
+      //       function (error) {
+      //         _this.create(newUser).then(
+      //           function (user) {
+      //             deferred.resolve(user);
+      //           },
+      //           function (error) {
+      //             deferred.reject(error);
+      //           }
+      //         );
+      //       }
+      //     );
+      //   },
+      //   function (error) {
+      //     deferred.reject(error);
+      //   }
+      // );
 
       return deferred.promise;
     },
@@ -120,6 +160,7 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
               var user = {
                 uid: userDetails.uid,
                 email: userDetails.email,
+                provider: profileDetails.val().provider,
                 name: profileDetails.val().name,
                 dob: profileDetails.val().dob
               };
