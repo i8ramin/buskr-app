@@ -1,0 +1,1985 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"on",
+				"onSuccess"
+			],
+			[
+				"prof",
+				"profileDetails"
+			],
+			[
+				"login",
+				"loginApp"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"show",
+				"showedWelcomeMessage"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"gr",
+				"grayFontColor"
+			],
+			[
+				"gra",
+				"grayColor"
+			],
+			[
+				"tet",
+				"text-align"
+			],
+			[
+				"draw",
+				"drawerView.visible"
+			],
+			[
+				"new",
+				"newUser"
+			],
+			[
+				"arti",
+				"artistView"
+			],
+			[
+				"local",
+				"localUser"
+			],
+			[
+				"defe",
+				"deferred"
+			],
+			[
+				"loc",
+				"localUser"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pro",
+				"profile"
+			],
+			[
+				"user",
+				"userDetails"
+			],
+			[
+				"$root",
+				"$rootScope"
+			],
+			[
+				"angul",
+				"angularLocalStorage"
+			],
+			[
+				"$fire",
+				"$firebaseAuth"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"art",
+				"artistView"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"bac",
+				"background-position"
+			],
+			[
+				"backg",
+				"background-size"
+			],
+			[
+				"$roo",
+				"$rootScope"
+			],
+			[
+				"relation",
+				"relationship_status"
+			],
+			[
+				"$ro",
+				"$rootScope"
+			],
+			[
+				"init",
+				"initNavbar"
+			],
+			[
+				"ng-sw",
+				"ng-switch-when	AngularJS"
+			],
+			[
+				"map",
+				"mapButton"
+			],
+			[
+				"is",
+				"is_company"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"javasc",
+				"javascripts"
+			],
+			[
+				"prel",
+				"preloadCallback"
+			],
+			[
+				"bak",
+				"background-repeat"
+			],
+			[
+				"ava",
+				"avatar"
+			],
+			[
+				"ofe",
+				"offeringsLoading"
+			],
+			[
+				"off",
+				"offeringsLoading"
+			],
+			[
+				"Lo",
+				"LocationMapper"
+			],
+			[
+				"serv",
+				"service_offering_category"
+			],
+			[
+				"fil",
+				"filteredOfferings"
+			],
+			[
+				"med",
+				"medium_2x"
+			],
+			[
+				"cat",
+				"category"
+			],
+			[
+				"empl",
+				"employee"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"bck",
+				"background-color"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"nam",
+				"nameParts"
+			],
+			[
+				"$locatio",
+				"$locationProvider"
+			],
+			[
+				"devi",
+				"deviceOptions"
+			],
+			[
+				"sess",
+				"session_response"
+			],
+			[
+				"ses",
+				"session_response"
+			],
+			[
+				"border-lef",
+				"border-left-width"
+			],
+			[
+				"angu",
+				"angular.element	AngularJS"
+			],
+			[
+				"backc",
+				"background-color"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"styl",
+				"stylus"
+			],
+			[
+				"dat",
+				"databaseName"
+			],
+			[
+				"replica",
+				"replicateFrom"
+			],
+			[
+				"Art",
+				"ArtistCouch"
+			],
+			[
+				"g",
+				"reforma-grotesk-demi"
+			],
+			[
+				"inin",
+				"inline-block"
+			],
+			[
+				"we",
+				"wework-yellow"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"preo",
+				"preloadedViews"
+			],
+			[
+				"avata",
+				"instance.avatar_url"
+			],
+			[
+				"WizVi",
+				"WizViewManagerPlugin"
+			],
+			[
+				"avatar",
+				"avatar_url"
+			],
+			[
+				"SIM",
+				"IS_SIMULATOR"
+			],
+			[
+				"pho",
+				"phonegap-plugin-wizViewManager"
+			],
+			[
+				"opt",
+				"optionsStr"
+			],
+			[
+				"option",
+				"optionStr"
+			],
+			[
+				"mari",
+				"margin-bottom"
+			],
+			[
+				"cre",
+				"createCallback"
+			],
+			[
+				"bower",
+				"bower_components"
+			],
+			[
+				"showVi",
+				"showViewCallback"
+			],
+			[
+				"header",
+				"headerHeight"
+			],
+			[
+				"head",
+				"headerElem"
+			],
+			[
+				"scro",
+				"scrollTop"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"ra",
+				"radius"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"load",
+				"loadView"
+			],
+			[
+				"remo",
+				"removeView"
+			],
+			[
+				"dire",
+				"direction"
+			],
+			[
+				"create",
+				"createView"
+			],
+			[
+				"prelo",
+				"preloadSuccess"
+			],
+			[
+				"view",
+				"viewName"
+			],
+			[
+				"error",
+				"errorCallback"
+			],
+			[
+				"menu",
+				"menuImgPath"
+			],
+			[
+				"logo",
+				"logoPath"
+			],
+			[
+				"labe",
+				"labelRef"
+			],
+			[
+				"l",
+				"labelRef"
+			],
+			[
+				"da",
+				"days_reservations"
+			],
+			[
+				"wi",
+				"with_schedule"
+			],
+			[
+				"room",
+				"room_with_schdule"
+			],
+			[
+				"e",
+				"angular.forEach	AngularJS"
+			],
+			[
+				"acti",
+				"activeElem"
+			],
+			[
+				"act",
+				"activeElem"
+			],
+			[
+				"sele",
+				"selectParent"
+			],
+			[
+				"touc",
+				"touchEvent"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"Res",
+				"RestangularConfigurer"
+			],
+			[
+				"erro",
+				"errorThrown"
+			],
+			[
+				"f",
+				"angular.forEach	AngularJS"
+			],
+			[
+				"thankyou",
+				"thankyouSection"
+			],
+			[
+				"Bar",
+				"BarcodeScanner"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"last-",
+				"last-of-type"
+			],
+			[
+				"rese",
+				"reservations"
+			],
+			[
+				"hour",
+				"$scope.hours_used"
+			],
+			[
+				"res",
+				"respond_with"
+			],
+			[
+				"respon",
+				"respond_with"
+			],
+			[
+				"rooms",
+				"rooms_with_schedule"
+			],
+			[
+				"am",
+				"amenities"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"reser",
+				"reserve_count"
+			],
+			[
+				"touch",
+				"touchOrClick"
+			],
+			[
+				"sec",
+				"secondaryColor"
+			],
+			[
+				"TV",
+				"TV_inst"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"inc",
+				"include_availability"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "www/javascripts/application.js",
+			"settings":
+			{
+				"buffer_size": 4450,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.js",
+			"settings":
+			{
+				"buffer_size": 4733,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/ramin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 1120,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "buskr-app.sublime-project",
+			"settings":
+			{
+				"buffer_size": 124,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 869 files for \"user:login\"\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/user.js:\n  139                deferred.resolve(user);\n  140  \n  141:               $rootScope.$broadcast('user:login', {\n  142                  user: user\n  143                });\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/models/models.js:\n  257                deferred.resolve(user);\n  258  \n  259:               $rootScope.$broadcast('user:login', {\n  260                  user: user\n  261                });\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/models/user.js:\n  139                deferred.resolve(user);\n  140  \n  141:               $rootScope.$broadcast('user:login', {\n  142                  user: user\n  143                });\n\n3 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 799,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/controllers/login.js",
+			"settings":
+			{
+				"buffer_size": 4669,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/menu.html",
+			"settings":
+			{
+				"buffer_size": 1616,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/javascripts/drawer.js",
+			"settings":
+			{
+				"buffer_size": 1219,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/JSHint/JSHint.sublime-build",
+	"command_palette":
+	{
+		"height": 107.0,
+		"selected_items":
+		[
+			[
+				"git blam",
+				"Git: Blame"
+			],
+			[
+				"gibl",
+				"Git: Blame"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"json",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				"gbla",
+				"Git: Blame"
+			],
+			[
+				"gitbl",
+				"Git: Blame"
+			],
+			[
+				"git log",
+				"Git: Log Current File"
+			],
+			[
+				"glo",
+				"Git: Log Current File"
+			],
+			[
+				"gitlo",
+				"Git: Quick Log Current File"
+			],
+			[
+				"gitlog",
+				"Git: Quick Log Current File"
+			],
+			[
+				"gilog",
+				"Git: Log Current File"
+			],
+			[
+				"git",
+				"Git: Log"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/drawer.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/drawer.js",
+		"/Users/ramin/Work/wework/rails/wenetwork/.git/MERGE_MSG",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/signup.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/controllers/artist.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/menu.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/menu.scss",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/menu.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt/node_modules/glob/examples/usr-local.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/application.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/README.md",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/identity.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/directives/webview.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/services/Navigator.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/welcome.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/webview.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/cordova/lib/install-device",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/index.html",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/views/home.html",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/message.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/services/Email.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/home.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/.git/MERGE_MSG",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/edit_profile.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/includes/_config.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/models/user.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/views/login.html",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/controllers/help.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/webview.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/src/jp/wizcorp/phonegap/plugin/wizViewManager/WizWebView.java",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/ios/WeWork/Plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/WizWebView.h",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/node_modules/cordova/node_modules/npm/doc/cli/npm-adduser.md",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/node_modules/phonegap/NOTICE",
+		"/Users/ramin/Work/wework/rails/wenetwork/app/assets/stylesheets/marketing/pages/healthy-members.css.scss",
+		"/Users/ramin/Work/wework/rails/wenetwork/app/views/shared/_my_sections.html.haml",
+		"/Users/ramin/Work/wework/rails/wenetwork/config/mixpanel.yml",
+		"/Users/ramin/Work/wework/rails/wenetwork/db/seeds.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/lib/we_tv/screen_generators/event_screen_generator.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/config/initializers/session_store.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/db/schema.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/db/schema.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/app.js.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/controllers/api/v1/base_controller.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/base.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/initializers/backtrace_silencers.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/bootstrap/js/bootstrap-affix.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/bower.json",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/initializers/session_store.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/moment/test/moment/sod_eod.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/home.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/home-mobile.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/routes.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/models/user.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/views/template/home-desktop.html.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/base.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/later.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/rooms.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/public/assets/application-ea8e2ad30e0d85c623650f4e8aa5c6f3.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/application.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/helpers/application_helper.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/README.md",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/services/options-service.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/angular-ui-bootstrap/misc/demo/assets/ui-select2.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/unicorn.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/initializers/omniauth.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/app/controllers/sessions_controller.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/spec/spec_helper.rb",
+		"/Users/ramin/Work/wework/rails/wenetwork/app/views/members/profiles/show-company.html.haml",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/views/partial/_reservation_list.html.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/views/template/reservations.html.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/views/layouts/application.html.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/reservation.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts/angular/controllers/reservations.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/stylesheets/application.css.scss",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/spin.js/.jshintrc",
+		"/Users/ramin/Work/wework/rails/conference-rooms/spec/javascripts/support/jasmine_helper.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/angular-ui/modules/directives/jq/test/jqSpec.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config/initializers/jasminerice.rb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/views/partial/_reservation_details.html.erb",
+		"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/vendor/modernizr/feature-detects/css-objectfit.js",
+		"/Users/ramin/Work/wework/rails/conference-rooms/config.ru",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/.jshintrc",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-extend-config/jshint.json",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/plugins/facebook-js-sdk.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/application.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/login.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-simple-login-debug.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/services.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/firebase/lib/firebase-simple-login.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/vendor/firebase/firebase-simple-login.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-simple-login.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/fonts/source-code-pro/SourceSansPro-It.otf",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/directives.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/services.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/directives.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/artist/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/login.scss",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/user.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/application.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/config/application.coffee",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/email.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/angularfire.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-debug.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/fastclick/lib/fastclick.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angularLocalStorage/src/angularLocalStorage.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/bower.json",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular/angular.min.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular/angular.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/firebase/lib/firebase-auth-client.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/controllers/offerings.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/models/fbprofile.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/data/sample-data/offerings.json",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/offerings.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/data/sample-data/offerings.json",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/offerings.scss",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/src/org/apache/cordova/file/FileUtils.java",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/plugins/org.apache.cordova.file/www/FileUploadOptions.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/controllers/edit_profile.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/edit_profile.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/css/edit_profile.css",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/ios/build/device/WeWork.app/www/js/services/EditProfiles.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/assets/www/js/services/EditProfiles.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/services/EditProfiles.js",
+		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/services/EditProfiles.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"*.js",
+			"",
+			"*.js",
+			"*.scss",
+			"",
+			"*.js",
+			"",
+			"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts,/Users/ramin/Work/personal/buskr/buskr-app.steroids/app",
+			"*.js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/views",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/views",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/views",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"*.js",
+			"",
+			"*.js",
+			"*.html",
+			"*.js",
+			"*.scss",
+			"*.html",
+			"",
+			"*.scss",
+			"*.js",
+			"*.scss",
+			"*.js",
+			"*.rb",
+			"*.scss",
+			"*.js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"*.js",
+			"",
+			"*.js",
+			"*.html",
+			"*.scss",
+			"*.js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/views",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"",
+			"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app,/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts",
+			"",
+			"/Users/ramin/Work/personal/buskr/topcoat/topcoat/node_modules/topcoat-theme/src",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"",
+			"*.html.erb",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/views",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app/js",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/app",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/www",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/www/js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/www/js",
+			"",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/ios/www/plugins",
+			"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/ios/WeWorkCore/Plugins",
+			"",
+			"/Users/ramin/Work/wework/rails/conference-rooms/app/assets/javascripts",
+			"",
+			"/Users/ramin/Work/personal/guzu",
+			"/Users/ramin/Work/personal/guzu/app",
+			"/Users/ramin/Work/personal/guzu/app/bower_components/modernizr",
+			"/Users/ramin/Work/personal/guzu/app/bower_components/modernizr/feature-detects",
+			"",
+			"/Users/ramin/Work/wework/steroids/WeWorkApp/app",
+			"",
+			"*.js",
+			"",
+			"*",
+			"*.js",
+			"*.rb",
+			"*.scss",
+			"*.js",
+			"*.rb",
+			"",
+			"*.scss",
+			"",
+			"*.scss",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"user:login",
+			"'userLogin'",
+			"openLogin",
+			"FB.init",
+			"fb",
+			"fbUser",
+			"backB",
+			"showBackButton",
+			"\"",
+			"window.addEventListener('",
+			" {",
+			"    \n",
+			"viewHiddenCallback",
+			"hideBarterModal",
+			"\"",
+			"showBarterModal",
+			"$rootScope.currentView",
+			"durationHide",
+			"modal",
+			"externalModal",
+			"Navigator",
+			"\"",
+			".widget",
+			"()\"\n",
+			".fancybox",
+			"artistView",
+			"Hiding drawer!",
+			".cover-photo",
+			".company-logo",
+			"session_",
+			"cookies.permanent",
+			"\"",
+			");\n",
+			"loadRoomsWithSchedule",
+			"0.0.4",
+			".hero",
+			".user",
+			"hours-notice",
+			"hours_used",
+			"credit",
+			"999",
+			"create",
+			"zip",
+			"\"",
+			"isMobilePhoneGap",
+			"$scope.",
+			"document.addEventListener('visibilitychange'",
+			"visibility",
+			"toggleDrawer",
+			"$auth",
+			"firebase",
+			"artistView",
+			"$scope.",
+			"$rootScope",
+			"storage",
+			"looading",
+			"$scope.loggingIn",
+			"steroids.layers.push({",
+			".preload(",
+			"steroids.views.preload",
+			"Error",
+			"profileDetails",
+			"$store",
+			"loginError",
+			"login",
+			"options",
+			"$login",
+			"pw",
+			"Firebase",
+			"fb.util",
+			"https://cdn.firebase.com/v0",
+			"user.",
+			"textarea",
+			"ensureDB",
+			"startReplication",
+			"onChange",
+			"ArtistCouch",
+			"startTwoWayReplication",
+			"keepInSync",
+			"cb",
+			"\"",
+			"ArtistCouch",
+			"FastClick.attach",
+			"drawerView",
+			"drawer",
+			"artistView",
+			"_this",
+			"event.data.",
+			"window.postMessage",
+			"drawerView.visible",
+			"popAllLayers",
+			"popAll",
+			"openLogin",
+			"manage-drawer",
+			"manager-drawer",
+			"ViewManager",
+			"navBar",
+			"ViewManager",
+			"initNavbar",
+			"initViews",
+			"ViewManager",
+			"artistView",
+			"mapView",
+			".mapView",
+			".artistView",
+			"ViewManager",
+			"map",
+			"drawerView",
+			"ViewManager",
+			"ViewManager.loginView",
+			"steroids.layers.push(",
+			"ViewManager",
+			"\"",
+			"artistsView",
+			"loginView",
+			"modal",
+			"startPoll",
+			"startOneWayReplication",
+			"\"",
+			"startTwoWayReplication",
+			"yield.controller",
+			"webView",
+			"center",
+			"animate-switch",
+			"function(",
+			"open",
+			"openLogin",
+			"_this.draw"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"WeApi",
+			"var services = angular.module('WeWorkCore.services');",
+			"var services = angular.module('WeWorkCore.services', []);",
+			"var directives = angular.module('WeWorkCore.directives');",
+			"\",\\n\"",
+			"\"",
+			"http://localhost:3001",
+			"href=\"www/views/",
+			"<preference name=\"EnableViewportScale\" value=\"false\" />",
+			"href=\"views",
+			"ng-click=",
+			"com/wework/plugins",
+			"com.wework.plugins",
+			"shared/analytics",
+			"Location.",
+			"$medium-side",
+			"$1 {",
+			"reservation",
+			"$scope.usedHours"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "www/javascripts/application.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4073,
+								4073
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1044.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4094,
+								4104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1980.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/ramin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								390,
+								390
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 172.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "buskr-app.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 799,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										207,
+										217
+									],
+									[
+										454,
+										464
+									],
+									[
+										699,
+										709
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/controllers/login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								913,
+								850
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 191.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "www/menu.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1389,
+								1389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "www/javascripts/drawer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								782,
+								782
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "buskr-app.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"draw",
+				"www/javascripts/drawer.js"
+			],
+			[
+				"homehtml",
+				"app/views/home.html"
+			],
+			[
+				"userjs",
+				"app/js/models/user.js"
+			],
+			[
+				"webviewjs",
+				"app/js/directives/webview.js"
+			],
+			[
+				"nav",
+				"app/js/services/Navigator.js"
+			],
+			[
+				"welcomjs",
+				"app/js/controllers/welcome.js"
+			],
+			[
+				"idensc",
+				"app/scss/identity.scss"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"homejs",
+				"app/js/controllers/home.js"
+			],
+			[
+				"email",
+				"app/js/services/Email.js"
+			],
+			[
+				"user",
+				"app/js/models/user.js"
+			],
+			[
+				"my_sectio",
+				"app/views/shared/_my_sections.html.haml"
+			],
+			[
+				"see",
+				"db/seeds.rb"
+			],
+			[
+				"appco",
+				"config/application.coffee"
+			],
+			[
+				"sesssto",
+				"config/initializers/session_store.rb"
+			],
+			[
+				"appcon",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"sesscon",
+				"app/controllers/sessions_controller.rb"
+			],
+			[
+				"appjs",
+				"app/assets/javascripts/angular/app.js.erb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"options",
+				"app/assets/javascripts/angular/services/options-service.js"
+			],
+			[
+				"schem",
+				"db/schema.rb"
+			],
+			[
+				"compan",
+				"app/models/company.rb"
+			],
+			[
+				"jshi",
+				".jshintrc"
+			],
+			[
+				"simpledebug",
+				"www/vendor/firebase/firebase-simple-login-debug.js"
+			],
+			[
+				"simple",
+				"dist/vendor/firebase/firebase-simple-login-debug.js"
+			],
+			[
+				"loginjs",
+				"app/controllers/login.js"
+			],
+			[
+				"firebase-de",
+				"dist/vendor/firebase/firebase-debug.js"
+			],
+			[
+				"angularfire",
+				"dist/vendor/firebase/angularfire.js"
+			],
+			[
+				"loginht",
+				"app/views/layouts/login.html"
+			],
+			[
+				"angularfi",
+				"dist/vendor/firebase/angularfire.js"
+			],
+			[
+				"fastcli",
+				"dist/components/fastclick/lib/fastclick.js"
+			],
+			[
+				"appc",
+				"config/application.coffee"
+			],
+			[
+				"offjs",
+				"app/js/controllers/offerings.js"
+			],
+			[
+				"_form",
+				"app/scss/includes/_forms.scss"
+			],
+			[
+				"offer",
+				"www/js/controllers/offerings.js"
+			],
+			[
+				"offejs",
+				"www/js/controllers/offerings.js"
+			],
+			[
+				"offerinjs",
+				"www/js/controllers/offerings.js"
+			],
+			[
+				"editpro",
+				"www/js/controllers/edit_profile.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"app",
+				"config/application.coffee"
+			],
+			[
+				"ser",
+				"www/javascripts/services.js"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"login",
+				"app/scss/login.scss"
+			],
+			[
+				"direc",
+				"www/javascripts/directives.js"
+			],
+			[
+				"servi",
+				"www/javascripts/services.js"
+			],
+			[
+				"homesc",
+				"app/scss/home.scss"
+			],
+			[
+				"layout",
+				"app/scss/includes/_layout.scss"
+			],
+			[
+				"logins",
+				"app/scss/login.scss"
+			],
+			[
+				"_layout",
+				"app/scss/includes/_layout.scss"
+			],
+			[
+				"fbpro",
+				"app/js/models/fbprofile.js"
+			],
+			[
+				"app/js/models/fbprofile.js",
+				"app/js/models/fbprofile.js"
+			],
+			[
+				"edit",
+				"app/scss/edit_profile.scss"
+			],
+			[
+				"indexjs",
+				"app/js/index.js"
+			],
+			[
+				"socia",
+				"app/js/services/SocialProfiles.js"
+			],
+			[
+				"fbjs",
+				"app/js/models/fbprofile.js"
+			],
+			[
+				"loginhtml",
+				"app/views/login.html"
+			],
+			[
+				"user.",
+				"app/js/models/user.js"
+			],
+			[
+				"social",
+				"app/js/services/SocialProfiles.js"
+			],
+			[
+				"apire",
+				"app/js/services/ApiRestangular.js"
+			],
+			[
+				"tabba",
+				"app/js/directives/tabbar.js"
+			],
+			[
+				"home.js",
+				"app/js/controllers/home.js"
+			],
+			[
+				"r",
+				"README.md"
+			],
+			[
+				"socialpr",
+				"app/js/services/SocialProfiles.js"
+			],
+			[
+				"index.js",
+				"app/js/index.js"
+			],
+			[
+				"conn",
+				"app/js/services/Connections.js"
+			],
+			[
+				"user.j",
+				"app/js/models/user.js"
+			],
+			[
+				"loma",
+				"app/js/services/LocationMapper.js"
+			],
+			[
+				"offerindex",
+				"app/views/offerings/index.html"
+			],
+			[
+				"forms",
+				"app/scss/includes/_forms.scss"
+			],
+			[
+				"serv",
+				"www/javascripts/services.js"
+			],
+			[
+				"fonts",
+				"app/scss/includes/_fonts.scss"
+			],
+			[
+				"fontsscss",
+				"app/assets/stylesheets/fonts.css.scss"
+			],
+			[
+				"profilejs",
+				"app/assets/javascripts/members/profiles.js"
+			],
+			[
+				"basescss",
+				"app/assets/stylesheets/includes/_base.css.scss"
+			],
+			[
+				"layou",
+				"app/assets/stylesheets/includes/_layout.css.scss"
+			],
+			[
+				"apphtml",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"followbu",
+				"app/views/shared/profile/_follow_buttons.html.haml"
+			],
+			[
+				"_buttons",
+				"app/assets/stylesheets/includes/_buttons.css.scss"
+			],
+			[
+				"butt",
+				"app/assets/stylesheets/includes/_buttons.css.scss"
+			],
+			[
+				"masthea",
+				"app/assets/stylesheets/includes/_masthead.css.scss"
+			],
+			[
+				"appscss",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"applicascss",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"apphel",
+				"app/helpers/application_helper.rb"
+			],
+			[
+				"dobb",
+				"app/js/services/DobbyService.js"
+			],
+			[
+				"offe",
+				"app/js/services/Offerings.js"
+			],
+			[
+				"config",
+				"dist/config.xml"
+			],
+			[
+				"sterjs",
+				"dist/components/steroids-js/steroids.js"
+			],
+			[
+				"appl",
+				"config/application.coffee"
+			],
+			[
+				"profi",
+				"app/models/profile.rb"
+			],
+			[
+				"deve",
+				"config/environments/development.rb"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"form",
+				"app/scss/includes/_forms.scss"
+			],
+			[
+				"_butt",
+				"app/scss/includes/_buttons.scss"
+			],
+			[
+				"home",
+				"app/views/home.html"
+			],
+			[
+				"button",
+				"app/scss/includes/_buttons.scss"
+			],
+			[
+				"off",
+				"app/js/services/Offerings.js"
+			],
+			[
+				"concie",
+				"app/js/controllers/concierge.js"
+			],
+			[
+				"offline",
+				"app/js/directives/offlinelistener.js"
+			],
+			[
+				"_anim",
+				"app/scss/includes/_animations.scss"
+			],
+			[
+				"concinde",
+				"app/views/concierge/index.html"
+			],
+			[
+				"browse",
+				"app/js/directives/browse.js"
+			],
+			[
+				"loginscs",
+				"app/scss/login.scss"
+			],
+			[
+				"user.js",
+				"app/js/models/user.js"
+			],
+			[
+				"dobbyres",
+				"app/js/services/DobbyService.js"
+			],
+			[
+				"mobres",
+				"app/js/services/MobileRestangular.js"
+			],
+			[
+				"clearab",
+				"app/js/directives/clearable.js"
+			],
+			[
+				"anima",
+				"app/scss/includes/_animations.scss"
+			],
+			[
+				"eventra",
+				"app/js/services/EventTracker.js"
+			],
+			[
+				"webvi",
+				"app/js/webview.js"
+			],
+			[
+				"devi",
+				"app/js/device-settings.js"
+			],
+			[
+				"offering/in",
+				"app/views/offerings/index.html"
+			],
+			[
+				"offerjs",
+				"app/js/controllers/offerings.js"
+			],
+			[
+				"bridge",
+				"app/js/wizViewMessengerBridge.js"
+			],
+			[
+				"http",
+				"app/js/filters/httpize.js"
+			],
+			[
+				"offein",
+				"app/scss/offerings.scss"
+			],
+			[
+				"conciergejs",
+				"app/js/controllers/concierge.js"
+			],
+			[
+				"offerin/in",
+				"app/views/offerings/index.html"
+			],
+			[
+				".jshin",
+				".jshintrc"
+			],
+			[
+				"locmapper",
+				"app/js/services/LocationMapper.js"
+			],
+			[
+				"offering/inde",
+				"app/views/offerings/index.html"
+			],
+			[
+				"locamapp",
+				"app/js/services/LocationMapper.js"
+			],
+			[
+				"locajs",
+				"app/js/services/Locations.js"
+			],
+			[
+				"offeinjs",
+				"app/js/controllers/offerings.js"
+			],
+			[
+				"indehtml",
+				"app/index.html"
+			],
+			[
+				"indexht",
+				"app/index.html"
+			],
+			[
+				"hintrc",
+				".jshintrc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 245.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -21,12 +21,30 @@ drawerApp.controller('DrawerCtrl', function ($rootScope, $scope, User) {
       action: 'openLogin'
     }, '*');
   };
+
+  window.addEventListener('message', function (event) {
+    if (event.data && event.data.action) {
+      switch(event.data.action) {
+        case 'skipLogin':
+          break;
+        case 'userLogin':
+          $rootScope.user = event.data.user;
+          $rootScope.$apply();
+          break;
+        case 'userLogout':
+          delete $rootScope.user;
+          $rootScope.$apply();
+          break;
+      }
+    }
+  });
 });
 
 document.addEventListener('deviceready', function () {
   angular.bootstrap(document, ['drawerApp']);
   FastClick.attach(document.body);
 }, false);
+
 
 steroids.on('ready', function() {
   // steroids.view.setBackgroundColor('#d2cbc3');

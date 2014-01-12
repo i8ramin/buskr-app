@@ -6,9 +6,11 @@ body {
 
 .artist-card {
   position: relative;
-  min-height: 175px;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 175px;
+  overflow: hidden;
+  // min-height: 175px;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 
   &::after {
     display: block;
@@ -19,8 +21,15 @@ body {
     bottom: 0;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.7) 100%);
-    // border-top: 1px solid rgba(255,255,255,.5);
     border-bottom: 1px solid rgba(0,0,0,.75);
+  }
+
+  .artist-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 
   .artist-name {

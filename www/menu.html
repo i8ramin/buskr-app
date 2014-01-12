@@ -23,6 +23,7 @@
   <script src="/components/fastclick/lib/fastclick.js"></script>
 
   <script src="/components/angular/angular.js"></script>
+  <script src="/components/angular-cache/dist/angular-cache.js"></script>
 
   <script src="/vendor/firebase/firebase.js"></script>
   <script src="/vendor/firebase/firebase-simple-login.js"></script>
@@ -35,7 +36,10 @@
   <script src="/javascripts/drawer.js"></script>
 </head>
 <body id="drawerMenu" ng-controller="DrawerCtrl">
-  <p>Welcome, {{$root.user.name}}</p>
+  <div ng-if="$root.user" ng-click="logout()">
+    Welcome, {{$root.user.name}}
+  </div>
+  <div ng-if="!$root.user" ng-click="openLogin()">Login</div>
   <nav>
     <ul>
       <!--<li><button ng-click="logout()">Logout</button></li>-->

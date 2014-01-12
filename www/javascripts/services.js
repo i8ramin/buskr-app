@@ -17,24 +17,15 @@
 
       drawerButton.onTap = function () {
         window.postMessage({
-          action: 'toggleDrawer',
-          callback: callback
+          action: 'toggleDrawer'
         }, '*');
       };
 
       mapButton.onTap = function () {
-        // window.postMessage({
-        //   action: 'toggleMap',
-        //   callback: callback
-        // }, '*');
-
         steroids.modal.show( {
           view: mapView
         }, {
           onSuccess: function () {
-            if (callback) {
-              callback.apply(this, arguments);
-            }
           },
           onFailure: function (error) {
             alert('Could not present the modal: ' + error.errorDescription);
@@ -48,6 +39,9 @@
         overrideBackButton: true
       }, {
         onSuccess: function () {
+          if (callback) {
+            callback.apply(this, arguments);
+          }
         },
         onFailure: function () {
           alert('Failed to set Nav Bar buttons.');

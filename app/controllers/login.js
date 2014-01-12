@@ -21,9 +21,12 @@ var FB_APP_ID = 574303185975176;
 
   // Index: http://localhost/views/login/index.html
   loginApp.controller('LoginCtrl', function ($scope, User) {
-    steroids.view.setBackgroundColor('#fbc26b');
     steroids.view.navigationBar.setButtons({
       overrideBackButton: true
+    }, {
+      onSuccess: function () {
+        steroids.view.navigationBar.show('');
+      }
     });
 
     $scope.skipLogin = function () {
@@ -74,9 +77,19 @@ var FB_APP_ID = 574303185975176;
                 view: artistView,
                 navigationBar: false
               });
+
+              $scope.loading = false;
             },
             onFailure: function (error) {
-              console.error(error.errorDescription);
+              if (error.errorDescription === 'A preloaded layer with this identifier already exists') {
+                steroids.layers.push({
+                  view: artistView,
+                  navigationBar: false
+                });
+              } else {
+                console.error('[EmailCtrl.submitLogin] ' + error.errorDescription);
+              }
+
               $scope.loading = false;
             }
           });
@@ -159,8 +172,6 @@ var FB_APP_ID = 574303185975176;
     // var tf;
 
     FastClick.attach(document.body);
-    // ImgCache.init();
-
     // tf = new TestFlight();
 
     // tf.takeOff(function (data) {
@@ -169,10 +180,13 @@ var FB_APP_ID = 574303185975176;
     //   alert('TestFlight error: ' + error);
     // }, '32984304-6d9a-4bbf-913e-40246035a8ac');
 
+    steroids.view.setBackgroundColor('#fbc26b');
     angular.bootstrap(document, ['loginApp']);
   }, false);
 
-  // document.addEventListener('visibilitychange', function (event) {
-  // }, false);
+  document.addEventListener('visibilitychange', function (event) {
+    if (!document.hidden) {
+    }
+  }, false);
 
 })(window.Firebase);

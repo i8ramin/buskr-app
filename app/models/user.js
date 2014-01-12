@@ -27,6 +27,10 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
     save: function (user) {
       $window.localStorage.setItem('user', JSON.stringify(user));
       $rootScope.user = user;
+
+      $rootScope.$broadcast('user:saved', {
+        user: user
+      });
     },
     create: function (newUser) {
       var _this = this;
@@ -34,18 +38,20 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
       $auth.$createUser(newUser.email, newUser.password, function (error, user) {
         var newProfileObj = {};
-        var userToSave = {
-          id: user.id,
-          uid: user.uid,
-          email: user.email,
-          name: newUser.name,
-          dob: newUser.dob,
-          provider: newUser.provider
-        };
+        var userToSave = {};
 
         if (error) {
           deferred.reject(error);
         } else {
+          userToSave = {
+            id: user.id,
+            uid: user.uid,
+            email: user.email,
+            name: newUser.name,
+            dob: newUser.dob,
+            provider: newUser.provider
+          };
+
           newProfileObj[user.uid] = {
             email: newUser.email,
             name: newUser.name || '',
@@ -85,7 +91,6 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
             _this.emailLogin(newUser.email, newUser.password).then(
               function (user) {
-                alert('logged in..');
                 deferred.resolve(user);
               },
               function (error) {
@@ -99,7 +104,6 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
                 );
               }
             );
-
           });
         } else {
           deferred.reject('User cancelled login or did not fully authorize.');
@@ -107,40 +111,6 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       }, {
         scope: 'email,user_birthday,user_location'
       });
-
-      // $auth.$login('facebook', {
-      //   rememberMe: true,
-      //   scope: 'email,user_birthday,user_location,manage_pages'
-      // }).then(
-      //   function (fbUser) {
-      //     var password = fbUser.uid;
-      //     var newUser = {
-      //       email: fbUser.email,
-      //       password: password,
-      //       name: fbUser.displayName,
-      //       dob: fbUser.birthday
-      //     };
-
-      //     _this.emailLogin(newUser.email, newUser.password).then(
-      //       function (user) {
-      //         deferred.resolve(user);
-      //       },
-      //       function (error) {
-      //         _this.create(newUser).then(
-      //           function (user) {
-      //             deferred.resolve(user);
-      //           },
-      //           function (error) {
-      //             deferred.reject(error);
-      //           }
-      //         );
-      //       }
-      //     );
-      //   },
-      //   function (error) {
-      //     deferred.reject(error);
-      //   }
-      // );
 
       return deferred.promise;
     },
@@ -167,6 +137,15 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
               _this.save(user);
               deferred.resolve(user);
+
+              $rootScope.$broadcast('user:login', {
+                user: user
+              });
+
+              window.postMessage({
+                action: 'userLogin',
+                user: user
+              }, '*');
             });
           },
           function (error) {
@@ -182,6 +161,9 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
       delete $rootScope.user;
       $window.localStorage.removeItem('user');
+
+      $rootScope.$broadcast('user:logout', {
+      });
 
       window.postMessage({
         action: 'userLogout'

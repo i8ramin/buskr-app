@@ -24,7 +24,17 @@
       10
     );
 
-    angular.bootstrap(document, ['artistApp']);
+    // ImgCache.options.debug = true;
+    ImgCache.options.usePersistentCache = true;
+    ImgCache.options.useDataURI = true;
+    ImgCache.init(
+      function () {
+        angular.bootstrap(document, ['artistApp']);
+      },
+      function () {
+        angular.bootstrap(document, ['artistApp']);
+      }
+    );
   });
 
   // window.addEventListener('message', function (event) {
@@ -44,36 +54,52 @@
   //   }
   // });
 
-  artistApp.run(function () {
+  artistApp.run(function (NavbarService) {
     steroids.view.setBackgroundColor('#d2cbc3');
 
     document.addEventListener('visibilitychange', function (event) {
+      if (!document.hidden) {
+        // NavbarService.navBar.init(function () {
+        //   steroids.view.navigationBar.show('');
+        // });
+      }
     }, false);
   });
 
   // Index: http://localhost/views/artist/index.html
-  artistApp.controller('IndexCtrl', function ($scope, $firebase, NavbarService) {
+  artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
     NavbarService.navBar.init(function () {
-    });
+      steroids.view.navigationBar.show('');
 
-    steroids.view.navigationBar.show('');
+      ArtistService.all().then(
+        function (artists) {
+          $scope.artists = artists;
+        }
+      );
+    });
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
-    $scope.open = function (artist) {
-      var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + artist.$id});
+    $scope.open = function (id) {
+      var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
       steroids.layers.push(webView);
     };
-
-    $scope.artists = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists'));
   });
 
   // Show: http://localhost/views/artist/show.html?id=<id>
-  artistApp.controller('ShowCtrl', function ($scope, $firebase) {
+  artistApp.controller('ShowCtrl', function ($scope, ArtistService) {
     var id = steroids.view.params.id;
-    var artistPromise;
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
+
+    // remove navigationBar buttons
+    steroids.view.navigationBar.setButtons({});
+
+    ArtistService.get(id).then(
+      function (artist) {
+        $scope.artist = artist;
+      }
+    );
 
     $scope.openMap = function () {
       steroids.openURL({
@@ -95,11 +121,6 @@
         }
       });
     };
-
-    // remove navigationBar buttons
-    steroids.view.navigationBar.setButtons({});
-
-    $scope.artist = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists/' + id));
   });
 
 })(window.Firebase);

@@ -4,10 +4,11 @@
       <ul class="list buskr-list-artists">
         <li
           class="list__item buskr-list-artists__item"
-          ng-click="open(artist)"
-          ng-repeat="artist in artists | orderByPriority | orderBy:'distance'">
+          ng-click="open(id)"
+          ng-repeat="(id, artist) in artists track by id | orderByPriority | orderBy:'distance'">
 
-          <div class="artist-card" ng-style="{'background-image':'url(' + artist.image_url + ')'}">
+          <div class="artist-card">
+            <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
             <div class="artist-name">{{artist.name}}</div>
             <div class="live-location">
               <div class="loc">{{artist.distance}} mi</div>

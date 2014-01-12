@@ -7,110 +7,116 @@ if (typeof angular === 'undefined') {
 	return;
 }
 
-var module = angular.module('ArtistModel', ['CornerCouch']);
+var module = angular.module('ArtistModel', [
+  'jmdobry.angular-cache'
+]);
 
-module.factory('ArtistCouch', function ($http, cornercouch) {
-  var databaseName  = 'artists',
-      server        = cornercouch('http://.touchdb.', 'GET'),
-      database      = server.getDB(databaseName);
 
-  // Set up two way replication with server and monitoring of the local database
-  var steroidsDB    = new steroids.data.TouchDB({name: databaseName}),
-      cloudUrl      = 'https://tokofellarivandiatuidedl:sx8J4jHWjY6jLi6DNsD4fyN1@buskr.cloudant.com/' + databaseName;
+module.factory('ArtistService', function ArtistService($q, $firebase, $angularCacheFactory) {
 
-  // Disable http credentials so CORS works
-  // FYI this is set to true in angular-cornercouch
-  $http.defaults.withCredentials = false;
+  var reloadArtists = function () {
+    var deferred = $q.defer();
+    var artists = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists'));
 
-  steroidsDB.replicateFrom({
-    url: cloudUrl
-  }, {
-    onSuccess: function () {
-      // alert('[replicateFrom] success');
-      console.log('[replicateFrom] success');
-    },
-    onFailure: function (response) {
-      alert('[replicateFrom] fail ' + response);
+    console.log('[Buskr] Reloading artists cache...');
+
+    artists.$on('loaded', function (a) {
+      artistsCache.put('artists', a);
+      console.log('[Buskr] Artists cache.');
+      console.log(a);
+
+      deferred.resolve(a);
+    });
+
+    return deferred.promise;
+  };
+
+  var reloadArtist = function (id) {
+    var deferred = $q.defer();
+    var artist = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists/' + id));
+
+    console.log('[Buskr] Reloading artist cache...', id);
+
+    artist.$on('loaded', function (a) {
+      artistsCache.put(id, a);
+      console.log('[Buskr] Artist cached.', id);
+      console.log(a);
+
+      deferred.resolve(a);
+    });
+
+    return deferred.promise;
+  };
+
+  var artistsCache = $angularCacheFactory('artistsCache', {
+    // This cache can hold 1000 items
+    capacity: 1000,
+
+    // Items added to this cache expire after 1 hour
+    maxAge: 6000000,
+
+    // Items will be actively deleted when they expire
+    deleteOnExpire: 'aggressive',
+
+    // This cache will check for expired items every 10 min
+    recycleFreq: 600000,
+
+    // This cache will clear itself every 4 hours
+    cacheFlushInterval: 14400000,
+
+    // This cache will sync itself with localStorage
+    storageMode: 'localStorage',
+
+    // Full synchronization with localStorage on every operation
+    verifyIntegrity: true,
+
+    // This callback is executed when the item specified by "key" expires.
+    // At this point you could retrieve a fresh value for "key"
+    // from the server and re-insert it into the cache.
+    onExpire: function (key, value) {
+      console.log('---------------- CACHE EXPIRED! --------------');
+
+      if (key === 'artists') {
+        reloadArtists();
+      } else {
+        reloadArtist(key);
+      }
     }
   });
 
-  database.getInfo().success(function() {
-    console.log('Database ' + databaseName + ' loaded:' + JSON.stringify(database.info));
-  });
+  var loadAll = function () {
+    var deferred = $q.defer();
+    var artists = artistsCache.get('artists');
 
-  // Only run this once
-  var startTwoWayReplication = function() {
-    steroidsDB.addTwoWayReplica({
-      url: cloudUrl
-    }, {
-      onSuccess: function() {
-        // alert('[startTwoWayReplication] Database ' + databaseName + ' replication was successful.');
-        console.log('[startTwoWayReplication]Database ' + databaseName + ' replication was successful.');
-      }, onFailure: function() {
-        alert('[startTwoWayReplication] Database ' + databaseName + ' replication failed.');
-        console.log('[startTwoWayReplication] Database ' + databaseName + ' replication failed.');
-      }
-    });
+    if (artists) {
+      deferred.resolve(artists);
+      artists = deferred.promise;
+    } else {
+      console.log('[Buskr] Artists not cached. Warming cache...');
+      artists = reloadArtists();
+    }
+
+    return artists;
   };
 
-  var startOneWayReplication = function (onChangeCallback) {
-    var options = {
-      source: cloudUrl,
-      target: databaseName
-    };
+  var loadOne = function (id) {
+    var deferred = $q.defer();
+    var artist = artistsCache.get(id);
 
-    var callbacks = {
-      onSuccess: function() {
-        // alert('[startOneWayReplication] Replication started');
-        console.log('[startOneWayReplication] Replication started');
-      },
-      onFailure: function() {
-        alert('[startOneWayReplication] Could not start replication');
-      }
-    };
+    if (artist) {
+      deferred.resolve(artist);
+      artist = deferred.promise;
+    } else {
+      console.log('[Buskr] Artist not cached. Warming cache...', id);
+      artist = reloadArtist(id);
+    }
 
-    steroidsDB.startReplication(options, callbacks);
-    steroidsDB.startMonitoringChanges({}, {
-      onChange: onChangeCallback
-    });
-  };
-
-  // Monitor changes
-  var startMonitoringChanges = function (onChangeCallback) {
-    steroidsDB.startMonitoringChanges({}, {
-      onChange: onChangeCallback
-    });
-  };
-
-  var ensureDB = function(onEnsuredCallback) {
-    steroidsDB.createDB({}, {
-      onSuccess: function () {
-        console.log('Database has been created.');
-
-        if (onEnsuredCallback) {
-          onEnsuredCallback.call();
-        }
-      },
-      onFailure: function (error) {
-        if (error.status === 412) {
-          if (onEnsuredCallback) {
-            onEnsuredCallback.call();
-          }
-        } else {
-          alert('[ensureDB] Unable to create database: ' + error.error);
-        }
-      }
-    });
+    return artist;
   };
 
   return {
-    ensureDB: ensureDB,
-    server: server,
-    cornerCouchDB: database,
-    keepInSync: startTwoWayReplication,
-    startPollingChanges: startOneWayReplication,
-    onChange: startMonitoringChanges,
-    steroidsDB: steroidsDB
+    all: loadAll,
+    get: loadOne
   };
 });
 
