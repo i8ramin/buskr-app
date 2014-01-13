@@ -48,7 +48,7 @@ var FB_APP_ID = 574303185975176;
           });
         },
         function (error) {
-          alert('ERROR: ' + error);
+          alert(error);
           console.error(error);
         }
       ).finally(function () {
@@ -169,10 +169,9 @@ var FB_APP_ID = 574303185975176;
   });
 
   document.addEventListener('deviceready', function () {
-    // var tf;
+    // var tf = new TestFlight();
 
     FastClick.attach(document.body);
-    // tf = new TestFlight();
 
     // tf.takeOff(function (data) {
     //   alert('TestFligh success! ' + data);

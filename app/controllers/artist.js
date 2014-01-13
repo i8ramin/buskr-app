@@ -73,7 +73,14 @@
 
       ArtistService.all().then(
         function (artists) {
-          $scope.artists = artists;
+          var artistsArray = [];
+
+          angular.forEach(artists, function (artist, key) {
+            artist.id = key;
+            artistsArray.push(artist);
+          });
+
+          $scope.artists = artistsArray;
         }
       );
     });

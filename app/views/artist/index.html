@@ -4,8 +4,8 @@
       <ul class="list buskr-list-artists">
         <li
           class="list__item buskr-list-artists__item"
-          ng-click="open(id)"
-          ng-repeat="(id, artist) in artists track by id | orderByPriority | orderBy:'distance'">
+          ng-click="open(artist.id)"
+          ng-repeat="artist in artists | orderBy:'distance'">
 
           <div class="artist-card">
             <img class="artist-image" cache-src ng-src="{{artist.image_url}}">

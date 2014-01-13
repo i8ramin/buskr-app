@@ -37,29 +37,34 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       var deferred = $q.defer();
 
       $auth.$createUser(newUser.email, newUser.password, function (error, user) {
-        var newProfileObj = {};
         var userToSave = {};
+        var profilePushRef = profilesRef.push();
 
         if (error) {
-          deferred.reject(error);
+          if (error.code === 'EMAIL_TAKEN') {
+            _this.emailLogin(newUser.email, newUser.password).then(
+              function (user) {
+                deferred.resolve(user);
+              },
+              function (error) {
+                deferred.reject(error);
+              }
+            );
+          } else {
+            deferred.reject(error);
+          }
         } else {
           userToSave = {
             id: user.id,
             uid: user.uid,
             email: user.email,
+            password: newUser.password,
             name: newUser.name,
-            dob: newUser.dob,
-            provider: newUser.provider
-          };
-
-          newProfileObj[user.uid] = {
-            email: newUser.email,
-            name: newUser.name || '',
             dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : '',
-            provider: newUser.provider || 'email'
+            provider: newUser.provider || 'password'
           };
 
-          profilesRef.set(newProfileObj, function (error) {
+          profilePushRef.set(userToSave, function (error) {
             if (error) {
               deferred.reject(error);
             } else {
@@ -88,6 +93,10 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
               name: response.name,
               dob: response.birthday
             };
+
+            profilesRef.once('value', function (profileRef) {
+              console.log();
+            });
 
             _this.emailLogin(newUser.email, newUser.password).then(
               function (user) {
@@ -126,26 +135,40 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       } else {
         $auth.$login('password', {email:email, password:password}).then(
           function (userDetails) {
-            profilesRef.child(userDetails.uid).on('value', function (profileDetails) {
-              var user = {
-                uid: userDetails.uid,
-                email: userDetails.email,
-                provider: profileDetails.val().provider,
-                name: profileDetails.val().name,
-                dob: profileDetails.val().dob
-              };
+            profilesRef.once('value', function (profiles) {
+              var profile;
 
-              _this.save(user);
-              deferred.resolve(user);
+              profiles.forEach(function (profileRef) {
+                var profileDetails = profileRef.val();
 
-              $rootScope.$broadcast('user:login', {
-                user: user
+                if (profileDetails.email === email) {
+                  profile = profileDetails;
+                }
               });
 
-              window.postMessage({
-                action: 'userLogin',
-                user: user
-              }, '*');
+              if (profile) {
+                var user = {
+                  uid: userDetails.uid,
+                  email: userDetails.email,
+                  provider: profile.provider,
+                  name: profile.name,
+                  dob: profile.dob
+                };
+
+                _this.save(user);
+                deferred.resolve(user);
+
+                $rootScope.$broadcast('user:login', {
+                  user: user
+                });
+
+                window.postMessage({
+                  action: 'userLogin',
+                  user: user
+                }, '*');
+              } else {
+                // profile not found
+              }
             });
           },
           function (error) {
