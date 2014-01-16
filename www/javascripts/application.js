@@ -34,44 +34,16 @@ buskrApp.run(function ($rootScope, $window, User) {
   );
 
   if (user) {
-    artistView.preload({}, {
-      onSuccess: function () {
-        steroids.layers.push({
-          view: artistView,
-          navigationBar: false,
-          keepLoading: true
-        });
-      },
-      onFailure: function (error) {
-        console.error(error.errorDescription);
-        alert(error.errorDescription);
-      }
+    steroids.layers.push({
+      view: artistView,
+      navigationBar: false,
+      keepLoading: true
     });
   } else {
-    loginView.preload({}, {
-      onSuccess: function () {
-        // steroids.layers.replace({
-        //   view: loginView
-        // }, {
-        //   onSuccess: function () {
-
-        //   },
-        //   onFailure: function (error) {
-        //     console.error(error.errorDescription);
-        //     alert(error.errorDescription);
-        //   }
-        // });
-
-        steroids.layers.push({
-          view: loginView,
-          navigationBar: false,
-          keepLoading: true
-        });
-      },
-      onFailure: function (error) {
-        console.error(error.errorDescription);
-        alert(error.errorDescription);
-      }
+    steroids.layers.push({
+      view: loginView,
+      navigationBar: false,
+      keepLoading: true
     });
   }
 

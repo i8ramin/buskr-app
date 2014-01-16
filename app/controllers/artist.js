@@ -37,23 +37,6 @@
     );
   });
 
-  // window.addEventListener('message', function (event) {
-  //   if (event.data.action === 'openLogin') {
-  //     steroids.layers.pop({}, {
-  //       onSuccess: function () {
-  //         setTimeout(function () {
-  //           steroids.drawers.hide({}, {
-  //             onSuccess: function () {
-  //             },
-  //             onFailure: function (error) {
-  //             }
-  //           });
-  //         }, 300);
-  //       }
-  //     });
-  //   }
-  // });
-
   artistApp.run(function (NavbarService) {
     steroids.view.setBackgroundColor('#d2cbc3');
 
@@ -69,21 +52,22 @@
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
     NavbarService.navBar.init(function () {
-      steroids.view.navigationBar.show('');
-
-      ArtistService.all().then(
-        function (artists) {
-          var artistsArray = [];
-
-          angular.forEach(artists, function (artist, key) {
-            artist.id = key;
-            artistsArray.push(artist);
-          });
-
-          $scope.artists = artistsArray;
-        }
-      );
     });
+
+    steroids.view.navigationBar.show('');
+
+    ArtistService.all().then(
+      function (artists) {
+        var artistsArray = [];
+
+        angular.forEach(artists, function (artist, key) {
+          artist.id = key;
+          artistsArray.push(artist);
+        });
+
+        $scope.artists = artistsArray;
+      }
+    );
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 

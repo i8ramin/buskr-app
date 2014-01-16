@@ -124,18 +124,23 @@ var FB_APP_ID = 574303185975176;
       User.create($scope.newUser).then(
         function (newUser) {
           // User.save(newUser);
-          artistView.preload({}, {
-            onSuccess: function () {
-              steroids.layers.push({
-                view: artistView,
-                navigationBar: false
-              });
-            },
-            onFailure: function (error) {
-              alert(error.errorDescription);
-              console.error(error.errorDescription);
-              $scope.loading = false;
-            }
+          // artistView.preload({}, {
+          //   onSuccess: function () {
+          //     steroids.layers.push({
+          //       view: artistView,
+          //       navigationBar: false
+          //     });
+          //   },
+          //   onFailure: function (error) {
+          //     alert(error.errorDescription);
+          //     console.error(error.errorDescription);
+          //     $scope.loading = false;
+          //   }
+          // });
+
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
           });
         },
         function (error) {
