@@ -36,14 +36,22 @@ buskrApp.run(function ($rootScope, $window, User) {
   if (user) {
     steroids.layers.push({
       view: artistView,
-      navigationBar: false,
-      keepLoading: true
+      navigationBar: false
+    }, {
+      onSuccess: function () {},
+      onFailure: function (error) {
+        alert(error.errorDescription);
+      }
     });
   } else {
     steroids.layers.push({
       view: loginView,
-      navigationBar: false,
-      keepLoading: true
+      navigationBar: false
+    }, {
+      onSuccess: function () {},
+      onFailure: function (error) {
+        alert(error.errorDescription);
+      }
     });
   }
 
