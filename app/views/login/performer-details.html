@@ -1,0 +1,32 @@
+<article class="view" ng-controller="PerformerDetailsCtrl">
+  <div class="content content-padded">
+    <form name="performerForm">
+
+      <div class="buskr-input input-select" ng-click="togglePerformanceCategory()">
+        <input type="text" ng-model="performerDetails.performanceCategories" placeholder="Performance Category" readonly class="buskr-text-input">
+      </div>
+
+      <div class="buskr-input">
+        <input type="text" ng-model="performerDetails.description" placeholder="Description">
+      </div>
+
+      <div class="buskr-input with-info">
+        <input type="email" ng-model="performerDetails.phoneNumber" placeholder="Email">
+        <div class="input-info">In case we need to get in touch with you. This won't ever be
+        displayed publicly.</div>
+      </div>
+
+      <div class="buskr-input input-select" ng-click="selectYourMedia()">
+        <input type="text" readonly placeholder="Your Media" class="buskr-text-input input-full">
+      </div>
+
+      <div class="buskr-input input-select" ng-click="selectEventDates()">
+        <input type="text" readonly placeholder="Event Dates" class="buskr-text-input input-full">
+      </div>
+
+      <div class="submit-area">
+        <button class="buskr-button" ng-click="artistNext()">Next</button>
+      </div>
+    </form>
+  </div>
+</article>

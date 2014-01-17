@@ -3,6 +3,7 @@ var FB_APP_ID = 574303185975176;
 (function (Firebase) {
 
   var loginApp = angular.module('loginApp', [
+    'ui.bootstrap',
     'UserModel',
     'buskrApp.services',
     'buskrApp.directives'
@@ -117,6 +118,17 @@ var FB_APP_ID = 574303185975176;
     steroids.view.setBackgroundColor('#d2cbc3');
     steroids.view.navigationBar.show('Sign Up');
 
+    $scope.userType = 'Audience';
+
+    $scope.artistNext = function () {
+      var performerDetailsView = new steroids.views.WebView({location:'views/login/performer-details.html'});
+
+      if (navigator.notification.confirm('Creating account as a "Performer/Artist". Continue?')) {
+        localStorage.setItem('newUser', $scope.newUser);
+        steroids.layers.push(performerDetailsView);
+      }
+    };
+
     $scope.createUser = function () {
       $scope.hasErrors = false;
       $scope.loading = true;
@@ -154,6 +166,10 @@ var FB_APP_ID = 574303185975176;
     $scope.facebookLogin = function () {
       steroids.layers.push(typeSelectView);
     };
+  });
+
+  loginApp.controller('PerformerDetailsCtrl', function ($scope, User) {
+    $scope.performerDetails = {};
   });
 
   loginApp.controller('TypeSelectCtrl', function ($scope, User) {

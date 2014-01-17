@@ -4,18 +4,22 @@
       name="loginForm"
       ng-submit="submitLogin()"
       ng-class="{'animated invalid invalid-shake':hasErrors}">
-      <input type="email"
-        ng-model="email"
-        placeholder="Email"
-        class="buskr-text-input input-full">
 
-      <input type="password"
-        ng-model="password"
-        placeholder="Password"
-        class="buskr-text-input input-full">
+      <div class="buskr-input">
+        <input type="email"
+          ng-model="email"
+          placeholder="Email">
+      </div>
 
-      <br>
-      <button type="submit" class="buskr-button">Sign In</button>
+      <div class="buskr-input">
+        <input type="password"
+          ng-model="password"
+          placeholder="Password">
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="buskr-button">Sign In</button>
+      </div>
     </form>
 
     <footer class="footer-bottom">

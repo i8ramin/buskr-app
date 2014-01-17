@@ -6,3 +6,4 @@ plugins/*
 dist
 node_modules
 www/components
+buskr-app.sublime-workspace

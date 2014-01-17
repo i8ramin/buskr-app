@@ -24,6 +24,9 @@
     "firebase": "~1.0.1",
     "angular-firebase": "~0.0.2",
     "angularLocalStorage": "~0.1.7",
-    "angular-cache": "~2.3.0"
+    "angular-cache": "~2.3.0",
+    "bootstrap": "~3.0.3",
+    "angular-bootstrap": "~0.10.0",
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.0.3-0"
   }
 }

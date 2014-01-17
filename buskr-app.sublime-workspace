@@ -4,12 +4,40 @@
 		"selected_items":
 		[
 			[
-				"on",
-				"onSuccess"
+				"profile",
+				"profileDetails"
+			],
+			[
+				"ar",
+				"artist"
+			],
+			[
+				"relo",
+				"reloadArtists"
 			],
 			[
 				"prof",
 				"profileDetails"
+			],
+			[
+				"art",
+				"artistView"
+			],
+			[
+				"arti",
+				"artists"
+			],
+			[
+				"bg",
+				"bgUrlMatches"
+			],
+			[
+				"reloa",
+				"reloadArtist"
+			],
+			[
+				"on",
+				"onSuccess"
 			],
 			[
 				"login",
@@ -46,10 +74,6 @@
 			[
 				"new",
 				"newUser"
-			],
-			[
-				"arti",
-				"artistView"
 			],
 			[
 				"local",
@@ -90,10 +114,6 @@
 			[
 				"data",
 				"database"
-			],
-			[
-				"art",
-				"artistView"
 			],
 			[
 				"text-",
@@ -494,36 +514,64 @@
 			[
 				"reser",
 				"reserve_count"
-			],
-			[
-				"touch",
-				"touchOrClick"
-			],
-			[
-				"sec",
-				"secondaryColor"
-			],
-			[
-				"TV",
-				"TV_inst"
-			],
-			[
-				"start",
-				"startTime"
-			],
-			[
-				"inc",
-				"include_availability"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "app/controllers/artist.js",
+			"settings":
+			{
+				"buffer_size": 2825,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/artist.js",
+			"settings":
+			{
+				"buffer_size": 3201,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/artist/index.html",
+			"settings":
+			{
+				"buffer_size": 797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "www/javascripts/services.js",
+			"settings":
+			{
+				"buffer_size": 1425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/artist/show.html",
+			"settings":
+			{
+				"buffer_size": 2018,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "www/javascripts/application.js",
 			"settings":
 			{
-				"buffer_size": 4450,
+				"buffer_size": 6276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/login.js",
+			"settings":
+			{
+				"buffer_size": 5241,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,57 +579,7 @@
 			"file": "app/models/user.js",
 			"settings":
 			{
-				"buffer_size": 4733,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/ramin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 1120,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "buskr-app.sublime-project",
-			"settings":
-			{
-				"buffer_size": 124,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 869 files for \"user:login\"\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/user.js:\n  139                deferred.resolve(user);\n  140  \n  141:               $rootScope.$broadcast('user:login', {\n  142                  user: user\n  143                });\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/models/models.js:\n  257                deferred.resolve(user);\n  258  \n  259:               $rootScope.$broadcast('user:login', {\n  260                  user: user\n  261                });\n\n/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/models/user.js:\n  139                deferred.resolve(user);\n  140  \n  141:               $rootScope.$broadcast('user:login', {\n  142                  user: user\n  143                });\n\n3 matches across 3 files\n",
-			"settings":
-			{
-				"buffer_size": 799,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "app/controllers/login.js",
-			"settings":
-			{
-				"buffer_size": 4669,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/menu.html",
-			"settings":
-			{
-				"buffer_size": 1616,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "www/javascripts/drawer.js",
-			"settings":
-			{
-				"buffer_size": 1219,
+				"buffer_size": 5393,
 				"line_ending": "Unix"
 			}
 		}
@@ -681,14 +679,47 @@
 	},
 	"file_history":
 	[
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/drawer.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/drawer.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/login.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/application.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/controllers/user.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/ng-firebase-binding.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/angularfire.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular/angular-csp.css",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/component.json",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/demo/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/README.md",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/config/application.coffee",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-debug.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/fastclick/lib/fastclick.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/models/models.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/user.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/fonts/avenir-webfont/avenir-heavy-webfont.svg",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/fonts/avenir-webfont/avenir-roman-webfont.svg",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/momentjs/lang/en-au.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/ng-firebase-collection.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular-firebase/ng-firebase.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/components/imgcache.js/js/imgcache.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/application.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/application.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/directives.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/artist/index.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/artist.scss",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/artist/show.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/artist.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/imgcache.js/js/imgcache.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/controllers/artist.js",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/menu.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/menu.html",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/bower.json",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/buskr-app.sublime-project",
+		"/Users/ramin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/drawer.js",
 		"/Users/ramin/Work/wework/rails/wenetwork/.git/MERGE_MSG",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/signup.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/controllers/artist.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/menu.html",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/menu.scss",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/menu.html",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt/node_modules/glob/examples/usr-local.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/application.scss",
 		"/Users/ramin/Work/wework/phonegap/MobileApp/README.md",
@@ -765,9 +796,6 @@
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/.jshintrc",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-extend-config/jshint.json",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/plugins/facebook-js-sdk.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/application.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/layouts/login.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/index.html",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-simple-login-debug.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/services.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/firebase/lib/firebase-simple-login.js",
@@ -776,39 +804,9 @@
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/fonts/source-code-pro/SourceSansPro-It.otf",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/directives.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/services.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/www/javascripts/directives.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/artist/index.html",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/scss/login.scss",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/models/user.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/javascripts/application.js",
 		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/index.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/config/application.coffee",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/email.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/angularfire.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase-debug.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/vendor/firebase/firebase.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/fastclick/lib/fastclick.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angularLocalStorage/src/angularLocalStorage.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/bower.json",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular/angular.min.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/node_modules/underscore/index.html",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/angular/angular.js",
-		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/dist/components/firebase/lib/firebase-auth-client.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/controllers/offerings.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/models/fbprofile.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/www/data/sample-data/offerings.json",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/offerings.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/data/sample-data/offerings.json",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/scss/offerings.scss",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/src/org/apache/cordova/file/FileUtils.java",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/plugins/org.apache.cordova.file/www/FileUploadOptions.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/controllers/edit_profile.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/controllers/edit_profile.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/www/css/edit_profile.css",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/ios/build/device/WeWork.app/www/js/services/EditProfiles.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/platforms/android/assets/www/js/services/EditProfiles.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/www/js/services/EditProfiles.js",
-		"/Users/ramin/Work/wework/phonegap/MobileApp/app/js/services/EditProfiles.js"
+		"/Users/ramin/Work/personal/buskr/buskr-app.steroids/app/views/login/email.html"
 	],
 	"find":
 	{
@@ -819,6 +817,8 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"*.js",
+			"*",
 			"*.js",
 			"",
 			"*.js",
@@ -944,8 +944,6 @@
 			"*.rb",
 			"",
 			"*.scss",
-			"",
-			"*.scss",
 			""
 		]
 	},
@@ -954,6 +952,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"profileDetails",
+			"profileDetails.val()",
+			"newProfileObj",
+			"profilesRef",
+			"cache",
+			"500",
+			"App:userLogout",
+			"_loadCachedFile",
+			"Background image URL",
+			"error_callback",
+			"init",
+			"LocalFile",
+			"application.js",
+			"new ImageCache",
+			"artistPromise",
+			"$window",
 			"user:login",
 			"'userLogin'",
 			"openLogin",
@@ -1065,23 +1079,7 @@
 			"ViewManager",
 			"ViewManager.loginView",
 			"steroids.layers.push(",
-			"ViewManager",
-			"\"",
-			"artistsView",
-			"loginView",
-			"modal",
-			"startPoll",
-			"startOneWayReplication",
-			"\"",
-			"startTwoWayReplication",
-			"yield.controller",
-			"webView",
-			"center",
-			"animate-switch",
-			"function(",
-			"open",
-			"openLogin",
-			"_this.draw"
+			"ViewManager"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1118,24 +1116,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "www/javascripts/application.js",
+					"file": "app/controllers/artist.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4450,
+						"buffer_size": 2825,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4073,
-								4073
+								942,
+								942
 							]
 						],
 						"settings":
@@ -1146,200 +1144,58 @@
 							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1044.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/user.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4094,
-								4104
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1980.0,
+						"translation.y": 519.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/Users/ramin/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"buffer": 1,
+					"file": "app/models/artist.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1120,
+						"buffer_size": 3201,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								390,
-								390
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 172.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "buskr-app.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 799,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										207,
-										217
-									],
-									[
-										454,
-										464
-									],
-									[
-										699,
-										709
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/controllers/login.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4669,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								913,
-								850
+								851,
+								851
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 191.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "www/menu.html",
+					"buffer": 2,
+					"file": "app/views/artist/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1616,
+						"buffer_size": 797,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1389,
-								1389
+								312,
+								312
 							]
 						],
 						"settings":
@@ -1352,24 +1208,84 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "www/javascripts/drawer.js",
+					"buffer": 3,
+					"file": "www/javascripts/services.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1219,
+						"buffer_size": 1425,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								782,
-								782
+								1164,
+								1164
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/artist/show.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2018,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "www/javascripts/application.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1037,
+								1037
 							]
 						],
 						"settings":
@@ -1380,10 +1296,72 @@
 							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/controllers/login.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3628,
+								3628
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/models/user.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4328,
+								4328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_separators": "./\\\\()\\\"\\'-:,.;<>~!@#%^&*|+=[]{}`~?"
+						},
+						"translation.x": 0.0,
+						"translation.y": 707.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1440,6 +1418,46 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"app/controllers/user.js"
+			],
+			[
+				"apphtml",
+				"app/views/layouts/application.html"
+			],
+			[
+				"appc",
+				"config/application.coffee"
+			],
+			[
+				"index",
+				"www/index.html"
+			],
+			[
+				"appjs",
+				"www/javascripts/application.js"
+			],
+			[
+				"imgcac",
+				"www/components/imgcache.js/js/imgcache.js"
+			],
+			[
+				"img",
+				"www/components/imgcache.js/js/imgcache.js"
+			],
+			[
+				"imgc",
+				"www/components/imgcache.js/js/imgcache.js"
+			],
+			[
+				"index.",
+				"www/index.html"
+			],
+			[
+				"models",
+				"dist/models/models.js"
+			],
+			[
 				"draw",
 				"www/javascripts/drawer.js"
 			],
@@ -1480,10 +1498,6 @@
 				"app/js/services/Email.js"
 			],
 			[
-				"user",
-				"app/js/models/user.js"
-			],
-			[
 				"my_sectio",
 				"app/views/shared/_my_sections.html.haml"
 			],
@@ -1506,10 +1520,6 @@
 			[
 				"sesscon",
 				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"appjs",
-				"app/assets/javascripts/angular/app.js.erb"
 			],
 			[
 				"route",
@@ -1562,10 +1572,6 @@
 			[
 				"fastcli",
 				"dist/components/fastclick/lib/fastclick.js"
-			],
-			[
-				"appc",
-				"config/application.coffee"
 			],
 			[
 				"offjs",
@@ -1738,10 +1744,6 @@
 			[
 				"layou",
 				"app/assets/stylesheets/includes/_layout.css.scss"
-			],
-			[
-				"apphtml",
-				"app/views/layouts/application.html.haml"
 			],
 			[
 				"followbu",
@@ -1926,30 +1928,6 @@
 			[
 				"offering/inde",
 				"app/views/offerings/index.html"
-			],
-			[
-				"locamapp",
-				"app/js/services/LocationMapper.js"
-			],
-			[
-				"locajs",
-				"app/js/services/Locations.js"
-			],
-			[
-				"offeinjs",
-				"app/js/controllers/offerings.js"
-			],
-			[
-				"indehtml",
-				"app/index.html"
-			],
-			[
-				"indexht",
-				"app/index.html"
-			],
-			[
-				"hintrc",
-				".jshintrc"
 			]
 		],
 		"width": 0.0

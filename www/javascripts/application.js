@@ -1,5 +1,6 @@
 
 var buskrApp = angular.module('buskrApp', [
+  'ui.bootstrap',
   'UserModel',
   'buskrApp.directives',
   'buskrApp.services'
@@ -44,15 +45,54 @@ buskrApp.run(function ($rootScope, $window, User) {
       }
     });
   } else {
-    steroids.layers.push({
-      view: loginView,
-      navigationBar: false
-    }, {
-      onSuccess: function () {},
+    // steroids.layers.push({
+    //   view: loginView,
+    //   navigationBar: false,
+    //   animation: new steroids.Animation({
+    //     transition: 'fade'
+    //   })
+    // }, {
+    //   onSuccess: function () {},
+    //   onFailure: function (error) {
+    //     alert(error.errorDescription);
+    //   }
+    // });
+
+    loginView.preload({}, {
+      onSuccess: function () {
+        steroids.layers.push({
+          view: loginView,
+          navigationBar: false,
+          animation: new steroids.Animation({
+            transition: 'fade',
+            duration: 0.5
+          })
+        }, {
+          onSuccess: function () {},
+          onFailure: function (error) {
+            alert(error.errorDescription);
+          }
+        });
+
+        // steroids.layers.replace({
+        //   view: loginView
+        // }, {
+        //   onSuccess: function () {
+
+        //   },
+        //   onFailure: function (error) {
+        //     console.error(error.errorDescription);
+        //     alert(error.errorDescription);
+        //   }
+        // });
+      },
       onFailure: function (error) {
+        console.error(error.errorDescription);
         alert(error.errorDescription);
       }
     });
+
+
   }
 
   document.addEventListener('visibilitychange', function (event) {

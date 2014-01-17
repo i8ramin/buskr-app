@@ -79,22 +79,6 @@
   text-decoration: none;
 }
 
-/* line 76, ../../app/scss/theme.scss */
-.buskr-button,
-.buskr-button-secondary {
-  display: block;
-  width: 85%;
-  margin: 0 auto 10px;
-  padding: 0 1.25rem;
-  font-size: 13px;
-  line-height: 3rem;
-  letter-spacing: 1px;
-  color: #fff;
-  vertical-align: top;
-  background-color: #f1b150;
-  border-radius: 3px;
-}
-
 /* line 93, ../../app/scss/theme.scss */
 .buskr-button.button_secondary {
   background-color: #CECECE;
@@ -114,13 +98,16 @@
   margin-bottom: 0;
 }
 
-/* line 110, ../../app/scss/theme.scss */
-.input,
-.text-input,
-.buskr-text-input,
-.buskr-text-input--large {
-  padding: 0;
-  margin: 0;
+/* line 107, ../../app/scss/theme.scss */
+.buskr-input {
+  margin-bottom: 10px;
+  border: 1px solid #D6D3D0;
+  border-radius: 3px;
+}
+/* line 112, ../../app/scss/theme.scss */
+.buskr-input input {
+  display: block;
+  width: 100%;
   font: inherit;
   color: inherit;
   background: transparent;
@@ -130,53 +117,29 @@
   background-clip: padding-box;
   vertical-align: top;
   outline: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: .75rem 1rem .5rem;
+  background-color: #fff;
+  color: #454545;
 }
-
-/* line 124, ../../app/scss/theme.scss */
-.input-full,
-.text-input-full {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-/* line 132, ../../app/scss/theme.scss */
-.input:disabled,
-.buskr-text-input:disabled,
-.buskr-text-input--large:disabled {
+/* line 130, ../../app/scss/theme.scss */
+.buskr-input input:disable {
   opacity: 0.3;
   cursor: default;
   pointer-events: none;
 }
-
-/* line 139, ../../app/scss/theme.scss */
-.buskr-text-input,
-.buskr-text-input--large {
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding: .75rem 1rem .5rem;
-  border: 1px solid #D6D3D0;
-  border-radius: 3px;
-  background-color: #fff;
-  /*box-shadow: inset 0 1px rgba(0,0,0,0.1);*/
-  color: #454545;
-  vertical-align: top;
-}
-
-/* line 153, ../../app/scss/theme.scss */
-.buskr-text-input:focus,
-.buskr-text-input--large:focus {
-  background-color: #fff;
-  color: #454545;
-  border: 1px solid #0036ff;
-}
-
-/* line 159, ../../app/scss/theme.scss */
-.buskr-text-input:disabled::-webkit-input-placeholder {
+/* line 135, ../../app/scss/theme.scss */
+.buskr-input input:disable::-webkit-input-placeholder {
   color: #454545;
 }
-
-/* line 163, ../../app/scss/theme.scss */
-.buskr-text-input:invalid {
-  border: 1px solid #ec514e;
+/* line 140, ../../app/scss/theme.scss */
+.buskr-input input:invalid {
+  color: #ec514e;
+}
+/* line 146, ../../app/scss/theme.scss */
+.buskr-input.with-info .input-info {
+  padding: .5rem 1rem .25rem;
+  background-color: #f6f5f3;
+  color: #d2cbc3;
 }

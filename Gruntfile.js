@@ -27,6 +27,7 @@ module.exports = function (grunt) {
                 imagesDir: 'www/images',
                 fontsDir: 'app/scss/fonts',
                 httpImagesPath: '/images',
+                importPath: 'www/components/bootstrap-sass/vendor/assets/stylesheets/bootstrap',
                 relativeAssets: false,
                 debugInfo: false
             },
