@@ -6,25 +6,25 @@
       ng-class="{'animated invalid invalid-shake':hasErrors}">
 
       <div class="buskr-input">
-        <input type="email"
+        <input type="email" class="form-control"
           ng-model="email"
           placeholder="Email">
       </div>
 
       <div class="buskr-input">
-        <input type="password"
+        <input type="password" class="form-control"
           ng-model="password"
           placeholder="Password">
       </div>
 
       <div class="submit-area">
-        <button type="submit" class="buskr-button">Sign In</button>
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
       </div>
     </form>
 
     <footer class="footer-bottom">
-      <button class="buskr-button" ng-click="signUp()">New User</button>
-      <button class="buskr-button button_secondary">Forgot Password</button>
+      <button class="btn btn-primary btn-block" ng-click="signUp()">New User</button>
+      <button class="btn btn-default btn-block">Forgot Password</button>
     </footer>
   </div>
 </article>

@@ -1,47 +1,53 @@
 <article class="view" ng-controller="SignUpCtrl">
   <div class="content content-padded">
     <form name="newUserForm">
-      <h2>Select Your User Type</h2>
+      <header class="text-center">
+        Select Your User Type
+      </header>
 
       <div class="btn-group btn-group-justified">
-        <a class="btn btn-primary" ng-model="userType" btn-radio="'Audience'">Audience</a>
-        <a class="btn btn-primary" ng-model="userType" btn-radio="'Artist'">Artist</a>
+        <a class="btn btn-primary btn-sm" ng-model="userType" btn-radio="'Audience'">Audience</a>
+        <a class="btn btn-primary btn-sm" ng-model="userType" btn-radio="'Artist'">Artist</a>
       </div>
       <br>
 
+      <div class="well well-lg text-center">
+        Profile Picture
+      </div>
+
       <div class="buskr-input">
-        <input type="text" ng-model="newUser.name" placeholder="Full Name">
+        <input type="text" class="form-control" ng-model="newUser.name" placeholder="Full Name">
       </div>
 
       <div class="buskr-input with-info" ng-if="userType == 'Artist'">
-        <input type="text" ng-model="newUser.buskrName" placeholder="Buskr Name">
+        <input type="text" class="form-control" ng-model="newUser.buskrName" placeholder="Buskr Name">
         <div class="input-info">#{{newUser.buskrName}}</div>
       </div>
 
       <div class="buskr-input">
-        <input type="email" ng-model="newUser.email" placeholder="Email">
+        <input type="email" class="form-control" ng-model="newUser.email" placeholder="Email">
       </div>
 
       <div class="buskr-input">
-        <input type="password" ng-model="newUser.password" placeholder="Password">
+        <input type="password" class="form-control" ng-model="newUser.password" placeholder="Password">
       </div>
 
       <div class="buskr-input">
-        <input type="text" ng-model="newUser.zipcode" placeholder="Zip Code">
+        <input type="text" class="form-control" ng-model="newUser.zipcode" placeholder="Zip Code">
       </div>
 
       <div class="buskr-input">
-        <input type="text" ng-model="newUser.dob" placeholder="Date of Birth">
+        <input type="text" class="form-control" ng-model="newUser.dob" placeholder="Date of Birth">
       </div>
 
       <div class="submit-area">
         <div ng-if="userType == 'Audience'">
-          <button class="buskr-button" ng-click="createUser()">Sign Up</button>
-          <button class="buskr-button button_facebook" ng-click="facebookLogin()">Login with Facebook</button>
+          <button class="btn btn-primary btn-block" ng-click="createUser()">Sign Up</button>
+          <button class="btn btn-primary btn-block btn-fb" ng-click="facebookLogin()">Login with Facebook</button>
         </div>
 
         <div ng-if="userType == 'Artist'">
-          <button class="buskr-button" ng-click="artistNext()">Next</button>
+          <button class="btn btn-primary btn-block" ng-click="artistNext()">Next</button>
         </div>
       </div>
     </form>

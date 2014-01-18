@@ -1,171 +1,135 @@
-/* line 173, ../../app/scss/theme.scss */
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-/* line 180, ../../app/scss/theme.scss */
-.btn-default:active, .btn-default.active,
-.btn-primary:active,
-.btn-primary.active,
-.btn-success:active,
-.btn-success.active,
-.btn-info:active,
-.btn-info.active,
-.btn-warning:active,
-.btn-warning.active,
-.btn-danger:active,
-.btn-danger.active {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-
-/* line 209, ../../app/scss/theme.scss */
+/* line 215, ../../app/scss/buskr-theme.scss */
 .btn:active, .btn.active {
   background-image: none;
 }
 
-/* line 215, ../../app/scss/theme.scss */
+/* line 221, ../../app/scss/buskr-theme.scss */
 .btn-default {
-  background-image: -webkit-linear-gradient(top, white 0%, #e0e0e0 100%);
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE0E0E0', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #dbdbdb;
-  text-shadow: 0 1px 0 #fff;
-  border-color: #ccc;
+  border-color: #cececd;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-default:hover, .btn-default:focus {
-  background-color: #e0e0e0;
-  background-position: 0 -15px;
+  background-color: #cececd;
+  border-color: #cececd;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-default:active, .btn-default.active {
-  background-color: #e0e0e0;
-  border-color: #dbdbdb;
+  background-color: #b0b0ae;
+  border-color: #cececd;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 216, ../../app/scss/theme.scss */
+/* line 222, ../../app/scss/buskr-theme.scss */
 .btn-primary {
-  background-image: -webkit-linear-gradient(top, #fbc26b 0%, #f9a92f 100%);
-  background-image: linear-gradient(to bottom, #fbc26b 0%, #f9a92f 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBC26B', endColorstr='#FFF9A92F', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #f9a525;
+  border-color: #f0b059;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-primary:hover, .btn-primary:focus {
-  background-color: #f9a92f;
-  background-position: 0 -15px;
+  background-color: #f0b059;
+  border-color: #f0b059;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-primary:active, .btn-primary.active {
-  background-color: #f9a92f;
-  border-color: #f9a525;
+  background-color: #eb9521;
+  border-color: #f0b059;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 217, ../../app/scss/theme.scss */
+/* line 223, ../../app/scss/buskr-theme.scss */
 .btn-success {
-  background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
-  background-image: linear-gradient(to bottom, #5cb85c 0%, #419641 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5CB85C', endColorstr='#FF419641', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #3e8f3e;
+  border-color: #5cb85c;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-success:hover, .btn-success:focus {
-  background-color: #419641;
-  background-position: 0 -15px;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-success:active, .btn-success.active {
   background-color: #419641;
-  border-color: #3e8f3e;
+  border-color: #5cb85c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 218, ../../app/scss/theme.scss */
+/* line 224, ../../app/scss/buskr-theme.scss */
 .btn-warning {
-  background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
-  background-image: linear-gradient(to bottom, #f0ad4e 0%, #eb9316 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0AD4E', endColorstr='#FFEB9316', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #e38d13;
+  border-color: #f0ad4e;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-warning:hover, .btn-warning:focus {
-  background-color: #eb9316;
-  background-position: 0 -15px;
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-warning:active, .btn-warning.active {
   background-color: #eb9316;
-  border-color: #e38d13;
+  border-color: #f0ad4e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 219, ../../app/scss/theme.scss */
+/* line 225, ../../app/scss/buskr-theme.scss */
 .btn-danger {
-  background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
-  background-image: linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD9534F', endColorstr='#FFC12E2A', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #b92c28;
+  border-color: #d9534f;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-danger:hover, .btn-danger:focus {
-  background-color: #c12e2a;
-  background-position: 0 -15px;
+  background-color: #d9534f;
+  border-color: #d9534f;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-danger:active, .btn-danger.active {
   background-color: #c12e2a;
-  border-color: #b92c28;
+  border-color: #d9534f;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 220, ../../app/scss/theme.scss */
+/* line 226, ../../app/scss/buskr-theme.scss */
 .btn-info {
-  background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%);
-  background-image: linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5BC0DE', endColorstr='#FF2AABD2', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  background-repeat: repeat-x;
-  border-color: #28a4c9;
+  border-color: #5bc0de;
 }
-/* line 193, ../../app/scss/theme.scss */
+/* line 194, ../../app/scss/buskr-theme.scss */
 .btn-info:hover, .btn-info:focus {
-  background-color: #2aabd2;
-  background-position: 0 -15px;
+  background-color: #5bc0de;
+  border-color: #5bc0de;
 }
-/* line 199, ../../app/scss/theme.scss */
+/* line 202, ../../app/scss/buskr-theme.scss */
 .btn-info:active, .btn-info.active {
   background-color: #2aabd2;
-  border-color: #28a4c9;
+  border-color: #5bc0de;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
-/* line 229, ../../app/scss/theme.scss */
+/* line 227, ../../app/scss/buskr-theme.scss */
+.btn-fb {
+  border-color: #4c689e;
+}
+/* line 194, ../../app/scss/buskr-theme.scss */
+.btn-fb:hover, .btn-fb:focus {
+  background-color: #4c689e;
+  border-color: #4c689e;
+}
+/* line 202, ../../app/scss/buskr-theme.scss */
+.btn-fb:active, .btn-fb.active {
+  background-color: #384d75;
+  border-color: #4c689e;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 236, ../../app/scss/buskr-theme.scss */
 .thumbnail,
 .img-thumbnail {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
-/* line 240, ../../app/scss/theme.scss */
+/* line 247, ../../app/scss/buskr-theme.scss */
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   background-image: -webkit-linear-gradient(top, whitesmoke 0%, #e8e8e8 100%);
@@ -175,29 +139,29 @@
   background-color: #e8e8e8;
 }
 
-/* line 246, ../../app/scss/theme.scss */
+/* line 253, ../../app/scss/buskr-theme.scss */
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  background-image: -webkit-linear-gradient(top, #fbc26b 0%, #fab852 100%);
-  background-image: linear-gradient(to bottom, #fbc26b 0%, #fab852 100%);
+  background-image: -webkit-linear-gradient(top, #f0b059 0%, #eea542 100%);
+  background-image: linear-gradient(to bottom, #f0b059 0%, #eea542 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBC26B', endColorstr='#FFFAB852', GradientType=0);
-  background-color: #fab852;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0B059', endColorstr='#FFEEA542', GradientType=0);
+  background-color: #eea542;
 }
 
-/* line 258, ../../app/scss/theme.scss */
+/* line 264, ../../app/scss/buskr-theme.scss */
 .navbar-default {
   background-image: -webkit-linear-gradient(top, white 0%, #f8f8f8 100%);
   background-image: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF8F8F8', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  border-radius: 3px;
+  border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
 }
-/* line 265, ../../app/scss/theme.scss */
+/* line 271, ../../app/scss/buskr-theme.scss */
 .navbar-default .navbar-nav > .active > a {
   background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
   background-image: linear-gradient(to bottom, #ebebeb 0%, #f3f3f3 100%);
@@ -207,13 +171,13 @@
   box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
 }
 
-/* line 271, ../../app/scss/theme.scss */
+/* line 277, ../../app/scss/buskr-theme.scss */
 .navbar-brand,
 .navbar-nav > li > a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-/* line 276, ../../app/scss/theme.scss */
+/* line 282, ../../app/scss/buskr-theme.scss */
 .navbar-inverse {
   background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
   background-image: linear-gradient(to bottom, #3c3c3c 0%, #222222 100%);
@@ -221,7 +185,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3C3C3C', endColorstr='#FF222222', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-/* line 280, ../../app/scss/theme.scss */
+/* line 286, ../../app/scss/buskr-theme.scss */
 .navbar-inverse .navbar-nav > .active > a {
   background-image: -webkit-linear-gradient(top, #222222 0%, #282828 100%);
   background-image: linear-gradient(to bottom, #222222 0%, #282828 100%);
@@ -230,27 +194,27 @@
   -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.25);
 }
-/* line 286, ../../app/scss/theme.scss */
+/* line 292, ../../app/scss/buskr-theme.scss */
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-nav > li > a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* line 294, ../../app/scss/theme.scss */
+/* line 300, ../../app/scss/buskr-theme.scss */
 .navbar-static-top,
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0;
 }
 
-/* line 305, ../../app/scss/theme.scss */
+/* line 311, ../../app/scss/buskr-theme.scss */
 .alert {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* line 318, ../../app/scss/theme.scss */
+/* line 324, ../../app/scss/buskr-theme.scss */
 .alert-success {
   background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
   background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
@@ -259,7 +223,7 @@
   border-color: #b2dba1;
 }
 
-/* line 319, ../../app/scss/theme.scss */
+/* line 325, ../../app/scss/buskr-theme.scss */
 .alert-info {
   background-image: -webkit-linear-gradient(top, #d9edf7 0%, #b9def0 100%);
   background-image: linear-gradient(to bottom, #d9edf7 0%, #b9def0 100%);
@@ -268,7 +232,7 @@
   border-color: #9acfea;
 }
 
-/* line 320, ../../app/scss/theme.scss */
+/* line 326, ../../app/scss/buskr-theme.scss */
 .alert-warning {
   background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #f8efc0 100%);
   background-image: linear-gradient(to bottom, #fcf8e3 0%, #f8efc0 100%);
@@ -277,7 +241,7 @@
   border-color: #f5e79e;
 }
 
-/* line 321, ../../app/scss/theme.scss */
+/* line 327, ../../app/scss/buskr-theme.scss */
 .alert-danger {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
   background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
@@ -286,7 +250,7 @@
   border-color: #dca7a7;
 }
 
-/* line 330, ../../app/scss/theme.scss */
+/* line 336, ../../app/scss/buskr-theme.scss */
 .progress {
   background-image: -webkit-linear-gradient(top, #ebebeb 0%, whitesmoke 100%);
   background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
@@ -294,15 +258,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF5F5F5', GradientType=0);
 }
 
-/* line 340, ../../app/scss/theme.scss */
+/* line 346, ../../app/scss/buskr-theme.scss */
 .progress-bar {
-  background-image: -webkit-linear-gradient(top, #fbc26b 0%, #faae39 100%);
-  background-image: linear-gradient(to bottom, #fbc26b 0%, #faae39 100%);
+  background-image: -webkit-linear-gradient(top, #f0b059 0%, #ec9a2a 100%);
+  background-image: linear-gradient(to bottom, #f0b059 0%, #ec9a2a 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBC26B', endColorstr='#FFFAAE39', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0B059', endColorstr='#FFEC9A2A', GradientType=0);
 }
 
-/* line 341, ../../app/scss/theme.scss */
+/* line 347, ../../app/scss/buskr-theme.scss */
 .progress-bar-success {
   background-image: -webkit-linear-gradient(top, #5cb85c 0%, #449d44 100%);
   background-image: linear-gradient(to bottom, #5cb85c 0%, #449d44 100%);
@@ -310,7 +274,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5CB85C', endColorstr='#FF449D44', GradientType=0);
 }
 
-/* line 342, ../../app/scss/theme.scss */
+/* line 348, ../../app/scss/buskr-theme.scss */
 .progress-bar-info {
   background-image: -webkit-linear-gradient(top, #5bc0de 0%, #31b0d5 100%);
   background-image: linear-gradient(to bottom, #5bc0de 0%, #31b0d5 100%);
@@ -318,7 +282,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5BC0DE', endColorstr='#FF31B0D5', GradientType=0);
 }
 
-/* line 343, ../../app/scss/theme.scss */
+/* line 349, ../../app/scss/buskr-theme.scss */
 .progress-bar-warning {
   background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #ec971f 100%);
   background-image: linear-gradient(to bottom, #f0ad4e 0%, #ec971f 100%);
@@ -326,7 +290,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0AD4E', endColorstr='#FFEC971F', GradientType=0);
 }
 
-/* line 344, ../../app/scss/theme.scss */
+/* line 350, ../../app/scss/buskr-theme.scss */
 .progress-bar-danger {
   background-image: -webkit-linear-gradient(top, #d9534f 0%, #c9302c 100%);
   background-image: linear-gradient(to bottom, #d9534f 0%, #c9302c 100%);
@@ -334,32 +298,32 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD9534F', endColorstr='#FFC9302C', GradientType=0);
 }
 
-/* line 352, ../../app/scss/theme.scss */
+/* line 358, ../../app/scss/buskr-theme.scss */
 .list-group {
-  border-radius: 3px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 
-/* line 358, ../../app/scss/theme.scss */
+/* line 364, ../../app/scss/buskr-theme.scss */
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
-  text-shadow: 0 -1px 0 #faae39;
-  background-image: -webkit-linear-gradient(top, #fbc26b 0%, #fab346 100%);
-  background-image: linear-gradient(to bottom, #fbc26b 0%, #fab346 100%);
+  text-shadow: 0 -1px 0 #ec9a2a;
+  background-image: -webkit-linear-gradient(top, #f0b059 0%, #ed9f36 100%);
+  background-image: linear-gradient(to bottom, #f0b059 0%, #ed9f36 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBC26B', endColorstr='#FFFAB346', GradientType=0);
-  border-color: #fab346;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0B059', endColorstr='#FFED9F36', GradientType=0);
+  border-color: #ed9f36;
 }
 
-/* line 371, ../../app/scss/theme.scss */
+/* line 377, ../../app/scss/buskr-theme.scss */
 .panel {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* line 381, ../../app/scss/theme.scss */
+/* line 387, ../../app/scss/buskr-theme.scss */
 .panel-default > .panel-heading {
   background-image: -webkit-linear-gradient(top, whitesmoke 0%, #e8e8e8 100%);
   background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
@@ -367,15 +331,15 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF5F5F5', endColorstr='#FFE8E8E8', GradientType=0);
 }
 
-/* line 382, ../../app/scss/theme.scss */
+/* line 388, ../../app/scss/buskr-theme.scss */
 .panel-primary > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #fbc26b 0%, #fab852 100%);
-  background-image: linear-gradient(to bottom, #fbc26b 0%, #fab852 100%);
+  background-image: -webkit-linear-gradient(top, #f0b059 0%, #eea542 100%);
+  background-image: linear-gradient(to bottom, #f0b059 0%, #eea542 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBC26B', endColorstr='#FFFAB852', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0B059', endColorstr='#FFEEA542', GradientType=0);
 }
 
-/* line 383, ../../app/scss/theme.scss */
+/* line 389, ../../app/scss/buskr-theme.scss */
 .panel-success > .panel-heading {
   background-image: -webkit-linear-gradient(top, #dff0d8 0%, #d0e9c6 100%);
   background-image: linear-gradient(to bottom, #dff0d8 0%, #d0e9c6 100%);
@@ -383,7 +347,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFDFF0D8', endColorstr='#FFD0E9C6', GradientType=0);
 }
 
-/* line 384, ../../app/scss/theme.scss */
+/* line 390, ../../app/scss/buskr-theme.scss */
 .panel-info > .panel-heading {
   background-image: -webkit-linear-gradient(top, #d9edf7 0%, #c4e3f3 100%);
   background-image: linear-gradient(to bottom, #d9edf7 0%, #c4e3f3 100%);
@@ -391,7 +355,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD9EDF7', endColorstr='#FFC4E3F3', GradientType=0);
 }
 
-/* line 385, ../../app/scss/theme.scss */
+/* line 391, ../../app/scss/buskr-theme.scss */
 .panel-warning > .panel-heading {
   background-image: -webkit-linear-gradient(top, #fcf8e3 0%, #faf2cc 100%);
   background-image: linear-gradient(to bottom, #fcf8e3 0%, #faf2cc 100%);
@@ -399,7 +363,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFCF8E3', endColorstr='#FFFAF2CC', GradientType=0);
 }
 
-/* line 386, ../../app/scss/theme.scss */
+/* line 392, ../../app/scss/buskr-theme.scss */
 .panel-danger > .panel-heading {
   background-image: -webkit-linear-gradient(top, #f2dede 0%, #ebcccc 100%);
   background-image: linear-gradient(to bottom, #f2dede 0%, #ebcccc 100%);
@@ -407,13 +371,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF2DEDE', endColorstr='#FFEBCCCC', GradientType=0);
 }
 
-/* line 394, ../../app/scss/theme.scss */
+/* line 400, ../../app/scss/buskr-theme.scss */
 .well {
-  background-image: -webkit-linear-gradient(top, #e8e8e8 0%, whitesmoke 100%);
-  background-image: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
+  background-image: -webkit-linear-gradient(top, #e9e4dc 0%, #f3f0ec 100%);
+  background-image: linear-gradient(to bottom, #e9e4dc 0%, #f3f0ec 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE8E8E8', endColorstr='#FFF5F5F5', GradientType=0);
-  border-color: gainsboro;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE9E4DC', endColorstr='#FFF3F0EC', GradientType=0);
+  border-color: #dfd7cd;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
 }

@@ -45,9 +45,35 @@ html, body {
 //   font: 11pt 'avenir', helvetica, arial, sans-serif;
 // }
 
+header {
+  margin-bottom: 1rem;
+}
+
 form {
   display: block;
   width: 100%;
+}
+
+.buskr-input {
+  margin-bottom: 1rem;
+
+  &.with-info {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .input-info {
+      position: relative;
+      top: -2px;
+      padding: .75rem $padding-base-horizontal;
+      background-color: #f6f5f3;
+      color: #d2cbc3;
+      border: 1px solid $input-border;
+      border-top: 0;
+      border-radius: $border-radius-base;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
 
 article.view {

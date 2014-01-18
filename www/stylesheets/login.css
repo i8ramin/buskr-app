@@ -10,31 +10,35 @@ html, body {
   right: 0;
   bottom: 0;
   left: 0;
+  padding: 2rem;
   background: #fbc26b url(../images/splash.png) no-repeat;
   background-size: 100%;
   background-position: 0 20%;
 }
-/* line 18, ../../app/scss/login.scss */
+/* line 19, ../../app/scss/login.scss */
 #loginPage .login-buttons {
   -webkit-align-self: flex-end;
   align-self: flex-end;
 }
 /* line 23, ../../app/scss/login.scss */
+#loginPage .login-buttons .btn {
+  margin: 5px auto;
+}
+/* line 28, ../../app/scss/login.scss */
 #loginPage .skip-login {
-  width: 85%;
   margin: auto;
   text-align: right;
-  padding: 10px 0;
+  padding: 15px 0;
   color: #bf8c3f;
 }
 
-/* line 32, ../../app/scss/login.scss */
+/* line 36, ../../app/scss/login.scss */
 h1 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* line 37, ../../app/scss/login.scss */
+/* line 41, ../../app/scss/login.scss */
 .submit-area {
   margin-top: 20px;
 }

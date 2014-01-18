@@ -47,4 +47,16 @@
 
 // Utility classes
 @import "utilities";
-@import "responsive-utilities";
+// @import "responsive-utilities";
+
+
+// Facebook button
+.btn-fb {
+  @include button-variant($btn-fb-color, $btn-fb-bg, $btn-fb-border);
+}
+
+.form-control {
+  -webkit-appearance: none;
+  appearance: none;
+  @include box-shadow(none);
+}
