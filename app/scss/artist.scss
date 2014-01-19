@@ -85,12 +85,13 @@
 }
 
 .artist-profile {
-  .artist-card .artist-image {
-    -webkit-animation: fadeIn 400ms;
-    animation: fadeIn 400ms;
 
-    -webkit-animation-delay: 300ms;
-    animation-delay: 300ms;
+  .artist-card .artist-image {
+    // -webkit-animation: fadeIn 400ms;
+    // animation: fadeIn 400ms;
+
+    // -webkit-animation-delay: 300ms;
+    // animation-delay: 300ms;
   }
 
   .profile-sections {
@@ -199,6 +200,7 @@
       }
     }
   }
+
 }
 
 

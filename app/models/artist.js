@@ -89,6 +89,8 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
     // var artists = artistsCache.get('artists');
 
     // if (artists) {
+    //   console.log('[Buskr] Artists cached...');
+
     //   deferred.resolve(artists);
     //   artists = deferred.promise;
     // } else {
@@ -102,20 +104,22 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
   };
 
   var loadOne = function (id) {
-    // var deferred = $q.defer();
-    // var artist = artistsCache.get(id);
+    var deferred = $q.defer();
+    var artist = artistsCache.get(id);
 
-    // if (artist) {
-    //   deferred.resolve(artist);
-    //   artist = deferred.promise;
-    // } else {
-    //   console.log('[Buskr] Artist not cached. Warming cache...', id);
-    //   artist = reloadArtist(id);
-    // }
+    if (artist) {
+      console.log('[Buskr] Artist cached...', artist.name);
 
-    // return artist;
+      deferred.resolve(artist);
+      artist = deferred.promise;
+    } else {
+      console.log('[Buskr] Artist not cached. Warming cache...', id);
+      artist = reloadArtist(id);
+    }
 
-    return reloadArtist(id);
+    return artist;
+
+    // return reloadArtist(id);
   };
 
   return {
