@@ -3,8 +3,10 @@ var FB_APP_ID = 574303185975176;
 (function (Firebase) {
 
   var loginApp = angular.module('loginApp', [
+    'ngAnimate',
     'ui.bootstrap',
     'UserModel',
+    'buskrApp.filters',
     'buskrApp.services',
     'buskrApp.directives'
   ]);
@@ -26,7 +28,7 @@ var FB_APP_ID = 574303185975176;
       overrideBackButton: true
     }, {
       onSuccess: function () {
-        steroids.view.navigationBar.show('');
+        // steroids.view.navigationBar.show('');
       }
     });
 

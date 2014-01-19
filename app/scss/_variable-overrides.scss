@@ -13,11 +13,13 @@ $bootstrap-sass-asset-helper: (twbs-font-path('') != unquote("twbs-font-path('')
 // Grays
 // -------------------------
 
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              lighten(#000, 20%) !default;   // #333
-$gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             lighten(#000, 60%) !default;   // #999
-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+$gray:                   #afafad !default;
+$gray-dark:              #7c7c7a !default;
+$gray-darker:            #2a2a28 !default;
+$gray-light:             #b0b0af !default;
+$gray-lighter:           #d1cbc2 !default;
+
+
 
 // Brand colors
 // -------------------------
@@ -28,12 +30,14 @@ $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 $brand-info:            #5bc0de !default;
 
+$brand-buskr:           #fbc16b !default;
+$brand-live:            #18c97c !default;
 $brand-fb:              #4c689e !default;
 
 // Scaffolding
 // -------------------------
 
-$body-bg:               #fff !default;
+$body-bg:               $gray-lighter !default;
 $text-color:            $gray-dark !default;
 
 // Links
@@ -96,9 +100,9 @@ $padding-xs-horizontal:          5px !default;
 $line-height-large:              1.33 !default;
 $line-height-small:              1.5 !default;
 
-$border-radius-base:             2px !default;
-$border-radius-large:            2px !default;
-$border-radius-small:            2px !default;
+$border-radius-base:             3px !default;
+$border-radius-large:            3px !default;
+$border-radius-small:            3px !default;
 
 $component-active-color:         #fff !default;
 $component-active-bg:            $brand-primary !default;
@@ -149,9 +153,13 @@ $btn-info-color:                 #fff !default;
 $btn-info-bg:                    $brand-info !default;
 $btn-info-border:                $brand-info !default;
 
-$btn-fb-color:                 #fff !default;
-$btn-fb-bg:                    $brand-fb !default;
-$btn-fb-border:                $brand-fb !default;
+$btn-fb-color:                   #fff !default;
+$btn-fb-bg:                      $brand-fb !default;
+$btn-fb-border:                  $brand-fb !default;
+
+$btn-live-color:                 #fff !default;
+$btn-live-bg:                    $brand-live !default;
+$btn-live-border:                $brand-live !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -162,7 +170,7 @@ $btn-link-disabled-color:        $gray-light !default;
 $input-bg:                       #fff !default;
 $input-bg-disabled:              $gray-lighter !default;
 
-$input-color:                    $gray !default;
+$input-color:                    $gray-dark !default;
 $input-border:                   #ccc !default;
 $input-border-radius:            $border-radius-base !default;
 $input-border-focus:             #66afe9 !default;

@@ -21,7 +21,7 @@
 
       <div class="buskr-input with-info" ng-if="userType == 'Artist'">
         <input type="text" class="form-control" ng-model="newUser.buskrName" placeholder="Buskr Name">
-        <div class="input-info">#{{newUser.buskrName}}</div>
+        <div class="input-info">#{{newUser.buskrName | urlfriendly}}</div>
       </div>
 
       <div class="buskr-input">

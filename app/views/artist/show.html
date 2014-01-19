@@ -1,10 +1,10 @@
-<div ng-controller="ShowCtrl" ng-cloak>
+<div class="artist-profile" ng-controller="ShowCtrl" ng-cloak>
   <div class="artist-card">
     <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
     <div class="artist-name">{{artist.name}}</div>
     <div class="live-location">
       <div class="loc">{{artist.distance}} mi</div>
-      <button class="buskr-button button_live" ng-if="artist.live">Live now!</button>
+      <button class="btn btn-xs btn-live" ng-if="artist.live">Live now!</button>
     </div>
   </div>
 
@@ -16,18 +16,18 @@
       </div>
     </section>
 
-    <section class="media">
-      <header>
-        <h1>MEDIA</h1>
+    <section class="media-section">
+      <header class="centered">
+        <h3>MEDIA</h3>
       </header>
       <div class="body">TODO</div>
     </section>
 
-    <section class="location flow-column">
+    <section class="location-section flow-column">
       <header class="full">
-        <h1>LOCATION</h1>
+        <h3>LOCATION</h3>
         <div class="info">
-          3 min diving / 10 min walking
+          3m driving / 10m walking
         </div>
       </header>
 
@@ -35,31 +35,50 @@
         <div class="map" ng-click="openMap()">
           <img width="100%" src="http://maps.googleapis.com/maps/api/staticmap?center=222+Broadway+St.,New+York,+NY+10012&zoom=16&size=640x400&sensor=false">
         </div>
+
         <div class="address">
           568 Broadway 11th FL, New York, NY 10012
         </div>
       </div>
     </section>
 
-    <section class="events">
+    <section class="events-section">
       <header>
-        <h1>EVENTS</h1>
+        <h3>EVENTS</h3>
       </header>
-      <div class="body">TODO</div>
+      <div class="body">
+        <ul class="list-unstyled">
+          <li class="live">Today &mdash; Live Now!</li>
+          <li>Sat, Sept 28 &mdash; 10:00 PM</li>
+          <li>Sun, Sept 30 &mdash; 10:00 PM</li>
+          <li>Tue, Oct 12 &mdash; 10:00 PM</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="last-fm">
-      <header>
-        <h1>LAST.FM</h1>
+    <section class="last-fm-section">
+      <header class="centered">
+        <h3>LAST.FM</h3>
       </header>
-      <div class="body">TODO</div>
+      <div class="body">last.fm/music/{{artist.name | urlfriendly}}</div>
     </section>
 
-    <section class="itunes">
-      <header>
-        <h1>iTUNES</h1>
+    <section class="itunes-section">
+      <header class="centered">
+        <h3>iTUNES</h3>
       </header>
-      <div class="body">TODO</div>
+      <div class="body">
+        <div class="itunes-button">
+          <img src="/images/download-on-itunes.png" width="101">
+        </div>
+      </div>
     </section>
   </div>
+
+  <footer>
+    <div class="tip-performer">
+      <img src="/images/tip-performer.png" width="70.5">
+      <div class="text">TIP PERFORMER</div>
+    </div>
+  </footer>
 </div>

@@ -1,6 +1,8 @@
 
 var drawerApp = angular.module('drawerApp', [
+  'ngAnimate',
   'UserModel',
+  'buskrApp.filters',
   'buskrApp.directives',
   'buskrApp.services'
 ]);

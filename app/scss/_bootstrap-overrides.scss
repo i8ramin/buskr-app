@@ -55,6 +55,11 @@
   @include button-variant($btn-fb-color, $btn-fb-bg, $btn-fb-border);
 }
 
+// Live button
+.btn-live {
+  @include button-variant($btn-live-color, $btn-live-bg, $btn-live-border);
+}
+
 .form-control {
   -webkit-appearance: none;
   appearance: none;

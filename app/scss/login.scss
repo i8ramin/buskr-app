@@ -1,4 +1,4 @@
-@import 'config';
+@import 'bootstrap-overrides';
 
 html, body {
   height: 100%;
@@ -36,6 +36,10 @@ html, body {
 h1 {
   margin-bottom: 20px;
   text-align: center;
+}
+
+form[name=loginForm] {
+  margin-bottom: 100px;
 }
 
 .submit-area {

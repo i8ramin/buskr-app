@@ -1,10 +1,10 @@
-/* line 7, ../../app/scss/artist.scss */
+/* line 3, ../../app/scss/artist.scss */
 .artist-card {
   position: relative;
   height: 175px;
   overflow: hidden;
 }
-/* line 15, ../../app/scss/artist.scss */
+/* line 8, ../../app/scss/artist.scss */
 .artist-card::after {
   display: block;
   content: '';
@@ -16,7 +16,7 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
-/* line 27, ../../app/scss/artist.scss */
+/* line 20, ../../app/scss/artist.scss */
 .artist-card .artist-image {
   position: absolute;
   top: 0;
@@ -24,41 +24,43 @@
   right: 0;
   width: 100%;
 }
-/* line 35, ../../app/scss/artist.scss */
+/* line 28, ../../app/scss/artist.scss */
 .artist-card .artist-name {
   position: absolute;
   z-index: 2;
   bottom: 50px;
-  left: 2vh;
-  right: 2vh;
+  left: 1rem;
+  right: 1rem;
   color: white;
   font-size: 16pt;
+  font-family: 'avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1;
   font-weight: bold;
   text-align: center;
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
 }
-/* line 49, ../../app/scss/artist.scss */
+/* line 43, ../../app/scss/artist.scss */
 .artist-card .live-location {
   position: absolute;
   z-index: 1;
   bottom: 0;
-  left: 2vh;
-  right: 2vh;
+  left: 1rem;
+  right: 1rem;
   padding: 8px 0;
+  min-height: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
-  line-height: 1.5rem;
 }
-/* line 60, ../../app/scss/artist.scss */
-.artist-card .live-location .button_live {
+/* line 54, ../../app/scss/artist.scss */
+.artist-card .live-location .btn-live {
   position: relative;
   float: left;
   width: 40%;
+  background-color: #18c97c;
   box-shadow: 0 0 15px 4px rgba(24, 201, 124, 0.75);
 }
-/* line 66, ../../app/scss/artist.scss */
-.artist-card .live-location .button_live::before {
+/* line 61, ../../app/scss/artist.scss */
+.artist-card .live-location .btn-live::before {
   position: absolute;
   left: 10px;
   display: block;
@@ -66,45 +68,82 @@
   color: #328059;
   font-size: 48px;
 }
-/* line 76, ../../app/scss/artist.scss */
+/* line 71, ../../app/scss/artist.scss */
 .artist-card .live-location .loc {
+  height: 20px;
   opacity: .85;
-  padding-left: 25px;
+  padding-left: 20px;
   background: transparent url(/icons/marker@2x.png) no-repeat;
-  background-size: 15px auto;
+  background-size: 13px auto;
   float: right;
 }
 
-/* line 86, ../../app/scss/artist.scss */
-.profile-sections {
-  margin: 2vh;
+/* line 82, ../../app/scss/artist.scss */
+.buskr-list-artists {
+  background-color: black;
+  margin: 0;
+}
+
+/* line 88, ../../app/scss/artist.scss */
+.artist-profile .artist-card .artist-image {
+  -webkit-animation: fadeIn 400ms;
+  animation: fadeIn 400ms;
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
+}
+/* line 96, ../../app/scss/artist.scss */
+.artist-profile .profile-sections {
+  margin: 1rem;
   background-color: white;
   border-radius: 3px;
 }
-/* line 91, ../../app/scss/artist.scss */
-.profile-sections > section {
+/* line 101, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
-  padding: 15px 15px 8px;
-  border-bottom: 1px solid #d1cfcd;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #d1cbc2;
 }
-/* line 101, ../../app/scss/artist.scss */
-.profile-sections > section.flow-column {
+/* line 111, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section:last-of-type {
+  border-bottom: none;
+}
+/* line 115, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section.flow-column {
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 105, ../../app/scss/artist.scss */
-.profile-sections > section.flow-column .body {
+/* line 119, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section.flow-column .body {
   display: block;
 }
-/* line 111, ../../app/scss/artist.scss */
-.profile-sections > section > header h1 {
-  color: #fbc16b;
+/* line 124, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section > header {
+  margin: 0 0 0 .5rem;
 }
-/* line 116, ../../app/scss/artist.scss */
-.profile-sections > section > .body {
+/* line 127, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section > header.centered {
+  -webkit-align-self: center;
+  align-self: center;
+}
+/* line 132, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section > header h3 {
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  color: #f0b059;
+}
+/* line 140, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section > header .info {
+  float: right;
+  font-size: 12px;
+  color: #b0b0af;
+}
+/* line 147, ../../app/scss/artist.scss */
+.artist-profile .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
   -webkit-justify-content: flex-end;
@@ -112,7 +151,43 @@
   -webkit-flex: 1 auto;
   flex: 1 auto;
 }
-/* line 128, ../../app/scss/artist.scss */
-.profile-sections .location .map {
-  margin: 0 -1rem;
+/* line 159, ../../app/scss/artist.scss */
+.artist-profile .profile-sections .location-section .address {
+  color: #afafad;
+}
+/* line 163, ../../app/scss/artist.scss */
+.artist-profile .profile-sections .location-section .map {
+  margin: 1rem 0;
+  border-radius: 3px;
+}
+/* line 169, ../../app/scss/artist.scss */
+.artist-profile .profile-sections .events-section {
+  text-align: right;
+}
+/* line 174, ../../app/scss/artist.scss */
+.artist-profile .profile-sections .itunes-section .itunes-button {
+  background-color: #85807a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+/* line 182, ../../app/scss/artist.scss */
+.artist-profile footer {
+  position: relative;
+  height: 45px;
+  background-color: #fbc16b;
+}
+/* line 187, ../../app/scss/artist.scss */
+.artist-profile footer .tip-performer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+/* line 194, ../../app/scss/artist.scss */
+.artist-profile footer .tip-performer .text {
+  padding: .5rem 1rem 1rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
 }

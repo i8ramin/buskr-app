@@ -1,7 +1,9 @@
 
 var buskrApp = angular.module('buskrApp', [
+  'ngAnimate',
   'ui.bootstrap',
   'UserModel',
+  'buskrApp.filters',
   'buskrApp.directives',
   'buskrApp.services'
 ]);
@@ -37,7 +39,11 @@ buskrApp.run(function ($rootScope, $window, User) {
   if (user) {
     steroids.layers.push({
       view: artistView,
-      navigationBar: false
+      navigationBar: false,
+      animation: new steroids.Animation({
+        transition: 'fade',
+        duration: 0.25
+      })
     }, {
       onSuccess: function () {},
       onFailure: function (error) {
@@ -45,52 +51,53 @@ buskrApp.run(function ($rootScope, $window, User) {
       }
     });
   } else {
-    // steroids.layers.push({
-    //   view: loginView,
-    //   navigationBar: false,
-    //   animation: new steroids.Animation({
-    //     transition: 'fade'
-    //   })
-    // }, {
-    //   onSuccess: function () {},
-    //   onFailure: function (error) {
-    //     alert(error.errorDescription);
-    //   }
-    // });
-
-    loginView.preload({}, {
-      onSuccess: function () {
-        steroids.layers.push({
-          view: loginView,
-          navigationBar: false,
-          animation: new steroids.Animation({
-            transition: 'fade',
-            duration: 0.5
-          })
-        }, {
-          onSuccess: function () {},
-          onFailure: function (error) {
-            alert(error.errorDescription);
-          }
-        });
-
-        // steroids.layers.replace({
-        //   view: loginView
-        // }, {
-        //   onSuccess: function () {
-
-        //   },
-        //   onFailure: function (error) {
-        //     console.error(error.errorDescription);
-        //     alert(error.errorDescription);
-        //   }
-        // });
-      },
+    steroids.layers.push({
+      view: loginView,
+      navigationBar: false,
+      animation: new steroids.Animation({
+        transition: 'fade',
+        duration: 0.25
+      })
+    }, {
+      onSuccess: function () {},
       onFailure: function (error) {
-        console.error(error.errorDescription);
         alert(error.errorDescription);
       }
     });
+
+    // loginView.preload({}, {
+    //   onSuccess: function () {
+    //     steroids.layers.push({
+    //       view: loginView,
+    //       navigationBar: false,
+    //       animation: new steroids.Animation({
+    //         transition: 'fade',
+    //         duration: 0.5
+    //       })
+    //     }, {
+    //       onSuccess: function () {},
+    //       onFailure: function (error) {
+    //         alert(error.errorDescription);
+    //       }
+    //     });
+
+    //     // steroids.layers.replace({
+    //     //   view: loginView
+    //     // }, {
+    //     //   onSuccess: function () {
+
+    //     //   },
+    //     //   onFailure: function (error) {
+    //     //     console.error(error.errorDescription);
+    //     //     alert(error.errorDescription);
+    //     //   }
+    //     // });
+    //   },
+    //   onFailure: function (error) {
+    //     console.error(error.errorDescription);
+    //     alert(error.errorDescription);
+    //   }
+    // });
 
 
   }
@@ -122,116 +129,57 @@ buskrApp.run(function ($rootScope, $window, User) {
           }
           break;
         case 'skipLogin':
-          artistView.unload({}, {
-            onSuccess: function () {},
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
+          }, {
+            onSuccess: function () {
+
+            },
             onFailure: function (error) {
+              alert(error.errorDescription);
               console.error(error.errorDescription);
             }
           });
 
-          artistView.preload({}, {
-            onSuccess: function () {
-              steroids.layers.push({
-                view: artistView,
-                navigationBar: false
-              });
-            },
-            onFailure: function (error) {
-              if (error.errorDescription === 'A preloaded layer with this identifier already exists') {
-                steroids.layers.push({
-                  view: artistView,
-                  navigationBar: false
-                });
-              } else {
-                console.error(error.errorDescription);
-              }
-
-            }
-          });
           break;
         case 'openLogin':
           steroids.layers.pop({}, {
             onSuccess: function () {
-              steroids.drawers.hide({}, {
-                onSuccess: function () {
-                },
-                onFailure: function (error) {
-                  alert(error.errorDescription);
-                }
-              });
+              setTimeout(function () {
+                steroids.drawers.hide({}, {
+                  onSuccess: function () {
+                  },
+                  onFailure: function (error) {
+                    alert(error.errorDescription);
+                  }
+                });
+              }, 500);
             },
             onFailure: function (error) {
               console.error(error.errorDescription);
             }
           });
 
-          // steroids.layers.push({
-          //   view: loginView,
-          //   navigationBar: false
-          // }, {
-          //   onSuccess: function () {
-          //     steroids.drawers.hideAll();
-          //   },
-          //   onFailure: function (error) {
-          //     alert(error.errorDescription);
-          //   }
-          // });
-
           break;
         case 'userLogout':
-          steroids.layers.popAll();
-
-          artistView.unload({}, {
-            onSuccess: function () {},
+          steroids.layers.pop({}, {
+            onSuccess: function () {
+              setTimeout(function () {
+                steroids.drawers.hide({}, {
+                  onSuccess: function () {
+                  },
+                  onFailure: function (error) {
+                    alert(error.errorDescription);
+                  }
+                });
+              }, 500);
+            },
             onFailure: function (error) {
               console.error(error.errorDescription);
             }
           });
 
-          steroids.drawers.hide({}, {
-              onSuccess: function () {
-                setTimeout(function () {
-                  steroids.layers.push({
-                    view: loginView,
-                    navigationBar: false
-                  }, {
-                    onSuccess: function () {},
-                    onFailure: function (error) {
-                      console.error('[App:userLogout] ' + error.errorDescription);
-                    }
-                  });
-                }, 500);
-              },
-              onFailure: function (error) {
-                alert(error.errorDescription);
-              }
-            });
-
-          // steroids.layers.pop({}, {
-          //   onSuccess: function () {
-          //     steroids.drawers.hide({}, {
-          //       onSuccess: function () {
-          //         setTimeout(function () {
-          //           steroids.layers.push({
-          //             view: loginView,
-          //             navigationBar: false
-          //           }, {
-          //             onSuccess: function () {},
-          //             onFailure: function (error) {
-          //               console.error('[App:userLogout] ' + error.errorDescription);
-          //             }
-          //           });
-          //         }, 1000);
-          //       },
-          //       onFailure: function (error) {
-          //         alert(error.errorDescription);
-          //       }
-          //     });
-          //   },
-          //   onFailure: function (error) {
-          //     console.error(error.errorDescription);
-          //   }
-          // });
 
           break;
 

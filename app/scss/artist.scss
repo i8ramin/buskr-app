@@ -1,16 +1,9 @@
-@import 'config';
-
-body {
-  // background-color: #fff;
-}
+@import "variable-overrides";
 
 .artist-card {
   position: relative;
   height: 175px;
   overflow: hidden;
-  // min-height: 175px;
-  // background-repeat: no-repeat;
-  // background-size: cover;
 
   &::after {
     display: block;
@@ -36,10 +29,11 @@ body {
     position: absolute;
     z-index: 2;
     bottom: 50px;
-    left: $gutter-width;
-    right: $gutter-width;
+    left: 1rem;
+    right: 1rem;
     color: white;
     font-size: 16pt;
+    font-family: 'avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1;
     font-weight: bold;
     text-align: center;
@@ -50,17 +44,18 @@ body {
     position: absolute;
     z-index: 1;
     bottom: 0;
-    left: $gutter-width;
-    right: $gutter-width;
+    left: 1rem;
+    right: 1rem;
     padding: 8px 0;
+    min-height: 40px;
     border-top: 1px solid rgba(255,255,255,.5);
     color: white;
-    line-height: 1.5rem;
 
-    .button_live {
+    .btn-live {
       position: relative;
       float: left;
       width: 40%;
+      background-color: $brand-live;
       box-shadow: 0 0 15px 4px rgba(24,201,124,.75);
 
       &::before {
@@ -74,62 +69,136 @@ body {
     }
 
     .loc {
+      height: 20px;
       opacity: .85;
-      padding-left: 25px;
+      padding-left: 20px;
       background: transparent url(/icons/marker@2x.png) no-repeat;
-      background-size: 15px auto;
+      background-size: 13px auto;
       float: right;
     }
   }
 }
 
-.profile-sections {
-  margin: $gutter-width;
-  background-color: white;
-  border-radius: 3px;
+.buskr-list-artists {
+  background-color: black;
+  margin: 0;
+}
 
-  > section {
-    display: -webkit-flex;
-    display: flex;
+.artist-profile {
+  .artist-card .artist-image {
+    -webkit-animation: fadeIn 400ms;
+    animation: fadeIn 400ms;
 
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
+    -webkit-animation-delay: 300ms;
+    animation-delay: 300ms;
+  }
 
-    padding: 15px 15px 8px;
-    border-bottom: 1px solid #d1cfcd;
+  .profile-sections {
+    margin: 1rem;
+    background-color: white;
+    border-radius: $border-radius-base;
 
-    &.flow-column {
-      -webkit-flex-flow: column nowrap;
-      flex-flow: column nowrap;
+    > section {
+      display: -webkit-flex;
+      display: flex;
 
-      .body {
-        display: block;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid $gray-lighter;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &.flow-column {
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+
+        .body {
+          display: block;
+        }
+      }
+
+      > header {
+        margin: 0 0 0 .5rem;
+
+        &.centered {
+          -webkit-align-self: center;
+          align-self: center;
+        }
+
+        h3 {
+          float: left;
+          font-size: $font-size-small;
+          font-weight: normal;
+          margin: 0;
+          color: $brand-primary;
+        }
+
+        .info {
+          float: right;
+          font-size: 12px;
+          color: $gray-light;
+        }
+      }
+
+      > .body {
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+
+        -webkit-flex: 1 auto;
+        flex: 1 auto;
       }
     }
 
-    > header {
-      h1 {
-        color: #fbc16b;
+    .location-section {
+      .address {
+        color: $gray;
+      }
+
+      .map {
+        margin: 1rem 0;
+        border-radius: $border-radius-base;
       }
     }
 
-    > .body {
-      display: -webkit-inline-flex;
-      display: inline-flex;
-      -webkit-justify-content: flex-end;
-      justify-content: flex-end;
+    .events-section {
+      text-align: right;
+    }
 
-      -webkit-flex: 1 auto;
-      flex: 1 auto;
+    .itunes-section {
+      .itunes-button {
+        background-color: #85807a;
+        border-radius: 3px;
+        overflow: hidden;
+      }
     }
   }
 
-  .location {
-    .map {
-      margin: 0 -1rem;
-      // height: 200px;
-      // background-repeat: no-repeat;
-      // background-size: 320px 100px;
+  footer {
+    position: relative;
+    height: 45px;
+    background-color: $brand-buskr;
+
+    .tip-performer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+
+      .text {
+        padding: .5rem 1rem 1rem;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: white;
+      }
     }
   }
 }
+
+

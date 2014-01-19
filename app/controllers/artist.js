@@ -4,12 +4,16 @@
 
   var gaPlugin;
   var artistApp = angular.module('artistApp', [
+    'ngAnimate',
     'UserModel',
     'ArtistModel',
     'firebase',
+    'buskrApp.filters',
     'buskrApp.directives',
     'buskrApp.services'
   ]);
+
+  var artistsArray = [];
 
   document.addEventListener('deviceready', function () {
     gaPlugin = window.plugins.gaPlugin;
@@ -42,6 +46,8 @@
 
     document.addEventListener('visibilitychange', function (event) {
       if (!document.hidden) {
+        // steroids.view.setBackgroundColor('#d2cbc3');
+
         // NavbarService.navBar.init(function () {
         //   steroids.view.navigationBar.show('');
         // });
@@ -56,18 +62,20 @@
 
     steroids.view.navigationBar.show('');
 
-    ArtistService.all().then(
-      function (artists) {
-        var artistsArray = [];
+    $scope.loadArtists = function () {
+      ArtistService.all().then(
+        function (artists) {
+          angular.forEach(artists, function (artist, key) {
+            artist.id = key;
+            artistsArray.push(artist);
+          });
 
-        angular.forEach(artists, function (artist, key) {
-          artist.id = key;
-          artistsArray.push(artist);
-        });
+          $scope.artists = artistsArray;
+        }
+      );
+    };
 
-        $scope.artists = artistsArray;
-      }
-    );
+    $scope.loadArtists();
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
@@ -75,6 +83,8 @@
       var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
       steroids.layers.push(webView);
     };
+
+
   });
 
   // Show: http://localhost/views/artist/show.html?id=<id>
@@ -85,6 +95,7 @@
 
     // remove navigationBar buttons
     steroids.view.navigationBar.setButtons({});
+    // steroids.view.navigationBar.show('Artist');
 
     ArtistService.get(id).then(
       function (artist) {

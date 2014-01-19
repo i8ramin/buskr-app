@@ -1,25 +1,23 @@
 @import 'compass/css3/font-face';
-@import 'config';
-
 @import 'bootstrap-overrides';
 
-// @include font-face('avenir',
-//   inline-font-files(
-//     'avenir-webfont/avenir-roman-webfont.woff', woff,
-//     'avenir-webfont/avenir-roman-webfont.ttf', truetype
-//   ),
-//   $weight: normal,
-//   $style: normal
-// );
+@include font-face('avenir',
+  inline-font-files(
+    'avenir-webfont/avenir-roman-webfont.woff', woff,
+    'avenir-webfont/avenir-roman-webfont.ttf', truetype
+  ),
+  $weight: normal,
+  $style: normal
+);
 
-// @include font-face('avenir',
-//   inline-font-files(
-//     'avenir-webfont/avenir-heavy-webfont.woff', woff,
-//     'avenir-webfont/avenir-heavy-webfont.ttf', truetype
-//   ),
-//   $weight: bold,
-//   $style: normal
-// );
+@include font-face('avenir',
+  inline-font-files(
+    'avenir-webfont/avenir-heavy-webfont.woff', woff,
+    'avenir-webfont/avenir-heavy-webfont.ttf', truetype
+  ),
+  $weight: bold,
+  $style: normal
+);
 
 * {
   -webkit-user-select: none;  /* Disable selection/copy of elements when tapping for a long time */
@@ -44,6 +42,7 @@ html, body {
 //   color: #000;
 //   font: 11pt 'avenir', helvetica, arial, sans-serif;
 // }
+
 
 header {
   margin-bottom: 1rem;
@@ -135,11 +134,42 @@ article.view {
   0%, 100% {transform: translateX(0);}
 }
 
+@-webkit-keyframes bounceIn {
+  0%    { opacity: 0; -webkit-transform: scale3d(0.85, 0.85, 0.85); }
+  50%   { opacity: 1; -webkit-transform: scale3d(1.05, 1.05, 1.05); }
+  70%   { opacity: 1; -webkit-transform: scale3d(0.9, 0.9, 0.9); }
+  100%  { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+@keyframes bounceIn {
+  0%    { opacity: 0; transform: scale3d(0.85, 0.85, 0.85); }
+  50%   { opacity: 1; transform: scale3d(1.05, 1.05, 1.05); }
+  70%   { opacity: 1; transform: scale3d(0.9, 0.9, 0.9); }
+  100%  { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+@-webkit-keyframes scaleIn {
+  0%    { opacity: 0; -webkit-transform: scale3d(1.15, 1.15, 1.15); }
+  100%  { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+@keyframes scaleIn {
+  0%    { opacity: 0; -webkit-transform: scale3d(1.15, 1.15, 1.15); }
+  100%  { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+
+
+@-webkit-keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
+}
+@keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
 .animated.invalid-shake {
   -webkit-animation: invalidshake .5s linear;
   animation: invalidshake .5s linear;
 }
-
 
 .animate-switch-container {
 }
@@ -157,3 +187,42 @@ article.view {
 .animate-switch.ng-enter.ng-enter-active {
   top: 0;
 }
+
+
+.repeat-animation.ng-move,
+.repeat-animation.ng-enter,
+.repeat-animation.ng-leave {
+  opacity: 0;
+}
+
+.repeat-animation.ng-enter-stagger,
+.repeat-animation.ng-leave-stagger,
+.repeat-animation.ng-move-stagger {
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+
+  -webkit-animation-duration: 0;
+  animation-duration: 0;
+}
+
+/* ending enter and move styling
+   (this is what the element will animate from */
+.repeat-animation.ng-enter {
+  -webkit-animation: scaleIn 400ms;
+  animation: scaleIn 400ms;
+}
+
+/* ending enter and move styling
+   (this is what the element will animate towards */
+.repeat-animation.ng-enter.ng-enter-active,
+.repeat-animation.ng-move.ng-move-active {
+}
+
+/* starting leave animation */
+.repeat-animation.ng-leave {
+}
+
+/* ending leave animation */
+.repeat-animation.ng-leave.ng-leave-active {
+}
+
