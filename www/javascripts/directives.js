@@ -3,28 +3,17 @@
 
   var directives = angular.module('buskrApp.directives', []);
 
-  directives.directive('manageDrawer', function ManageDrawer(NavbarService) {
+  directives.directive('overlay', function Overlay() {
     return {
       restrict: 'A',
       link: function (scope, element, attr) {
-        // element.on('touchstart', function (e) {
-        //   if (NavbarService.navBar.drawer.visible) {
-        //     e.preventDefault();
-        //     e.stopPropagation();
+        var mask = element.find('.mask');
+        var overlay = element.find('.overlay');
 
-        //     window.postMessage({
-        //       action: 'toggleDrawer'
-        //     }, '*');
-
-        //     // steroids.drawers.hide({}, {
-        //     //   onSuccess: function () {
-        //     //   },
-        //     //   onFailure: function(error) {
-        //     //     alert('Could not hide the drawer: ' + error.errorDescription);
-        //     //   }
-        //     // });
-        //   }
-        // });
+        mask.on('touchstart', function (e) {
+          // e.preventDefault();
+          // e.stopPropagation();
+        });
       }
     };
   });

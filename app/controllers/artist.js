@@ -41,29 +41,37 @@
     );
   });
 
-  artistApp.run(function (NavbarService) {
-    steroids.view.setBackgroundColor('#d2cbc3');
-
-    document.addEventListener('visibilitychange', function (event) {
-      if (!document.hidden) {
-        // steroids.view.setBackgroundColor('#d2cbc3');
-
-        // NavbarService.navBar.init(function () {
-        //   steroids.view.navigationBar.show('');
-        // });
-      }
-    }, false);
+  artistApp.run(function () {
+    // steroids.view.setBackgroundColor('#d2cbc3');
   });
 
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
-    NavbarService.navBar.init(function () {
-    });
+    // NavbarService.navBar.init();
+    // steroids.view.navigationBar.show('');
 
-    steroids.view.navigationBar.show('');
+    var allArtists = ArtistService.all();
+
+    document.addEventListener('visibilitychange', function (event) {
+      if (document.hidden) {
+        // $scope.artists = [];
+      } else {
+        NavbarService.navBar.init(function () {
+          steroids.view.navigationBar.show('');
+
+          setTimeout(function () {
+            $scope.loadArtists();
+          }, 500);
+        });
+      }
+    }, false);
 
     $scope.loadArtists = function () {
-      ArtistService.all().then(
+      if ($scope.artists) {
+        return;
+      }
+
+      allArtists.then(
         function (artists) {
           angular.forEach(artists, function (artist, key) {
             artist.id = key;
@@ -75,7 +83,7 @@
       );
     };
 
-    $scope.loadArtists();
+    // $scope.loadArtists();
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
@@ -83,13 +91,12 @@
       var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
       steroids.layers.push(webView);
     };
-
-
   });
 
   // Show: http://localhost/views/artist/show.html?id=<id>
   artistApp.controller('ShowCtrl', function ($scope, ArtistService) {
     var id = steroids.view.params.id;
+    var addCardView = new steroids.views.WebView({location:'views/payment/add-card.html'});
 
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
 
@@ -122,6 +129,15 @@
           });
         }
       });
+    };
+
+    $scope.tipBuskr = function () {
+      $scope.showPaymentOverlay = true;
+    };
+
+    $scope.addCard = function () {
+      $scope.showPaymentOverlay = false;
+      steroids.layers.push(addCardView);
     };
   });
 

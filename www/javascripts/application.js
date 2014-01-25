@@ -25,8 +25,6 @@ drawerView.preload({}, {
 buskrApp.run(function ($rootScope, $window, User) {
   var user = User.load();
 
-  // steroids.view.navigationBar.show('');
-
   navigator.geolocation.getCurrentPosition(
     function (position) {
       $window.localStorage.setItem('position', JSON.stringify(position.coords));
@@ -51,6 +49,15 @@ buskrApp.run(function ($rootScope, $window, User) {
       }
     });
   } else {
+    artistView.preload({}, {
+      onSuccess: function () {
+        // alert('preloaded');
+      },
+      onFailure: function (error) {
+        console.error(error.errorDescription);
+      }
+    });
+
     steroids.layers.push({
       view: loginView,
       navigationBar: false,
@@ -103,7 +110,7 @@ buskrApp.run(function ($rootScope, $window, User) {
   }
 
   document.addEventListener('visibilitychange', function (event) {
-    if (!document.hidden) {
+    if (document.hidden) {
     }
   }, false);
 

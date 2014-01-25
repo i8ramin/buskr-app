@@ -76,9 +76,24 @@
   </div>
 
   <footer>
-    <div class="tip-performer">
+    <div class="tip-performer" ng-click="tipBuskr()">
       <img src="/images/tip-performer.png" width="70.5">
       <div class="text">TIP PERFORMER</div>
     </div>
   </footer>
+
+  <div class="overlay-wrapper animate-show" overlay ng-show="showPaymentOverlay">
+    <div class="mask"></div>
+    <div class="overlay animate-overlay" ng-show="showPaymentOverlay">
+      <header>Payment</header>
+      <div class="body">
+        <p>We need some payment information</p>
+        <p>You only need to enter this once.
+        We'll remember next time. Promise!</p>
+      </div>
+      <footer>
+        <button class="btn btn-primary btn-block" ng-click="addCard()">Add Card</button>
+      </footer>
+    </div>
+  </div>
 </div>

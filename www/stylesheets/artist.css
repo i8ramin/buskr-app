@@ -84,13 +84,13 @@
   margin: 0;
 }
 
-/* line 97, ../../app/scss/artist.scss */
+/* line 96, ../../app/scss/artist.scss */
 .artist-profile .profile-sections {
   margin: 1rem;
   background-color: white;
   border-radius: 3px;
 }
-/* line 102, ../../app/scss/artist.scss */
+/* line 101, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section {
   display: -webkit-flex;
   display: flex;
@@ -99,29 +99,29 @@
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #d1cbc2;
 }
-/* line 112, ../../app/scss/artist.scss */
+/* line 111, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section:last-of-type {
   border-bottom: none;
 }
-/* line 116, ../../app/scss/artist.scss */
+/* line 115, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column {
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 120, ../../app/scss/artist.scss */
+/* line 119, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column .body {
   display: block;
 }
-/* line 125, ../../app/scss/artist.scss */
+/* line 124, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header {
   margin: 0 0 0 .5rem;
 }
-/* line 128, ../../app/scss/artist.scss */
+/* line 127, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header.centered {
   -webkit-align-self: center;
   align-self: center;
 }
-/* line 133, ../../app/scss/artist.scss */
+/* line 132, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header h3 {
   float: left;
   font-size: 12px;
@@ -129,13 +129,13 @@
   margin: 0;
   color: #f0b059;
 }
-/* line 141, ../../app/scss/artist.scss */
+/* line 140, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header .info {
   float: right;
   font-size: 12px;
   color: #b0b0af;
 }
-/* line 148, ../../app/scss/artist.scss */
+/* line 147, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -144,32 +144,32 @@
   -webkit-flex: 1 auto;
   flex: 1 auto;
 }
-/* line 160, ../../app/scss/artist.scss */
+/* line 159, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .address {
   color: #afafad;
 }
-/* line 164, ../../app/scss/artist.scss */
+/* line 163, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .map {
   margin: 1rem 0;
   border-radius: 3px;
 }
-/* line 170, ../../app/scss/artist.scss */
+/* line 169, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .events-section {
   text-align: right;
 }
-/* line 175, ../../app/scss/artist.scss */
+/* line 174, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .itunes-section .itunes-button {
   background-color: #85807a;
   border-radius: 3px;
   overflow: hidden;
 }
-/* line 183, ../../app/scss/artist.scss */
+/* line 182, ../../app/scss/artist.scss */
 .artist-profile footer {
   position: relative;
   height: 45px;
   background-color: #fbc16b;
 }
-/* line 188, ../../app/scss/artist.scss */
+/* line 187, ../../app/scss/artist.scss */
 .artist-profile footer .tip-performer {
   position: absolute;
   left: 0;
@@ -177,7 +177,7 @@
   bottom: 0;
   text-align: center;
 }
-/* line 195, ../../app/scss/artist.scss */
+/* line 194, ../../app/scss/artist.scss */
 .artist-profile footer .tip-performer .text {
   padding: .5rem 1rem 1rem;
   font-size: 12px;

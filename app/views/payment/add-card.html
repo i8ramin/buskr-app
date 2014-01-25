@@ -1,0 +1,21 @@
+<article class="view" ng-controller="AddCardCtrl">
+  <div class="content content-padded">
+    <form name="addCardForm">
+      <div class="buskr-input">
+        <input type="text" class="form-control"
+          ng-model="name"
+          placeholder="Name">
+      </div>
+
+      <div class="buskr-input">
+        <input type="text" class="form-control"
+          ng-model="cc"
+          placeholder="CC">
+      </div>
+    </form>
+
+    <footer class="footer-bottom">
+      <button class="btn btn-primary btn-block" ng-click="signUp()">Add Card</button>
+    </footer>
+  </div>
+</article>
