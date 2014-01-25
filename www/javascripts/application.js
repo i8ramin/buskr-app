@@ -8,10 +8,9 @@ var buskrApp = angular.module('buskrApp', [
   'buskrApp.services'
 ]);
 
-var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.html'});
-var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
-
+var drawerView = new steroids.views.WebView({location:'menu.html'});
 var loginView = new steroids.views.WebView({location:'views/login/index.html'});
+var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
 drawerView.preload({id: 'drawerView'}, {
   onSuccess: function () {
@@ -24,17 +23,8 @@ drawerView.preload({id: 'drawerView'}, {
   }
 });
 
-artistView.preload({id: 'artistView'}, {
-  onSuccess: function () {
-  },
-  onFailure: function (error) {
-    alert(error.errorDescription);
-    console.error('[artistView.preload] ' + error.errorDescription);
-  }
-});
-
 buskrApp.run(function ($rootScope, $window, User) {
-  var user = null; //User.load();
+  var user = User.load();
 
   navigator.geolocation.getCurrentPosition(
     function (position) {
@@ -46,6 +36,8 @@ buskrApp.run(function ($rootScope, $window, User) {
   );
 
   if (user) {
+    artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+
     steroids.layers.push({
       view: artistView,
       navigationBar: false,

@@ -47,30 +47,15 @@
 
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
-    var allArtists = ArtistService.all();
-
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
-    document.addEventListener('visibilitychange', function (event) {
-      if (document.hidden) {
-      } else {
-        NavbarService.navBar.init(function () {
-          steroids.view.navigationBar.show('');
-          steroids.view.removeLoading();
-
-          setTimeout(function () {
-            $scope.loadArtists();
-          }, 500);
-        });
-      }
-    }, false);
+    NavbarService.navBar.init(function () {
+      steroids.view.navigationBar.show('');
+      steroids.view.removeLoading();
+    });
 
     $scope.loadArtists = function () {
-      if ($scope.artists) {
-        return;
-      }
-
-      allArtists.then(
+      ArtistService.all().then(
         function (artists) {
           angular.forEach(artists, function (artist, key) {
             artist.id = key;
@@ -81,6 +66,8 @@
         }
       );
     };
+
+    $scope.loadArtists();
 
     $scope.open = function (id) {
       var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});

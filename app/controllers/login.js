@@ -15,9 +15,7 @@ var FB_APP_ID = 574303185975176;
   var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
   var typeSelectView = new steroids.views.WebView({location:'views/login/type-select.html'});
   var performerDetailsView = new steroids.views.WebView({location:'views/login/performer-details.html'});
-
-  // has ID field b/c it has been preloaded
-  var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
+  var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
   loginApp.run(function () {
     FB.init({

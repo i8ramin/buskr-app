@@ -130,6 +130,11 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       //   scope: 'email,user_birthday,user_location'
       // });
 
+      window.postMessage({
+        action: 'userLogin',
+        user: userToSave
+      }, '*');
+
       _this.save(userToSave);
       deferred.resolve(userToSave);
 
@@ -191,6 +196,11 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       //     }
       //   );
       // }
+
+      window.postMessage({
+        action: 'userLogin',
+        user: userToSave
+      }, '*');
 
       _this.save(userToSave);
       deferred.resolve(userToSave);
