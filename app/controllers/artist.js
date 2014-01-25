@@ -47,17 +47,16 @@
 
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
-    // NavbarService.navBar.init();
-    // steroids.view.navigationBar.show('');
-
     var allArtists = ArtistService.all();
+
+    gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
     document.addEventListener('visibilitychange', function (event) {
       if (document.hidden) {
-        // $scope.artists = [];
       } else {
         NavbarService.navBar.init(function () {
           steroids.view.navigationBar.show('');
+          steroids.view.removeLoading();
 
           setTimeout(function () {
             $scope.loadArtists();
@@ -83,10 +82,6 @@
       );
     };
 
-    // $scope.loadArtists();
-
-    gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
-
     $scope.open = function (id) {
       var webView = new steroids.views.WebView({location:'views/artist/show.html?id=' + id});
       steroids.layers.push(webView);
@@ -102,11 +97,11 @@
 
     // remove navigationBar buttons
     steroids.view.navigationBar.setButtons({});
-    // steroids.view.navigationBar.show('Artist');
 
     ArtistService.get(id).then(
       function (artist) {
         $scope.artist = artist;
+        // steroids.view.navigationBar.show(artist.name);
       }
     );
 

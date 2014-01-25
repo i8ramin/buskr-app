@@ -35,147 +35,165 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
     create: function (newUser) {
       var _this = this;
       var deferred = $q.defer();
+      var userToSave = {
+        name: 'Test User'
+      };
 
-      $auth.$createUser(newUser.email, newUser.password, function (error, user) {
-        var userToSave = {};
-        var profilePushRef = profilesRef.push();
+      // $auth.$createUser(newUser.email, newUser.password, function (error, user) {
+      //   var userToSave = {};
+      //   var profilePushRef = profilesRef.push();
 
-        if (error) {
-          if (error.code === 'EMAIL_TAKEN') {
-            _this.emailLogin(newUser.email, newUser.password).then(
-              function (user) {
-                deferred.resolve(user);
-              },
-              function (error) {
-                deferred.reject(error);
-              }
-            );
-          } else {
-            deferred.reject(error);
-          }
-        } else {
-          userToSave = {
-            id: user.id,
-            uid: user.uid,
-            email: user.email,
-            password: newUser.password,
-            name: newUser.name,
-            dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : '',
-            provider: newUser.provider || 'password'
-          };
+      //   if (error) {
+      //     if (error.code === 'EMAIL_TAKEN') {
+      //       _this.emailLogin(newUser.email, newUser.password).then(
+      //         function (user) {
+      //           deferred.resolve(user);
+      //         },
+      //         function (error) {
+      //           deferred.reject(error);
+      //         }
+      //       );
+      //     } else {
+      //       deferred.reject(error);
+      //     }
+      //   } else {
+      //     userToSave = {
+      //       id: user.id,
+      //       uid: user.uid,
+      //       email: user.email,
+      //       password: newUser.password,
+      //       name: newUser.name,
+      //       dob: newUser.dob ? moment(newUser.dob).format('YYYY-MM-DD') : '',
+      //       provider: newUser.provider || 'password'
+      //     };
 
-          profilePushRef.set(userToSave, function (error) {
-            if (error) {
-              deferred.reject(error);
-            } else {
-              _this.save(userToSave);
-              deferred.resolve(userToSave);
-            }
-          });
-        }
-      });
+      //     profilePushRef.set(userToSave, function (error) {
+      //       if (error) {
+      //         deferred.reject(error);
+      //       } else {
+      //         _this.save(userToSave);
+      //         deferred.resolve(userToSave);
+      //       }
+      //     });
+      //   }
+      // });
+
+      _this.save(userToSave);
+      deferred.resolve(userToSave);
 
       return deferred.promise;
     },
     fbLogin: function () {
       var _this = this;
       var deferred = $q.defer();
+      var userToSave = {
+        name: 'Test User'
+      };
 
-      FB.login(function (response) {
-        if (response.authResponse) {
-          FB.api('/me', function (response) {
-            var password = response.id;
-            var newUser = {
-              provider: 'facebook',
-              username: response.username,
-              email: response.email,
-              password: password,
-              name: response.name,
-              dob: response.birthday
-            };
+      // FB.login(function (response) {
+      //   if (response.authResponse) {
+      //     FB.api('/me', function (response) {
+      //       var password = response.id;
+      //       var newUser = {
+      //         provider: 'facebook',
+      //         username: response.username,
+      //         email: response.email,
+      //         password: password,
+      //         name: response.name,
+      //         dob: response.birthday
+      //       };
 
-            profilesRef.once('value', function (profileRef) {
-              console.log();
-            });
+      //       profilesRef.once('value', function (profileRef) {
+      //         console.log();
+      //       });
 
-            _this.emailLogin(newUser.email, newUser.password).then(
-              function (user) {
-                deferred.resolve(user);
-              },
-              function (error) {
-                _this.create(newUser).then(
-                  function (user) {
-                    deferred.resolve(user);
-                  },
-                  function (error) {
-                    deferred.reject(error);
-                  }
-                );
-              }
-            );
-          });
-        } else {
-          deferred.reject('User cancelled login or did not fully authorize.');
-        }
-      }, {
-        scope: 'email,user_birthday,user_location'
-      });
+      //       _this.emailLogin(newUser.email, newUser.password).then(
+      //         function (user) {
+      //           deferred.resolve(user);
+      //         },
+      //         function (error) {
+      //           _this.create(newUser).then(
+      //             function (user) {
+      //               deferred.resolve(user);
+      //             },
+      //             function (error) {
+      //               deferred.reject(error);
+      //             }
+      //           );
+      //         }
+      //       );
+      //     });
+      //   } else {
+      //     deferred.reject('User cancelled login or did not fully authorize.');
+      //   }
+      // }, {
+      //   scope: 'email,user_birthday,user_location'
+      // });
+
+      _this.save(userToSave);
+      deferred.resolve(userToSave);
 
       return deferred.promise;
     },
     emailLogin: function (email, password) {
       var _this = this;
       var deferred = $q.defer();
+      var userToSave = {
+        name: 'Test User'
+      };
 
       email = email || '';
       password = password || '';
 
-      if (!email.length || !password.length) {
-        deferred.reject(new Error('Please enter email and password'));
-      } else {
-        $auth.$login('password', {email:email, password:password}).then(
-          function (userDetails) {
-            profilesRef.once('value', function (profiles) {
-              var profile;
+      // if (!email.length || !password.length) {
+      //   deferred.reject(new Error('Please enter email and password'));
+      // } else {
+      //   $auth.$login('password', {email:email, password:password}).then(
+      //     function (userDetails) {
+      //       profilesRef.once('value', function (profiles) {
+      //         var profile;
 
-              profiles.forEach(function (profileRef) {
-                var profileDetails = profileRef.val();
+      //         profiles.forEach(function (profileRef) {
+      //           var profileDetails = profileRef.val();
 
-                if (profileDetails.email === email) {
-                  profile = profileDetails;
-                }
-              });
+      //           if (profileDetails.email === email) {
+      //             profile = profileDetails;
+      //           }
+      //         });
 
-              if (profile) {
-                var user = {
-                  uid: userDetails.uid,
-                  email: userDetails.email,
-                  provider: profile.provider,
-                  name: profile.name,
-                  dob: profile.dob
-                };
+      //         if (profile) {
+      //           var user = {
+      //             uid: userDetails.uid,
+      //             email: userDetails.email,
+      //             provider: profile.provider,
+      //             name: profile.name,
+      //             dob: profile.dob
+      //           };
 
-                _this.save(user);
-                deferred.resolve(user);
+      //           _this.save(user);
+      //           deferred.resolve(user);
 
-                $rootScope.$broadcast('user:login', {
-                  user: user
-                });
+      //           $rootScope.$broadcast('user:login', {
+      //             user: user
+      //           });
 
-                window.postMessage({
-                  action: 'userLogin',
-                  user: user
-                }, '*');
-              } else {
-                // profile not found
-              }
-            });
-          },
-          function (error) {
-            deferred.reject(error);
-          }
-        );
-      }
+      //           window.postMessage({
+      //             action: 'userLogin',
+      //             user: user
+      //           }, '*');
+      //         } else {
+      //           // profile not found
+      //         }
+      //       });
+      //     },
+      //     function (error) {
+      //       deferred.reject(error);
+      //     }
+      //   );
+      // }
+
+      _this.save(userToSave);
+      deferred.resolve(userToSave);
 
       return deferred.promise;
     },

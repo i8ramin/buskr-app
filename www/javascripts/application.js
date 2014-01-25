@@ -8,22 +8,33 @@ var buskrApp = angular.module('buskrApp', [
   'buskrApp.services'
 ]);
 
-var drawerView = new steroids.views.WebView({location:'menu.html'});
-var loginView = new steroids.views.WebView({location:'views/login/index.html'});
-var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.html'});
+var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
 
-drawerView.preload({}, {
+var loginView = new steroids.views.WebView({location:'views/login/index.html'});
+
+drawerView.preload({id: 'drawerView'}, {
   onSuccess: function () {
     drawerView.visible = false;
     steroids.drawers.enableGesture(drawerView);
   },
   onFailure: function (error) {
-    alert('Failed to preload menu view. ' + error.errorDescription);
+    alert('[drawerView.preload] ' + error.errorDescription);
+    console.error(error.errorDescription);
+  }
+});
+
+artistView.preload({id: 'artistView'}, {
+  onSuccess: function () {
+  },
+  onFailure: function (error) {
+    alert(error.errorDescription);
+    console.error('[artistView.preload] ' + error.errorDescription);
   }
 });
 
 buskrApp.run(function ($rootScope, $window, User) {
-  var user = User.load();
+  var user = null; //User.load();
 
   navigator.geolocation.getCurrentPosition(
     function (position) {
@@ -49,15 +60,6 @@ buskrApp.run(function ($rootScope, $window, User) {
       }
     });
   } else {
-    artistView.preload({}, {
-      onSuccess: function () {
-        // alert('preloaded');
-      },
-      onFailure: function (error) {
-        console.error(error.errorDescription);
-      }
-    });
-
     steroids.layers.push({
       view: loginView,
       navigationBar: false,
@@ -68,7 +70,8 @@ buskrApp.run(function ($rootScope, $window, User) {
     }, {
       onSuccess: function () {},
       onFailure: function (error) {
-        alert(error.errorDescription);
+        alert('[steroids.layers.push:loginView] ' + error.errorDescription);
+        console.error(error.errorDescription);
       }
     });
 
@@ -111,6 +114,8 @@ buskrApp.run(function ($rootScope, $window, User) {
 
   document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {
+    } else {
+
     }
   }, false);
 
@@ -153,6 +158,7 @@ buskrApp.run(function ($rootScope, $window, User) {
         case 'openLogin':
           steroids.layers.pop({}, {
             onSuccess: function () {
+              // steroids.view.navigationBar.hide();
               setTimeout(function () {
                 steroids.drawers.hide({}, {
                   onSuccess: function () {
@@ -167,11 +173,12 @@ buskrApp.run(function ($rootScope, $window, User) {
               console.error(error.errorDescription);
             }
           });
-
           break;
         case 'userLogout':
           steroids.layers.pop({}, {
             onSuccess: function () {
+              // steroids.view.navigationBar.hide();
+
               setTimeout(function () {
                 steroids.drawers.hide({}, {
                   onSuccess: function () {
@@ -186,8 +193,6 @@ buskrApp.run(function ($rootScope, $window, User) {
               console.error(error.errorDescription);
             }
           });
-
-
           break;
 
         default:

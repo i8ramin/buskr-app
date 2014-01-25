@@ -12,8 +12,12 @@ var FB_APP_ID = 574303185975176;
   ]);
 
   var emailView = new steroids.views.WebView({location:'views/login/email.html'});
+  var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
   var typeSelectView = new steroids.views.WebView({location:'views/login/type-select.html'});
-  var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+  var performerDetailsView = new steroids.views.WebView({location:'views/login/performer-details.html'});
+
+  // has ID field b/c it has been preloaded
+  var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
 
   loginApp.run(function () {
     FB.init({
@@ -24,6 +28,7 @@ var FB_APP_ID = 574303185975176;
 
   // Index: http://localhost/views/login/index.html
   loginApp.controller('LoginCtrl', function ($scope, User) {
+    steroids.view.navigationBar.hide();
     steroids.view.navigationBar.setButtons({
       overrideBackButton: true
     }, {
@@ -33,9 +38,17 @@ var FB_APP_ID = 574303185975176;
     });
 
     $scope.skipLogin = function () {
-      window.postMessage({
-        action: 'skipLogin'
-      }, '*');
+      steroids.layers.push({
+        view: artistView,
+        keepLoading: true,
+        navigationBar: false
+      }, {
+        onSuccess: function () {},
+        onFailure: function (error) {
+          alert(error.errorDescription);
+          console.error(error.errorDescription);
+        }
+      });
     };
 
     $scope.facebookLogin = function() {
@@ -74,26 +87,16 @@ var FB_APP_ID = 574303185975176;
 
       User.emailLogin($scope.email, $scope.password).then(
         function (user) {
-          artistView.preload({}, {
+          steroids.layers.push({
+            view: artistView,
+            navigationBar: false
+          }, {
             onSuccess: function () {
-              steroids.layers.push({
-                view: artistView,
-                navigationBar: false
-              });
-
               $scope.loading = false;
             },
             onFailure: function (error) {
-              if (error.errorDescription === 'A preloaded layer with this identifier already exists') {
-                steroids.layers.push({
-                  view: artistView,
-                  navigationBar: false
-                });
-              } else {
-                console.error('[EmailCtrl.submitLogin] ' + error.errorDescription);
-              }
-
-              $scope.loading = false;
+              alert(error.errorDescription);
+              console.error(error.errorDescription);
             }
           });
         },
@@ -111,7 +114,6 @@ var FB_APP_ID = 574303185975176;
     };
 
     $scope.signUp = function () {
-      var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
       steroids.layers.push(signUpView);
     };
   });
@@ -123,8 +125,6 @@ var FB_APP_ID = 574303185975176;
     $scope.userType = 'Audience';
 
     $scope.artistNext = function () {
-      var performerDetailsView = new steroids.views.WebView({location:'views/login/performer-details.html'});
-
       if (navigator.notification.confirm('Creating account as a "Performer/Artist". Continue?')) {
         localStorage.setItem('newUser', $scope.newUser);
         steroids.layers.push(performerDetailsView);
@@ -137,29 +137,14 @@ var FB_APP_ID = 574303185975176;
 
       User.create($scope.newUser).then(
         function (newUser) {
-          // User.save(newUser);
-          // artistView.preload({}, {
-          //   onSuccess: function () {
-          //     steroids.layers.push({
-          //       view: artistView,
-          //       navigationBar: false
-          //     });
-          //   },
-          //   onFailure: function (error) {
-          //     alert(error.errorDescription);
-          //     console.error(error.errorDescription);
-          //     $scope.loading = false;
-          //   }
-          // });
-
           steroids.layers.push({
             view: artistView,
             navigationBar: false
           });
         },
         function (error) {
-          alert(error);
-          console.error(error);
+          alert(error.errorDescription);
+          console.error(error.errorDescription);
           $scope.loading = false;
         }
       );
@@ -176,18 +161,18 @@ var FB_APP_ID = 574303185975176;
 
   loginApp.controller('TypeSelectCtrl', function ($scope, User) {
     $scope.selectAudience = function () {
-      User.fbLogin().then(
-        function (user) {
-          steroids.layers.push({
-            view: artistView,
-            navigationBar: false
-          });
-        },
-        function (error) {
-          alert(error);
-          console.error(error);
-        }
-      );
+      // User.fbLogin().then(
+      //   function (user) {
+      //     steroids.layers.push({
+      //       view: artistView,
+      //       navigationBar: false
+      //     });
+      //   },
+      //   function (error) {
+      //     alert(error);
+      //     console.error(error);
+      //   }
+      // );
     };
   });
 
@@ -207,7 +192,7 @@ var FB_APP_ID = 574303185975176;
   }, false);
 
   document.addEventListener('visibilitychange', function (event) {
-    if (!document.hidden) {
+    if (document.hidden) {
     }
   }, false);
 
