@@ -6240,43 +6240,35 @@ article.view > .content > *:not(footer) {
   animation: invalidshake .5s linear;
 }
 
-/* line 236, ../../app/scss/application.scss */
-.animate-switch.ng-animate {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-}
-
-/* line 241, ../../app/scss/application.scss */
-.animate-switch.ng-leave.ng-leave-active,
-.animate-switch.ng-enter {
-  top: -50px;
-}
-
-/* line 245, ../../app/scss/application.scss */
-.animate-switch.ng-leave,
-.animate-switch.ng-enter.ng-enter-active {
-  top: 0;
-}
-
 /* line 249, ../../app/scss/application.scss */
-.animate-show {
+.animate-mask {
   -webkit-transition: all 300ms;
   transition: all 300ms;
   opacity: 1;
 }
 
 /* line 255, ../../app/scss/application.scss */
-.animate-show.ng-hide-add,
-.animate-show.ng-hide-remove {
+.animate-mask.ng-hide-add,
+.animate-mask.ng-hide-remove {
   display: block !important;
 }
 
 /* line 258, ../../app/scss/application.scss */
-.animate-show.ng-hide {
+.animate-mask.ng-hide {
   opacity: 0;
 }
 
 /* line 267, ../../app/scss/application.scss */
+.animate-tip-amounts.ng-hide-add,
+.animate-tip-amounts.ng-hide-remove {
+  display: block !important;
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+  -webkit-animation: bounceIn 400ms;
+  animation: bounceIn 400ms;
+}
+
+/* line 284, ../../app/scss/application.scss */
 .animate-overlay.ng-hide-add,
 .animate-overlay.ng-hide-remove {
   display: block !important;
@@ -6286,20 +6278,20 @@ article.view > .content > *:not(footer) {
   animation: scaleIn 400ms;
 }
 
-/* line 276, ../../app/scss/application.scss */
+/* line 293, ../../app/scss/application.scss */
 .animate-overlay.ng-hide {
   -webkit-animation: scaleOut 400ms;
   animation: scaleOut 400ms;
 }
 
-/* line 284, ../../app/scss/application.scss */
+/* line 302, ../../app/scss/application.scss */
 .repeat-animation.ng-move,
 .repeat-animation.ng-enter,
 .repeat-animation.ng-leave {
   opacity: 0;
 }
 
-/* line 290, ../../app/scss/application.scss */
+/* line 308, ../../app/scss/application.scss */
 .repeat-animation.ng-enter-stagger,
 .repeat-animation.ng-leave-stagger,
 .repeat-animation.ng-move-stagger {
@@ -6311,7 +6303,7 @@ article.view > .content > *:not(footer) {
 
 /* ending enter and move styling
    (this is what the element will animate from */
-/* line 300, ../../app/scss/application.scss */
+/* line 318, ../../app/scss/application.scss */
 .repeat-animation.ng-enter {
   -webkit-animation: scaleIn 400ms;
   animation: scaleIn 400ms;

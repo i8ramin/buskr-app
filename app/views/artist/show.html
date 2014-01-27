@@ -33,7 +33,7 @@
 
       <div class="body">
         <div class="map" ng-click="openMap()">
-          <img width="100%" src="http://maps.googleapis.com/maps/api/staticmap?center=222+Broadway+St.,New+York,+NY+10012&zoom=16&size=640x400&sensor=false">
+          <img width="100%" src="http://maps.googleapis.com/maps/api/staticmap?center=222+Broadway+St.,New+York,+NY+10012&zoom=16&size=640x300&sensor=false">
         </div>
 
         <div class="address">
@@ -75,16 +75,30 @@
     </section>
   </div>
 
-  <footer>
+  <footer class="profile-footer">
     <div class="tip-performer" ng-click="tipBuskr()">
       <img src="/images/tip-performer.png" width="70.5">
       <div class="text">TIP PERFORMER</div>
     </div>
   </footer>
 
-  <div class="overlay-wrapper animate-show" overlay ng-show="showPaymentOverlay">
+  <div class="overlay-wrapper animate-mask" overlay ng-show="showOverlay">
     <div class="mask"></div>
-    <div class="overlay animate-overlay" ng-show="showPaymentOverlay">
+
+    <div class="tip-amount-overlay overlay" ng-show="showTipAmountOverlay">
+      <div class="tip-amounts animate-tip-amounts" ng-show="showTipAmountOverlay">
+        Hello!
+      </div>
+
+      <footer class="profile-footer">
+        <div class="tip-performer" ng-click="hideOverlay()">
+          <img src="/images/tip-performer.png" width="70.5">
+          <div class="text">TIP PERFORMER</div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="payment-overlay overlay animate-overlay" ng-show="showPaymentOverlay">
       <header>Payment</header>
       <div class="body">
         <p>We need some payment information</p>

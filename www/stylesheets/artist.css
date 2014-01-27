@@ -164,13 +164,13 @@
   overflow: hidden;
 }
 /* line 182, ../../app/scss/artist.scss */
-.artist-profile footer {
+.artist-profile .profile-footer {
   position: relative;
   height: 45px;
   background-color: #fbc16b;
 }
 /* line 187, ../../app/scss/artist.scss */
-.artist-profile footer .tip-performer {
+.artist-profile .profile-footer .tip-performer {
   position: absolute;
   left: 0;
   right: 0;
@@ -178,9 +178,49 @@
   text-align: center;
 }
 /* line 194, ../../app/scss/artist.scss */
-.artist-profile footer .tip-performer .text {
+.artist-profile .profile-footer .tip-performer .text {
   padding: .5rem 1rem 1rem;
   font-size: 12px;
   text-transform: uppercase;
   color: white;
+}
+/* line 203, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 210, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .profile-footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 216, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -125px;
+  height: 300px;
+  width: 250px;
+  padding: 1rem;
+  border-radius: 3px;
+  background-color: white;
+}
+/* line 227, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts::after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-top-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
 }

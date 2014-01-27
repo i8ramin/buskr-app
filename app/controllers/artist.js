@@ -62,6 +62,8 @@
             artistsArray.push(artist);
           });
 
+          console.log('[BUSKR] Loaded ' + artistsArray.length + ' artists.');
+
           $scope.artists = artistsArray;
         }
       );
@@ -114,11 +116,21 @@
     };
 
     $scope.tipBuskr = function () {
-      $scope.showPaymentOverlay = true;
+      $scope.showOverlay = true;
+      $scope.showTipAmountOverlay = true;
+      // $scope.showPaymentOverlay = true;
+    };
+
+    $scope.hideOverlay = function () {
+      $scope.showOverlay = false;
+      $scope.showTipAmountOverlay = false;
+      $scope.showPaymentOverlay = false;
     };
 
     $scope.addCard = function () {
+      $scope.showOverlay = false;
       $scope.showPaymentOverlay = false;
+
       steroids.layers.push(addCardView);
     };
   });

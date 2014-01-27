@@ -89,7 +89,7 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
     // var artists = artistsCache.get('artists');
 
     // if (artists) {
-    //   console.log('[Buskr] Artists cached...');
+    //   console.log('[Buskr] Loading cached Artists...');
 
     //   deferred.resolve(artists);
     //   artists = deferred.promise;
