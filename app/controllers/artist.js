@@ -4,6 +4,7 @@
 
   var gaPlugin;
   var artistApp = angular.module('artistApp', [
+    'google-maps',
     'ngAnimate',
     'UserModel',
     'ArtistModel',
@@ -133,6 +134,112 @@
 
       steroids.layers.push(addCardView);
     };
+  });
+
+  artistApp.controller('MapCtrl', function ($rootScope, $scope, $timeout, User, ArtistService) {
+    var position = JSON.parse(localStorage.getItem('position'));
+    var map, iconUrl, markers = [];
+    var bounds = new google.maps.LatLngBounds();
+
+    // Enable the new Google Maps visuals until it gets enabled by default.
+    // See http://googlegeodevelopers.blogspot.ca/2013/05/a-fresh-new-look-for-maps-api-for-all.html
+    google.maps.visualRefresh = true;
+
+    $scope.map = {
+      center: {
+        latitude: position.latitude,
+        longitude: position.longitude
+      },
+      zoom: 13,
+      draggable: true,
+      options: {
+        disableDefaultUI: true,
+        zoomControl: true,
+        streetViewControl: false,
+        panControl: false,
+        maxZoom: 20,
+        minZoom: 3
+      },
+      markerOptions: {
+        animation: google.maps.Animation.DROP
+      },
+      myMarker: {
+        latitude: position.latitude,
+        longitude: position.longitude,
+        icon: {
+          url: 'http://localhost/images/marker-me.png',
+          scaledSize: new google.maps.Size(49, 63)
+        },
+        options: {
+          animation: google.maps.Animation.DROP
+        }
+      }
+    };
+
+    $scope.map.markers = [];
+
+    ArtistService.all().then(
+      function (artists) {
+        angular.forEach(artists, function (artist, key) {
+          iconUrl = artist.live ? 'http://localhost/images/marker-live.png' :
+            'http://localhost/images/marker.png';
+
+          artist.id = key;
+
+          markers.push({
+            latitude: artist.location.lat,
+            longitude: artist.location.long,
+            artist: artist,
+            icon: {
+              url: iconUrl,
+              scaledSize: new google.maps.Size(49, 63)
+            },
+            options: {
+              // animation: google.maps.Animation.DROP
+            }
+          });
+
+          bounds.extend(new google.maps.LatLng(artist.location.lat, artist.location.long));
+        });
+
+        $scope.map.markers = markers;
+        $scope.map.bounds = {
+          northeast: {
+            latitude: bounds.getNorthEast().lat(),
+            longitude: bounds.getNorthEast().lng()
+          },
+          southwest: {
+            latitude: bounds.getSouthWest().lat(),
+            longitude: bounds.getSouthWest().lng()
+          }
+        };
+      }
+    );
+
+    $scope.showArtistInfo = function (marker) {
+      $scope.artist = null;
+
+      $timeout(function () {
+        $scope.artist = marker.artist;
+      }, 200);
+    };
+
+    $scope.showArtist = function (artist) {
+      var webView = new steroids.views.WebView({
+        location:'views/artist/show.html?id=' + artist.id
+      });
+
+      steroids.layers.push(webView);
+    };
+
+    window.addEventListener('message', function (event) {
+      if (event.data && event.data.action) {
+        switch(event.data.action) {
+          case '':
+            break;
+        }
+      }
+    });
   });
 
 })(window.Firebase);

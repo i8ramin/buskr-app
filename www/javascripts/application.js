@@ -43,7 +43,7 @@ buskrApp.run(function ($rootScope, $window, User) {
       navigationBar: false,
       animation: new steroids.Animation({
         transition: 'fade',
-        duration: 0.25
+        duration: 0.1
       })
     }, {
       onSuccess: function () {},
@@ -57,7 +57,7 @@ buskrApp.run(function ($rootScope, $window, User) {
       navigationBar: false,
       animation: new steroids.Animation({
         transition: 'fade',
-        duration: 0.25
+        duration: 0.1
       })
     }, {
       onSuccess: function () {},

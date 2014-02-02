@@ -7,7 +7,7 @@
     var navBar = {};
 
     navBar.init = function (callback) {
-      var mapView = new steroids.views.WebView({location:'modal/map.html'});
+      var mapView = new steroids.views.WebView({location:'views/artist/map.html'});
 
       var drawerButton = new steroids.buttons.NavigationBarButton();
       var mapButton = new steroids.buttons.NavigationBarButton();
@@ -22,15 +22,17 @@
       };
 
       mapButton.onTap = function () {
-        steroids.modal.show( {
-          view: mapView
-        }, {
-          onSuccess: function () {
-          },
-          onFailure: function (error) {
-            alert('Could not present the modal: ' + error.errorDescription);
-          }
-        });
+        steroids.layers.push(mapView);
+
+        // steroids.modal.show( {
+        //   view: mapView
+        // }, {
+        //   onSuccess: function () {
+        //   },
+        //   onFailure: function (error) {
+        //     alert('Could not present the modal: ' + error.errorDescription);
+        //   }
+        // });
       };
 
       steroids.view.navigationBar.setButtons({

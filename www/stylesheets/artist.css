@@ -1,10 +1,10 @@
-/* line 3, ../../app/scss/artist.scss */
+/* line 1, ../../app/scss/_artist-card.scss */
 .artist-card {
   position: relative;
   height: 175px;
   overflow: hidden;
 }
-/* line 8, ../../app/scss/artist.scss */
+/* line 6, ../../app/scss/_artist-card.scss */
 .artist-card::after {
   display: block;
   content: '';
@@ -16,7 +16,7 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
 }
-/* line 20, ../../app/scss/artist.scss */
+/* line 18, ../../app/scss/_artist-card.scss */
 .artist-card .artist-image {
   position: absolute;
   top: 0;
@@ -24,7 +24,7 @@
   right: 0;
   width: 100%;
 }
-/* line 28, ../../app/scss/artist.scss */
+/* line 26, ../../app/scss/_artist-card.scss */
 .artist-card .artist-name {
   position: absolute;
   z-index: 2;
@@ -39,7 +39,7 @@
   text-align: center;
   text-shadow: 1px 0 1px rgba(0, 0, 0, 0.5);
 }
-/* line 43, ../../app/scss/artist.scss */
+/* line 41, ../../app/scss/_artist-card.scss */
 .artist-card .live-location {
   position: absolute;
   z-index: 1;
@@ -51,7 +51,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
 }
-/* line 54, ../../app/scss/artist.scss */
+/* line 52, ../../app/scss/_artist-card.scss */
 .artist-card .live-location .btn-live {
   position: relative;
   float: left;
@@ -59,7 +59,7 @@
   background-color: #18c97c;
   box-shadow: 0 0 15px 4px rgba(24, 201, 124, 0.75);
 }
-/* line 61, ../../app/scss/artist.scss */
+/* line 59, ../../app/scss/_artist-card.scss */
 .artist-card .live-location .btn-live::before {
   position: absolute;
   left: 10px;
@@ -68,7 +68,7 @@
   color: #328059;
   font-size: 48px;
 }
-/* line 71, ../../app/scss/artist.scss */
+/* line 69, ../../app/scss/_artist-card.scss */
 .artist-card .live-location .loc {
   height: 20px;
   opacity: .85;
@@ -78,19 +78,19 @@
   float: right;
 }
 
-/* line 82, ../../app/scss/artist.scss */
+/* line 4, ../../app/scss/artist.scss */
 .buskr-list-artists {
   background-color: black;
   margin: 0;
 }
 
-/* line 96, ../../app/scss/artist.scss */
+/* line 18, ../../app/scss/artist.scss */
 .artist-profile .profile-sections {
   margin: 1rem;
   background-color: white;
   border-radius: 3px;
 }
-/* line 101, ../../app/scss/artist.scss */
+/* line 23, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section {
   display: -webkit-flex;
   display: flex;
@@ -99,29 +99,29 @@
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #d1cbc2;
 }
-/* line 111, ../../app/scss/artist.scss */
+/* line 33, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section:last-of-type {
   border-bottom: none;
 }
-/* line 115, ../../app/scss/artist.scss */
+/* line 37, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column {
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 119, ../../app/scss/artist.scss */
+/* line 41, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column .body {
   display: block;
 }
-/* line 124, ../../app/scss/artist.scss */
+/* line 46, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header {
   margin: 0 0 0 .5rem;
 }
-/* line 127, ../../app/scss/artist.scss */
+/* line 49, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header.centered {
   -webkit-align-self: center;
   align-self: center;
 }
-/* line 132, ../../app/scss/artist.scss */
+/* line 54, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header h3 {
   float: left;
   font-size: 12px;
@@ -129,13 +129,13 @@
   margin: 0;
   color: #f0b059;
 }
-/* line 140, ../../app/scss/artist.scss */
+/* line 62, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header .info {
   float: right;
   font-size: 12px;
   color: #b0b0af;
 }
-/* line 147, ../../app/scss/artist.scss */
+/* line 69, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -144,32 +144,32 @@
   -webkit-flex: 1 auto;
   flex: 1 auto;
 }
-/* line 159, ../../app/scss/artist.scss */
+/* line 81, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .address {
   color: #afafad;
 }
-/* line 163, ../../app/scss/artist.scss */
+/* line 85, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .map {
   margin: 1rem 0;
   border-radius: 3px;
 }
-/* line 169, ../../app/scss/artist.scss */
+/* line 91, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .events-section {
   text-align: right;
 }
-/* line 174, ../../app/scss/artist.scss */
+/* line 96, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .itunes-section .itunes-button {
   background-color: #85807a;
   border-radius: 3px;
   overflow: hidden;
 }
-/* line 182, ../../app/scss/artist.scss */
+/* line 104, ../../app/scss/artist.scss */
 .artist-profile .profile-footer {
   position: relative;
   height: 45px;
   background-color: #fbc16b;
 }
-/* line 187, ../../app/scss/artist.scss */
+/* line 109, ../../app/scss/artist.scss */
 .artist-profile .profile-footer .tip-performer {
   position: absolute;
   left: 0;
@@ -177,14 +177,14 @@
   bottom: 0;
   text-align: center;
 }
-/* line 194, ../../app/scss/artist.scss */
+/* line 116, ../../app/scss/artist.scss */
 .artist-profile .profile-footer .tip-performer .text {
   padding: .5rem 1rem 1rem;
   font-size: 12px;
   text-transform: uppercase;
   color: white;
 }
-/* line 203, ../../app/scss/artist.scss */
+/* line 125, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay {
   position: absolute;
   top: 0;
@@ -192,13 +192,13 @@
   left: 0;
   right: 0;
 }
-/* line 210, ../../app/scss/artist.scss */
+/* line 132, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .profile-footer {
   left: 0;
   right: 0;
   bottom: 0;
 }
-/* line 216, ../../app/scss/artist.scss */
+/* line 138, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .tip-amounts {
   position: absolute;
   bottom: 100px;
@@ -210,7 +210,7 @@
   border-radius: 3px;
   background-color: white;
 }
-/* line 227, ../../app/scss/artist.scss */
+/* line 149, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .tip-amounts::after {
   top: 100%;
   left: 50%;
@@ -223,4 +223,27 @@
   border-top-color: #fff;
   border-width: 10px;
   margin-left: -10px;
+}
+
+/* line 166, ../../app/scss/artist.scss */
+.artists-map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 174, ../../app/scss/artist.scss */
+.artists-map .angular-google-map,
+.artists-map .angular-google-map-container {
+  height: 100%;
+  width: 100%;
+}
+/* line 179, ../../app/scss/artist.scss */
+.artists-map .artist-card {
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

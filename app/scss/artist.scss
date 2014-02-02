@@ -1,83 +1,5 @@
 @import "variable-overrides";
-
-.artist-card {
-  position: relative;
-  height: 175px;
-  overflow: hidden;
-
-  &::after {
-    display: block;
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.7) 100%);
-    border-bottom: 1px solid rgba(0,0,0,.75);
-  }
-
-  .artist-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
-
-  .artist-name {
-    position: absolute;
-    z-index: 2;
-    bottom: 50px;
-    left: 1rem;
-    right: 1rem;
-    color: white;
-    font-size: 16pt;
-    font-family: 'avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 1px 0 1px rgba(0,0,0,.5);
-  }
-
-  .live-location {
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 1rem;
-    right: 1rem;
-    padding: 8px 0;
-    min-height: 40px;
-    border-top: 1px solid rgba(255,255,255,.5);
-    color: white;
-
-    .btn-live {
-      position: relative;
-      float: left;
-      width: 40%;
-      background-color: $brand-live;
-      box-shadow: 0 0 15px 4px rgba(24,201,124,.75);
-
-      &::before {
-        position: absolute;
-        left: 10px;
-        display: block;
-        content: '\b7';
-        color: #328059;
-        font-size: 48px;
-      }
-    }
-
-    .loc {
-      height: 20px;
-      opacity: .85;
-      padding-left: 20px;
-      background: transparent url(/icons/marker@2x.png) no-repeat;
-      background-size: 13px auto;
-      float: right;
-    }
-  }
-}
+@import "artist-card";
 
 .buskr-list-artists {
   background-color: black;
@@ -241,4 +163,24 @@
   }
 }
 
+.artists-map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
+  .angular-google-map,
+  .angular-google-map-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .artist-card {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
