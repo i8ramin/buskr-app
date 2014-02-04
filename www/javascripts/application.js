@@ -100,8 +100,6 @@ buskrApp.run(function ($rootScope, $window, User) {
     //     alert(error.errorDescription);
     //   }
     // });
-
-
   }
 
   document.addEventListener('visibilitychange', function (event) {

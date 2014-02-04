@@ -27,7 +27,8 @@
     "require",
     "module",
     "moment",
-    "Firebase"
+    "Firebase",
+    "Parse"
   ],
   "curly": true,
   "eqeqeq": true,

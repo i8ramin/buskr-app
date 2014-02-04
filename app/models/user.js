@@ -1,6 +1,6 @@
 // The contents of individual model .js files will be concatenated into dist/models.js
 
-(function(Firebase) {
+(function() {
 
 // Protects views where AngularJS is not loaded from errors
 if (typeof angular === 'undefined') {
@@ -12,20 +12,20 @@ var module = angular.module('UserModel', [
 ]);
 
 module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
-  var rootRef = new Firebase('https://buskrapp.firebaseio.com');
-  var profilesRef = rootRef.child('profiles');
+  // var rootRef = new Firebase('https://buskrapp.firebaseio.com');
+  // var profilesRef = rootRef.child('profiles');
 
-  var $auth = $firebaseAuth(rootRef);
+  // var $auth = $firebaseAuth(rootRef);
 
   return {
     load: function () {
-      var localUser = JSON.parse($window.localStorage.getItem('user'));
-      $rootScope.user = localUser;
+      // var localUser = JSON.parse($window.localStorage.getItem('user'));
+      $rootScope.user = Parse.User.current();
 
       return $rootScope.user;
     },
     save: function (user) {
-      $window.localStorage.setItem('user', JSON.stringify(user));
+      // $window.localStorage.setItem('user', JSON.stringify(user));
       $rootScope.user = user;
 
       $rootScope.$broadcast('user:saved', {
@@ -35,9 +35,34 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
     create: function (newUser) {
       var _this = this;
       var deferred = $q.defer();
-      var userToSave = {
-        name: 'Test User'
-      };
+
+      // var userToSave = {
+      //   name: 'Test User'
+      // };
+
+      // _this.save(userToSave);
+      // deferred.resolve(userToSave);
+
+      var parseUser = new Parse.User();
+
+      parseUser.set('username', newUser.email);
+      parseUser.set('password', newUser.password);
+      parseUser.set('email', newUser.email);
+
+      parseUser.set('name', newUser.name);
+      parseUser.set('zipcode', newUser.zipcode);
+      parseUser.set('dob', moment(newUser.dob).format('YYYY-MM-DD'));
+
+      parseUser.signUp(null, {
+        success: function (user) {
+          _this.save(user);
+          deferred.resolve(user);
+        },
+        error: function (user, error) {
+          alert('Error: ' + error.code + ' ' + error.message);
+          deferred.reject(error);
+        }
+      });
 
       // $auth.$createUser(newUser.email, newUser.password, function (error, user) {
       //   var userToSave = {};
@@ -77,9 +102,6 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
       //     });
       //   }
       // });
-
-      _this.save(userToSave);
-      deferred.resolve(userToSave);
 
       return deferred.promise;
     },
@@ -140,78 +162,98 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
 
       return deferred.promise;
     },
-    emailLogin: function (email, password) {
+    emailLogin: function (username, password) {
       var _this = this;
       var deferred = $q.defer();
       var userToSave = {
         name: 'Test User'
       };
 
-      email = email || '';
+      username = username || '';
       password = password || '';
 
-      // if (!email.length || !password.length) {
-      //   deferred.reject(new Error('Please enter email and password'));
-      // } else {
-      //   $auth.$login('password', {email:email, password:password}).then(
-      //     function (userDetails) {
-      //       profilesRef.once('value', function (profiles) {
-      //         var profile;
+      if (!username.length || !password.length) {
+        deferred.reject(new Error('Please enter email and password'));
+      } else {
+        Parse.User.logIn(username, password, {
+          success: function(user) {
+            _this.save(user);
+            deferred.resolve(user);
 
-      //         profiles.forEach(function (profileRef) {
-      //           var profileDetails = profileRef.val();
+            $rootScope.$broadcast('user:login', {
+              user: user
+            });
 
-      //           if (profileDetails.email === email) {
-      //             profile = profileDetails;
-      //           }
-      //         });
+            window.postMessage({
+              action: 'userLogin',
+              user: user
+            }, '*');
+          },
+          error: function(user, error) {
+            deferred.reject(error);
+          }
+        });
 
-      //         if (profile) {
-      //           var user = {
-      //             uid: userDetails.uid,
-      //             email: userDetails.email,
-      //             provider: profile.provider,
-      //             name: profile.name,
-      //             dob: profile.dob
-      //           };
+        // $auth.$login('password', {email:username, password:password}).then(
+        //   function (userDetails) {
+        //     profilesRef.once('value', function (profiles) {
+        //       var profile;
 
-      //           _this.save(user);
-      //           deferred.resolve(user);
+        //       profiles.forEach(function (profileRef) {
+        //         var profileDetails = profileRef.val();
 
-      //           $rootScope.$broadcast('user:login', {
-      //             user: user
-      //           });
+        //         if (profileDetails.email === username) {
+        //           profile = profileDetails;
+        //         }
+        //       });
 
-      //           window.postMessage({
-      //             action: 'userLogin',
-      //             user: user
-      //           }, '*');
-      //         } else {
-      //           // profile not found
-      //         }
-      //       });
-      //     },
-      //     function (error) {
-      //       deferred.reject(error);
-      //     }
-      //   );
-      // }
+        //       if (profile) {
+        //         var user = {
+        //           uid: userDetails.uid,
+        //           email: userDetails.email,
+        //           provider: profile.provider,
+        //           name: profile.name,
+        //           dob: profile.dob
+        //         };
 
-      window.postMessage({
-        action: 'userLogin',
-        user: userToSave
-      }, '*');
+        //         _this.save(user);
+        //         deferred.resolve(user);
 
-      _this.save(userToSave);
-      deferred.resolve(userToSave);
+        //         $rootScope.$broadcast('user:login', {
+        //           user: user
+        //         });
+
+        //         window.postMessage({
+        //           action: 'userLogin',
+        //           user: user
+        //         }, '*');
+        //       } else {
+        //         // profile not found
+        //       }
+        //     });
+        //   },
+        //   function (error) {
+        //     deferred.reject(error);
+        //   }
+        // );
+      }
+
+      // window.postMessage({
+      //   action: 'userLogin',
+      //   user: userToSave
+      // }, '*');
+
+      // _this.save(userToSave);
+      // deferred.resolve(userToSave);
 
       return deferred.promise;
     },
     logout: function () {
-      $auth.$logout();
-
+      Parse.User.logOut();
       delete $rootScope.user;
-      $window.localStorage.removeItem('user');
+
+      // $auth.$logout();
+      // $window.localStorage.removeItem('user');
 
       $rootScope.$broadcast('user:logout', {
       });
@@ -223,4 +265,4 @@ module.factory('User', function ($rootScope, $window, $q, $firebaseAuth) {
   };
 });
 
-})(window.Firebase);
+})();

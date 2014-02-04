@@ -18,10 +18,7 @@ var FB_APP_ID = 574303185975176;
   var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
 
   loginApp.run(function () {
-    FB.init({
-      appId: 574303185975176,
-      nativeInterface: CDV.FB
-    });
+
   });
 
   // Index: http://localhost/views/login/index.html

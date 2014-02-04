@@ -2,11 +2,6 @@
 
 (function() {
 
-// Protects views where AngularJS is not loaded from errors
-if (typeof angular === 'undefined') {
-	return;
-}
-
 var module = angular.module('ArtistModel', [
   'jmdobry.angular-cache'
 ]);
@@ -14,39 +9,10 @@ var module = angular.module('ArtistModel', [
 
 module.factory('ArtistService', function ArtistService($q, $firebase, $angularCacheFactory) {
 
-  var reloadArtists = function () {
-    var deferred = $q.defer();
-    var artists = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists'));
+  Parse.initialize('FDL0TbPcLmxhov0YZKROC7eQ9xhiRHO46TRjdaLz', 'd5ePetdwvtVDTE1Gf4lkEexmwpis23T9yYgm1v86');
 
-    console.log('[Buskr] Reloading artists cache...');
-
-    artists.$on('loaded', function (a) {
-      console.log('[Buskr] ' + artists.$getIndex().length + ' artists cached.');
-      // console.log(a);
-
-      artistsCache.put('artists', a);
-      deferred.resolve(a);
-    });
-
-    return deferred.promise;
-  };
-
-  var reloadArtist = function (id) {
-    var deferred = $q.defer();
-    var artist = $firebase(new Firebase('https://buskrapp.firebaseio.com/artists/' + id));
-
-    console.log('[Buskr] Reloading artist cache...', id);
-
-    artist.$on('loaded', function (a) {
-      console.log('[Buskr] Artist cached.', id);
-      // console.log(a);
-
-      artistsCache.put(id, a);
-      deferred.resolve(a);
-    });
-
-    return deferred.promise;
-  };
+  var Artist = Parse.Object.extend('Artist');
+  var query = new Parse.Query(Artist);
 
   var artistsCache = $angularCacheFactory('artistsCache', {
     // This cache can hold 1000 items
@@ -84,23 +50,58 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
     }
   });
 
+  var reloadArtists = function () {
+    var deferred = $q.defer();
+    var artistsAsJSON;
+
+    query.find({
+      success: function (artists) {
+        artistsAsJSON = artists.map(function (a) {return a.toJSON();});
+
+        artistsCache.put('artists', artistsAsJSON);
+        deferred.resolve(artistsAsJSON);
+      },
+      error: function(error) {
+        deferred.reject(error);
+      }
+    });
+
+    return deferred.promise;
+  };
+
+  var reloadArtist = function (id) {
+    var deferred = $q.defer();
+
+    query.get(id, {
+      success: function (artist) {
+        artistsCache.put('artists/' + id, artist.toJSON());
+        deferred.resolve(artist.toJSON());
+      },
+      error: function(error) {
+        deferred.reject(error);
+      }
+    });
+
+    return deferred.promise;
+  };
+
   var loadAll = function () {
-    // var deferred = $q.defer();
-    // var artists = artistsCache.get('artists');
+    var deferred = $q.defer();
+    var artists = artistsCache.get('artists');
 
-    // if (artists) {
-    //   console.log('[Buskr] Loading cached Artists...');
+    if (artists) {
+      console.log('[Buskr] Loading cached Artists...');
 
-    //   deferred.resolve(artists);
-    //   artists = deferred.promise;
-    // } else {
-    //   console.log('[Buskr] Artists not cached. Warming cache...');
-    //   artists = reloadArtists();
-    // }
+      deferred.resolve(artists);
+      artists = deferred.promise;
+    } else {
+      console.log('[Buskr] Artists not cached. Warming cache...');
+      artists = reloadArtists();
+    }
 
-    // return artists;
+    return artists;
 
-    return reloadArtists();
+    // return reloadArtists();
   };
 
   var loadOne = function (id) {

@@ -14,8 +14,6 @@
     'buskrApp.services'
   ]);
 
-  var artistsArray = [];
-
   document.addEventListener('deviceready', function () {
     gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(
@@ -58,14 +56,9 @@
     $scope.loadArtists = function () {
       ArtistService.all().then(
         function (artists) {
-          angular.forEach(artists, function (artist, key) {
-            artist.id = key;
-            artistsArray.push(artist);
-          });
+          console.log('[BUSKR] Loaded ' + artists.length + ' artists.');
 
-          console.log('[BUSKR] Loaded ' + artistsArray.length + ' artists.');
-
-          $scope.artists = artistsArray;
+          $scope.artists = artists;
         }
       );
     };
@@ -91,7 +84,6 @@
     ArtistService.get(id).then(
       function (artist) {
         $scope.artist = artist;
-        // steroids.view.navigationBar.show(artist.name);
       }
     );
 
@@ -138,8 +130,20 @@
 
   artistApp.controller('MapCtrl', function ($rootScope, $scope, $timeout, User, ArtistService) {
     var position = JSON.parse(localStorage.getItem('position'));
-    var map, iconUrl, markers = [];
+    var map, iconUrl, myMarker, markers = [];
     var bounds = new google.maps.LatLngBounds();
+
+    myMarker = {
+      latitude: position.latitude,
+      longitude: position.longitude,
+      icon: {
+        url: 'http://localhost/images/marker-me.png',
+        scaledSize: new google.maps.Size(49, 63)
+      },
+      options: {
+        animation: google.maps.Animation.DROP
+      }
+    };
 
     // Enable the new Google Maps visuals until it gets enabled by default.
     // See http://googlegeodevelopers.blogspot.ca/2013/05/a-fresh-new-look-for-maps-api-for-all.html
@@ -163,28 +167,18 @@
       markerOptions: {
         animation: google.maps.Animation.DROP
       },
-      myMarker: {
-        latitude: position.latitude,
-        longitude: position.longitude,
-        icon: {
-          url: 'http://localhost/images/marker-me.png',
-          scaledSize: new google.maps.Size(49, 63)
-        },
-        options: {
-          animation: google.maps.Animation.DROP
-        }
-      }
+      myMarker: myMarker
     };
+
+    bounds.extend(new google.maps.LatLng(position.latitude, position.longitude));
 
     $scope.map.markers = [];
 
     ArtistService.all().then(
       function (artists) {
-        angular.forEach(artists, function (artist, key) {
+        angular.forEach(artists, function (artist) {
           iconUrl = artist.live ? 'http://localhost/images/marker-live.png' :
             'http://localhost/images/marker.png';
-
-          artist.id = key;
 
           markers.push({
             latitude: artist.location.lat,
@@ -226,7 +220,7 @@
 
     $scope.showArtist = function (artist) {
       var webView = new steroids.views.WebView({
-        location:'views/artist/show.html?id=' + artist.id
+        location:'views/artist/show.html?id=' + artist.objectId
       });
 
       steroids.layers.push(webView);

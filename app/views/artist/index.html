@@ -3,7 +3,7 @@
   <ul class="buskr-list-artists list-unstyled">
     <li
       class="repeat-animation"
-      ng-click="open(artist.id)"
+      ng-click="open(artist.objectId)"
       ng-repeat="artist in artists | orderBy:['-live', 'distance']">
 
       <div class="artist-card">
