@@ -23,8 +23,6 @@
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
-    steroids.drawers.enableGesture(drawerView);
-
     NavbarService.navBar.init(function () {
     });
 
@@ -117,8 +115,6 @@
     var map, iconUrl, myMarker, markers = [];
     var bounds = new google.maps.LatLngBounds();
 
-    steroids.drawers.disableGesture();
-
     myMarker = {
       latitude: position.latitude,
       longitude: position.longitude,
@@ -141,9 +137,9 @@
       },
       zoom: 13,
       options: {
-        disableDefaultUI: true,
-        zoomControl: false,
-        streetViewControl: false
+        // disableDefaultUI: true,
+        // zoomControl: true,
+        // streetViewControl: false
       },
       events: {
         dragend: function () {
@@ -248,21 +244,24 @@
   });
 
   document.addEventListener('visibilitychange', function (event) {
-    if (!document.hidden && localStorage.getItem('backToExplore')) {
-      // really hacky way to go back multiple
-      // steps in the layer stack. hopefully
-      // layers.pop() will take a param soon
-      localStorage.removeItem('backToExplore');
+    if (document.hidden) {
+    } else {
+      if (localStorage.getItem('backToExplore')) {
+        // really hacky way to go back multiple
+        // steps in the layer stack. hopefully
+        // layers.pop() will take a param soon
+        localStorage.removeItem('backToExplore');
 
-      setTimeout(function () {
-        steroids.layers.pop({}, {
-          onSuccess: function () {},
-          onFailure: function (error) {
-            alert(error.errorDescription);
-            console.error(error.errorDescription);
-          }
-        });
-      }, 500);
+        setTimeout(function () {
+          steroids.layers.pop({}, {
+            onSuccess: function () {},
+            onFailure: function (error) {
+              alert(error.errorDescription);
+              console.error(error.errorDescription);
+            }
+          });
+        }, 500);
+      }
     }
   }, false);
 
