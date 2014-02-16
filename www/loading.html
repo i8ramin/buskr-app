@@ -16,7 +16,16 @@ Currently, loading.html is supported by iOS only.
   <style>
   html, body {
     height: 100%;
-    background-color: #d2cbc3;
+    background-color: #fbc26b;
+  }
+
+  @-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
   }
 
   .centered {
@@ -28,13 +37,20 @@ Currently, loading.html is supported by iOS only.
   }
 
   #spinner {
+    width: 36px;
+
     opacity: 0;
 
     -webkit-transition: all 200ms;
     transition: all 200ms;
 
-    -webkit-transition-delay: 750ms;
-    transition-delay: 750ms;
+    -webkit-transition-delay: 200ms;
+    transition-delay: 200ms;
+
+    -webkit-animation-name:            rotate;
+    -webkit-animation-duration:        1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
   }
 
   body.visible #spinner {
@@ -46,24 +62,11 @@ Currently, loading.html is supported by iOS only.
 
 <body>
   <div class='centered'>
-    <div id="spinner"></div>
+    <img id="spinner" src="/images/spinner2x.png">
   </div>
 
-  <script src='/components/spinjs/dist/spin.js'></script>
+  <script src='/components/spinjs/spin.js'></script>
   <script type='text/javascript'>
-    var target = document.getElementById('spinner');
-    var spinner = new Spinner({
-      lines: 11,
-      length: 8,
-      width: 4,
-      radius: 11,
-      speed: 1.2,
-      color: '#fff',
-      hwaccel: true
-    });
-
-    spinner.spin(target);
-
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) {
         document.body.classList.remove('visible');

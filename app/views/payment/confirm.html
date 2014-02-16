@@ -1,0 +1,47 @@
+<article class="view confirm-view" ng-class="{'confirmed':confirmed}" ng-controller="ConfirmCtrl">
+  <div class="content content-padded">
+    <div class="body">
+      <header ng-if="!confirmed">
+        Please confirm donation<br>
+        <strong>${{amount|number}}</strong> to
+        <strong>{{artist.name}}</strong>
+      </header>
+
+      <header ng-if="confirmed">
+        Thank you!<br>
+        <strong>${{amount|number}}</strong> to
+        <strong>{{artist.name}}</strong> confirmed!
+      </header>
+
+      <div class="amount-area" ng-if="!confirmed">
+        <div class="amount">
+          <span>${{amount|number}}</span>
+        </div>
+        <div class="divider"></div>
+        <div class="artist">
+          <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
+        </div>
+      </div>
+
+      <div class="amount-area confirmed animate-tip-amounts" ng-if="confirmed">
+        <div class="amount">
+          <span>${{amount|number}}</span>
+        </div>
+        <div class="divider"></div>
+        <div class="artist">
+          <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="footer-bottom">
+      <button ng-if="confirmed" class="btn btn-primary btn-block" ng-click="backToExplore()">Back to Explore</button>
+
+      <div ng-if="!confirmed">
+        <button class="btn btn-primary btn-block" ng-click="confirm()">Confirm</button>
+        <button class="btn btn-default btn-block" ng-click="cancel()">Cancel</button>
+      </div>
+    </footer>
+  </div>
+</article>

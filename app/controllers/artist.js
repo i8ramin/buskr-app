@@ -1,5 +1,5 @@
 
-(function (Firebase) {
+(function () {
   'use strict';
 
   var gaPlugin;
@@ -8,31 +8,30 @@
     'ngAnimate',
     'UserModel',
     'ArtistModel',
-    'firebase',
     'buskrApp.filters',
     'buskrApp.directives',
     'buskrApp.services'
   ]);
 
+  var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.html'});
+
   artistApp.run(function () {
     steroids.view.setBackgroundColor('#d2cbc3');
-    // steroids.view.setBackgroundColor('#fbc26b');
   });
 
   // Index: http://localhost/views/artist/index.html
   artistApp.controller('IndexCtrl', function ($scope, ArtistService, NavbarService) {
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
+    steroids.drawers.enableGesture(drawerView);
+
     NavbarService.navBar.init(function () {
-    //   // steroids.view.navigationBar.show();
-    //   // steroids.view.removeLoading();
     });
 
     $scope.loadArtists = function () {
       ArtistService.all().then(
         function (artists) {
           console.log('[BUSKR] Loaded ' + artists.length + ' artists.');
-
           $scope.artists = artists;
         }
       ).finally(function () {
@@ -56,7 +55,7 @@
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/show');
 
     // remove navigationBar buttons
-    steroids.view.navigationBar.setButtons({});
+    // steroids.view.navigationBar.setButtons({});
 
     ArtistService.get(id).then(
       function (artist) {
@@ -91,10 +90,11 @@
       // $scope.showPaymentOverlay = true;
     };
 
-    $scope.hideOverlay = function () {
-      $scope.showOverlay = false;
-      $scope.showTipAmountOverlay = false;
-      $scope.showPaymentOverlay = false;
+    $scope.tip = function (artist, amount) {
+      var webView = new steroids.views.WebView({location:'views/payment/confirm.html?id=' + artist.objectId + '&amount=' + amount});
+
+      steroids.layers.push(webView);
+      $scope.hideOverlay();
     };
 
     $scope.addCard = function () {
@@ -102,6 +102,13 @@
       $scope.showPaymentOverlay = false;
 
       steroids.layers.push(addCardView);
+      $scope.hideOverlay();
+    };
+
+    $scope.hideOverlay = function () {
+      $scope.showOverlay = false;
+      $scope.showTipAmountOverlay = false;
+      $scope.showPaymentOverlay = false;
     };
   });
 
@@ -110,13 +117,7 @@
     var map, iconUrl, myMarker, markers = [];
     var bounds = new google.maps.LatLngBounds();
 
-    // var bingOptions = {
-    //     credentials: 'AqTGBsziZHIJYYxgivLBf0hVdrAk9mWO5cQcb8Yux8sW5M8c8opEC2lZqKR1ZZXf',
-    //     mapTypeId: Microsoft.Maps.MapTypeId.road,
-    //     center: new Microsoft.Maps.Location(43.069452, -89.411373),
-    //     zoom: 11
-    // };
-    // var map = new Microsoft.Maps.Map(document.getElementById('map'), bingOptions);
+    steroids.drawers.disableGesture();
 
     myMarker = {
       latitude: position.latitude,
@@ -126,7 +127,6 @@
         scaledSize: new google.maps.Size(49, 63)
       },
       options: {
-        // animation: google.maps.Animation.DROP
       }
     };
 
@@ -175,6 +175,11 @@
               title: artist.name,
               animation: google.maps.Animation.DROP,
               draggable: false
+            },
+            events: {
+              click: function (marker) {
+                marker.getMap().panTo(marker.position);
+              }
             }
           });
 
@@ -208,6 +213,8 @@
         location:'views/artist/show.html?id=' + artist.objectId
       });
 
+      $scope.artist = null;
+
       steroids.layers.push(webView);
     };
   });
@@ -240,9 +247,23 @@
     angular.bootstrap(document, ['artistApp']);
   });
 
-  // document.addEventListener('visibilitychange', function (event) {
-  //   if (!document.hidden) {
-  //   }
-  // }, false);
+  document.addEventListener('visibilitychange', function (event) {
+    if (!document.hidden && localStorage.getItem('backToExplore')) {
+      // really hacky way to go back multiple
+      // steps in the layer stack. hopefully
+      // layers.pop() will take a param soon
+      localStorage.removeItem('backToExplore');
 
-})(window.Firebase);
+      setTimeout(function () {
+        steroids.layers.pop({}, {
+          onSuccess: function () {},
+          onFailure: function (error) {
+            alert(error.errorDescription);
+            console.error(error.errorDescription);
+          }
+        });
+      }, 500);
+    }
+  }, false);
+
+})();

@@ -1,6 +1,6 @@
 var FB_APP_ID = 574303185975176;
 
-(function (Firebase) {
+(function () {
 
   var loginApp = angular.module('loginApp', [
     'ngAnimate',
@@ -202,4 +202,4 @@ var FB_APP_ID = 574303185975176;
   document.addEventListener('visibilitychange', function (event) {
   }, false);
 
-})(window.Firebase);
+})();

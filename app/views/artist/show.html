@@ -87,7 +87,27 @@
 
     <div class="tip-amount-overlay overlay" ng-show="showTipAmountOverlay">
       <div class="tip-amounts animate-tip-amounts" ng-show="showTipAmountOverlay">
-        Hello!
+        <ul class="list-unstyled">
+          <li ng-click="tip(artist, 200)">
+            <div class="amount">$2</div>
+            <small class="desc">Appreciate the entertainment</small>
+          </li>
+          <li ng-click="tip(artist, 300)">
+            <div class="amount">$3</div>
+            <small class="desc">Love this!</small>
+          </li>
+          <li ng-click="tip(artist, 500)">
+            <div class="amount">$5</div>
+            <small class="desc">I want to buy them a drink!</small>
+          </li>
+          <li ng-click="tip(artist, 1000)">
+            <div class="amount">$10</div>
+            <small class="desc">I support the arts!</small>
+          </li>
+          <li ng-click="custom(artist)">
+            <div class="custom-amt">Custom Amount</div>
+          </li>
+        </ul>
       </div>
 
       <footer class="profile-footer">

@@ -146,9 +146,7 @@ html, body, #map-canvas {
       bottom: 100px;
       left: 50%;
       margin-left: -125px;
-      height: 300px;
       width: 250px;
-      padding: 1rem;
       border-radius: $border-radius-base;
       background-color: white;
 
@@ -164,6 +162,40 @@ html, body, #map-canvas {
         border-top-color: #fff;
         border-width: 10px;
         margin-left: -10px;
+      }
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      li {
+        padding: 1rem;
+        border-bottom: 1px solid $gray-lightest;
+        color: $gray-dark;
+        text-align: center;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+
+        .amount {
+          line-height: 1;
+          font-size: 14pt;
+        }
+
+        .desc {
+          color: $gray;
+        }
+
+        .custom-amt {
+          margin: -0.5rem;
+          padding: .5rem;
+          color: $gray;
+          font-size: 10pt;
+          border: 1px solid #e0dfdc;
+          border-radius: $border-radius-base;
+          background-color: $gray-lightest;
+        }
       }
     }
   }

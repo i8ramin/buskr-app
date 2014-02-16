@@ -12,13 +12,6 @@ var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.ht
 var loginView = new steroids.views.WebView({id: 'loginView', location:'views/login/index.html'});
 var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
 
-// artistView.preload({id: 'artistView'}, {
-//   onSuccess: function () {},
-//   onFailure: function (error) {
-//     alert(error.errorDescription);
-//   }
-// });
-
 loginView.preload({id: 'loginView'}, {
   onSuccess: function () {},
   onFailure: function (error) {
@@ -29,7 +22,7 @@ loginView.preload({id: 'loginView'}, {
 drawerView.preload({id: 'drawerView'}, {
   onSuccess: function () {
     drawerView.visible = false;
-    // steroids.drawers.enableGesture(drawerView);
+    steroids.drawers.enableGesture(drawerView);
   },
   onFailure: function (error) {
     alert('[drawerView.preload] ' + error.errorDescription);
@@ -80,40 +73,6 @@ buskrApp.run(function ($rootScope, $window, User) {
         console.error(error.errorDescription);
       }
     });
-
-    // loginView.preload({}, {
-    //   onSuccess: function () {
-    //     steroids.layers.push({
-    //       view: loginView,
-    //       navigationBar: false,
-    //       animation: new steroids.Animation({
-    //         transition: 'fade',
-    //         duration: 0.5
-    //       })
-    //     }, {
-    //       onSuccess: function () {},
-    //       onFailure: function (error) {
-    //         alert(error.errorDescription);
-    //       }
-    //     });
-
-    //     // steroids.layers.replace({
-    //     //   view: loginView
-    //     // }, {
-    //     //   onSuccess: function () {
-
-    //     //   },
-    //     //   onFailure: function (error) {
-    //     //     console.error(error.errorDescription);
-    //     //     alert(error.errorDescription);
-    //     //   }
-    //     // });
-    //   },
-    //   onFailure: function (error) {
-    //     console.error(error.errorDescription);
-    //     alert(error.errorDescription);
-    //   }
-    // });
   }
 
   // document.addEventListener('visibilitychange', function (event) {
@@ -125,6 +84,16 @@ buskrApp.run(function ($rootScope, $window, User) {
   window.addEventListener('message', function (event) {
     if (event.data && event.data.action) {
       switch(event.data.action) {
+        case 'backToBrowse':
+          steroids.layers.pop({}, {
+            onSuccess: function () {
+              steroids.layers.pop();
+            },
+            onFailure: function (error) {
+              alert(error.errorDescription);
+            }
+          });
+          break;
         case 'toggleDrawer':
           if (drawerView.visible) {
             steroids.drawers.hideAll();
@@ -133,9 +102,6 @@ buskrApp.run(function ($rootScope, $window, User) {
               view: drawerView
             }, {
               onSuccess: function () {
-                // if (callback) {
-                //   callback.apply(this, arguments);
-                // }
               },
               onFailure: function (error) {
                 alert('Could not show the drawer: ' + error.errorDescription);

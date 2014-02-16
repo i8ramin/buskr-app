@@ -1,3 +1,77 @@
+@import 'bootstrap-overrides';
+
 html, body {
   height: 100%;
+}
+
+.confirm-view {
+  .content {
+    background: transparent url(/images/confirm-bg.png) no-repeat bottom center;
+    background-size: 100%;
+  }
+
+  .body {
+    header {
+      border-radius: $border-radius-base $border-radius-base 0 0;
+      padding: 2rem 1rem;
+      margin: -20px -15px 1rem;
+      text-align: center;
+      background-color: $gray-lightest;
+      color: $gray-dark;
+    }
+  }
+
+  .amount-area {
+    position: relative;
+    width: 200px;
+    margin: 50px auto;
+
+    .amount {
+      float: left;
+      height: 80px;
+      line-height: 80px;
+      width: 80px;
+      text-align: center;
+      background: transparent url(/images/confirm-amt-bg.png) no-repeat;
+      background-size: 80px 80px;
+
+      span {
+        display: inline-block;
+        font-size: 12pt;
+        color: $brand-live;
+      }
+    }
+
+    .divider {
+      float: left;
+      height: 80px;
+      width: 40px;
+      background: transparent url(/images/confirm-arrow.png) no-repeat 50%;
+      background-size: 23px 80px;
+    }
+
+    .artist {
+      float: left;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      border-radius: 100%;
+      background-color: $gray-lightest;
+
+      img {
+        display: block;
+        height: 100%;
+      }
+    }
+
+    &.confirmed {
+      .amount {
+        background-image: url(/images/confirm-thanks-bg.png);
+      }
+
+      .divider {
+        background-image: url(/images/confirm-check.png);
+      }
+    }
+  }
 }

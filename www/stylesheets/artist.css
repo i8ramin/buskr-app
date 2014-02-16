@@ -211,13 +211,11 @@ html, body, #map-canvas {
   bottom: 100px;
   left: 50%;
   margin-left: -125px;
-  height: 300px;
   width: 250px;
-  padding: 1rem;
   border-radius: 3px;
   background-color: white;
 }
-/* line 155, ../../app/scss/artist.scss */
+/* line 153, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .tip-amounts::after {
   top: 100%;
   left: 50%;
@@ -231,8 +229,42 @@ html, body, #map-canvas {
   border-width: 10px;
   margin-left: -10px;
 }
+/* line 167, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts ul {
+  margin-bottom: 0;
+}
+/* line 171, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts li {
+  padding: 1rem;
+  border-bottom: 1px solid #f1efeb;
+  color: #7c7c7a;
+  text-align: center;
+}
+/* line 177, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts li:last-of-type {
+  border-bottom: none;
+}
+/* line 181, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts li .amount {
+  line-height: 1;
+  font-size: 14pt;
+}
+/* line 186, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts li .desc {
+  color: #afafad;
+}
+/* line 190, ../../app/scss/artist.scss */
+.artist-profile .tip-amount-overlay .tip-amounts li .custom-amt {
+  margin: -0.5rem;
+  padding: .5rem;
+  color: #afafad;
+  font-size: 10pt;
+  border: 1px solid #e0dfdc;
+  border-radius: 3px;
+  background-color: #f1efeb;
+}
 
-/* line 172, ../../app/scss/artist.scss */
+/* line 204, ../../app/scss/artist.scss */
 .artists-map {
   position: absolute;
   top: 0;
@@ -240,13 +272,13 @@ html, body, #map-canvas {
   bottom: 0;
   left: 0;
 }
-/* line 180, ../../app/scss/artist.scss */
+/* line 212, ../../app/scss/artist.scss */
 .artists-map .angular-google-map,
 .artists-map .angular-google-map-container {
   height: 100%;
   width: 100%;
 }
-/* line 185, ../../app/scss/artist.scss */
+/* line 217, ../../app/scss/artist.scss */
 .artists-map .artist-card {
   position: absolute;
   z-index: 99;
