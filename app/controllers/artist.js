@@ -14,34 +14,9 @@
     'buskrApp.services'
   ]);
 
-  document.addEventListener('deviceready', function () {
-    gaPlugin = window.plugins.gaPlugin;
-    gaPlugin.init(
-      function () {
-        // success
-      },
-      function () {
-        // error
-      },
-      'UA-46274077-1',
-      10
-    );
-
-    // ImgCache.options.debug = true;
-    ImgCache.options.usePersistentCache = true;
-    ImgCache.options.useDataURI = true;
-    ImgCache.init(
-      function () {
-        angular.bootstrap(document, ['artistApp']);
-      },
-      function () {
-        angular.bootstrap(document, ['artistApp']);
-      }
-    );
-  });
-
   artistApp.run(function () {
-    // steroids.view.setBackgroundColor('#d2cbc3');
+    steroids.view.setBackgroundColor('#d2cbc3');
+    // steroids.view.setBackgroundColor('#fbc26b');
   });
 
   // Index: http://localhost/views/artist/index.html
@@ -49,8 +24,8 @@
     gaPlugin.trackPage($.noop, $.noop, 'views/artist/index');
 
     NavbarService.navBar.init(function () {
-      steroids.view.navigationBar.show('');
-      steroids.view.removeLoading();
+    //   // steroids.view.navigationBar.show();
+    //   // steroids.view.removeLoading();
     });
 
     $scope.loadArtists = function () {
@@ -60,7 +35,9 @@
 
           $scope.artists = artists;
         }
-      );
+      ).finally(function () {
+        steroids.splashscreen.hide();
+      });
     };
 
     $scope.loadArtists();
@@ -133,6 +110,14 @@
     var map, iconUrl, myMarker, markers = [];
     var bounds = new google.maps.LatLngBounds();
 
+    // var bingOptions = {
+    //     credentials: 'AqTGBsziZHIJYYxgivLBf0hVdrAk9mWO5cQcb8Yux8sW5M8c8opEC2lZqKR1ZZXf',
+    //     mapTypeId: Microsoft.Maps.MapTypeId.road,
+    //     center: new Microsoft.Maps.Location(43.069452, -89.411373),
+    //     zoom: 11
+    // };
+    // var map = new Microsoft.Maps.Map(document.getElementById('map'), bingOptions);
+
     myMarker = {
       latitude: position.latitude,
       longitude: position.longitude,
@@ -141,7 +126,7 @@
         scaledSize: new google.maps.Size(49, 63)
       },
       options: {
-        animation: google.maps.Animation.DROP
+        // animation: google.maps.Animation.DROP
       }
     };
 
@@ -155,17 +140,15 @@
         longitude: position.longitude
       },
       zoom: 13,
-      draggable: true,
       options: {
         disableDefaultUI: true,
-        zoomControl: true,
-        streetViewControl: false,
-        panControl: false,
-        maxZoom: 20,
-        minZoom: 3
+        zoomControl: false,
+        streetViewControl: false
       },
-      markerOptions: {
-        animation: google.maps.Animation.DROP
+      events: {
+        dragend: function () {
+          console.log('drag...');
+        }
       },
       myMarker: myMarker
     };
@@ -189,7 +172,9 @@
               scaledSize: new google.maps.Size(49, 63)
             },
             options: {
-              // animation: google.maps.Animation.DROP
+              title: artist.name,
+              animation: google.maps.Animation.DROP,
+              draggable: false
             }
           });
 
@@ -225,15 +210,39 @@
 
       steroids.layers.push(webView);
     };
-
-    window.addEventListener('message', function (event) {
-      if (event.data && event.data.action) {
-        switch(event.data.action) {
-          case '':
-            break;
-        }
-      }
-    });
   });
+
+  document.addEventListener('deviceready', function () {
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(
+      function () {
+        // success
+      },
+      function () {
+        // error
+      },
+      'UA-46274077-1',
+      10
+    );
+
+    // ImgCache.options.debug = true;
+    ImgCache.options.usePersistentCache = true;
+    ImgCache.options.useDataURI = true;
+    ImgCache.init(
+      function () {
+        // angular.bootstrap(document, ['artistApp']);
+      },
+      function () {
+        // angular.bootstrap(document, ['artistApp']);
+      }
+    );
+
+    angular.bootstrap(document, ['artistApp']);
+  });
+
+  // document.addEventListener('visibilitychange', function (event) {
+  //   if (!document.hidden) {
+  //   }
+  // }, false);
 
 })(window.Firebase);

@@ -79,18 +79,25 @@
 }
 
 /* line 4, ../../app/scss/artist.scss */
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 10, ../../app/scss/artist.scss */
 .buskr-list-artists {
   background-color: black;
   margin: 0;
 }
 
-/* line 18, ../../app/scss/artist.scss */
+/* line 24, ../../app/scss/artist.scss */
 .artist-profile .profile-sections {
   margin: 1rem;
   background-color: white;
   border-radius: 3px;
 }
-/* line 23, ../../app/scss/artist.scss */
+/* line 29, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section {
   display: -webkit-flex;
   display: flex;
@@ -99,29 +106,29 @@
   padding: 1.5rem 1rem;
   border-bottom: 1px solid #d1cbc2;
 }
-/* line 33, ../../app/scss/artist.scss */
+/* line 39, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section:last-of-type {
   border-bottom: none;
 }
-/* line 37, ../../app/scss/artist.scss */
+/* line 43, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column {
   -webkit-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-/* line 41, ../../app/scss/artist.scss */
+/* line 47, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section.flow-column .body {
   display: block;
 }
-/* line 46, ../../app/scss/artist.scss */
+/* line 52, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header {
   margin: 0 0 0 .5rem;
 }
-/* line 49, ../../app/scss/artist.scss */
+/* line 55, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header.centered {
   -webkit-align-self: center;
   align-self: center;
 }
-/* line 54, ../../app/scss/artist.scss */
+/* line 60, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header h3 {
   float: left;
   font-size: 12px;
@@ -129,13 +136,13 @@
   margin: 0;
   color: #f0b059;
 }
-/* line 62, ../../app/scss/artist.scss */
+/* line 68, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > header .info {
   float: right;
   font-size: 12px;
   color: #b0b0af;
 }
-/* line 69, ../../app/scss/artist.scss */
+/* line 75, ../../app/scss/artist.scss */
 .artist-profile .profile-sections > section > .body {
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -144,32 +151,32 @@
   -webkit-flex: 1 auto;
   flex: 1 auto;
 }
-/* line 81, ../../app/scss/artist.scss */
+/* line 87, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .address {
   color: #afafad;
 }
-/* line 85, ../../app/scss/artist.scss */
+/* line 91, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .location-section .map {
   margin: 1rem 0;
   border-radius: 3px;
 }
-/* line 91, ../../app/scss/artist.scss */
+/* line 97, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .events-section {
   text-align: right;
 }
-/* line 96, ../../app/scss/artist.scss */
+/* line 102, ../../app/scss/artist.scss */
 .artist-profile .profile-sections .itunes-section .itunes-button {
   background-color: #85807a;
   border-radius: 3px;
   overflow: hidden;
 }
-/* line 104, ../../app/scss/artist.scss */
+/* line 110, ../../app/scss/artist.scss */
 .artist-profile .profile-footer {
   position: relative;
   height: 45px;
   background-color: #fbc16b;
 }
-/* line 109, ../../app/scss/artist.scss */
+/* line 115, ../../app/scss/artist.scss */
 .artist-profile .profile-footer .tip-performer {
   position: absolute;
   left: 0;
@@ -177,14 +184,14 @@
   bottom: 0;
   text-align: center;
 }
-/* line 116, ../../app/scss/artist.scss */
+/* line 122, ../../app/scss/artist.scss */
 .artist-profile .profile-footer .tip-performer .text {
   padding: .5rem 1rem 1rem;
   font-size: 12px;
   text-transform: uppercase;
   color: white;
 }
-/* line 125, ../../app/scss/artist.scss */
+/* line 131, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay {
   position: absolute;
   top: 0;
@@ -192,13 +199,13 @@
   left: 0;
   right: 0;
 }
-/* line 132, ../../app/scss/artist.scss */
+/* line 138, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .profile-footer {
   left: 0;
   right: 0;
   bottom: 0;
 }
-/* line 138, ../../app/scss/artist.scss */
+/* line 144, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .tip-amounts {
   position: absolute;
   bottom: 100px;
@@ -210,7 +217,7 @@
   border-radius: 3px;
   background-color: white;
 }
-/* line 149, ../../app/scss/artist.scss */
+/* line 155, ../../app/scss/artist.scss */
 .artist-profile .tip-amount-overlay .tip-amounts::after {
   top: 100%;
   left: 50%;
@@ -225,7 +232,7 @@
   margin-left: -10px;
 }
 
-/* line 166, ../../app/scss/artist.scss */
+/* line 172, ../../app/scss/artist.scss */
 .artists-map {
   position: absolute;
   top: 0;
@@ -233,13 +240,13 @@
   bottom: 0;
   left: 0;
 }
-/* line 174, ../../app/scss/artist.scss */
+/* line 180, ../../app/scss/artist.scss */
 .artists-map .angular-google-map,
 .artists-map .angular-google-map-container {
   height: 100%;
   width: 100%;
 }
-/* line 179, ../../app/scss/artist.scss */
+/* line 185, ../../app/scss/artist.scss */
 .artists-map .artist-card {
   position: absolute;
   z-index: 99;

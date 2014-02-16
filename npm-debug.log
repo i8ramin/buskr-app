@@ -1,0 +1,171 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.10.22/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@1.3.14
+3 info using node@v0.10.22
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/ramin/Work/personal/buskr/buskr-app.steroids',
+5 verbose install   [ 'grunt-steroids',
+5 verbose install     'grunt-contrib-compass',
+5 verbose install     'grunt-contrib-watch',
+5 verbose install     'load-grunt-tasks',
+5 verbose install     'time-grunt' ] ]
+6 info preinstall mySteroidsProject@0.0.1
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping grunt-contrib-watch@0.5.x /Users/ramin/Work/personal/buskr/buskr-app.steroids
+9 verbose already installed skipping grunt-steroids@0.1.x /Users/ramin/Work/personal/buskr/buskr-app.steroids
+10 verbose already installed skipping grunt-contrib-compass@0.7.x /Users/ramin/Work/personal/buskr/buskr-app.steroids
+11 verbose already installed skipping load-grunt-tasks@0.2.x /Users/ramin/Work/personal/buskr/buskr-app.steroids
+12 verbose already installed skipping time-grunt@0.2.x /Users/ramin/Work/personal/buskr/buskr-app.steroids
+13 silly resolved []
+14 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids
+15 verbose linkStuff [ false, false, false, '/Users/ramin/Work/personal/buskr' ]
+16 info linkStuff mySteroidsProject@0.0.1
+17 verbose linkBins mySteroidsProject@0.0.1
+18 verbose linkMans mySteroidsProject@0.0.1
+19 verbose rebuildBundles mySteroidsProject@0.0.1
+20 verbose rebuildBundles [ 'grunt',
+20 verbose rebuildBundles   'grunt-contrib-clean',
+20 verbose rebuildBundles   'grunt-contrib-coffee',
+20 verbose rebuildBundles   'grunt-contrib-compass',
+20 verbose rebuildBundles   'grunt-contrib-concat',
+20 verbose rebuildBundles   'grunt-contrib-copy',
+20 verbose rebuildBundles   'grunt-contrib-sass',
+20 verbose rebuildBundles   'grunt-contrib-watch',
+20 verbose rebuildBundles   'grunt-extend-config',
+20 verbose rebuildBundles   'grunt-steroids',
+20 verbose rebuildBundles   'load-grunt-tasks',
+20 verbose rebuildBundles   'time-grunt' ]
+21 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt
+22 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt
+23 info preinstall grunt@0.4.2
+24 verbose linkStuff [ false,
+24 verbose linkStuff   false,
+24 verbose linkStuff   false,
+24 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+25 info linkStuff grunt@0.4.2
+26 verbose linkBins grunt@0.4.2
+27 verbose linkMans grunt@0.4.2
+28 verbose rebuildBundles grunt@0.4.2
+29 verbose rebuildBundles [ '.bin',
+29 verbose rebuildBundles   'async',
+29 verbose rebuildBundles   'coffee-script',
+29 verbose rebuildBundles   'colors',
+29 verbose rebuildBundles   'dateformat',
+29 verbose rebuildBundles   'eventemitter2',
+29 verbose rebuildBundles   'exit',
+29 verbose rebuildBundles   'findup-sync',
+29 verbose rebuildBundles   'getobject',
+29 verbose rebuildBundles   'glob',
+29 verbose rebuildBundles   'hooker',
+29 verbose rebuildBundles   'iconv-lite',
+29 verbose rebuildBundles   'js-yaml',
+29 verbose rebuildBundles   'lodash',
+29 verbose rebuildBundles   'minimatch',
+29 verbose rebuildBundles   'nopt',
+29 verbose rebuildBundles   'rimraf',
+29 verbose rebuildBundles   'underscore.string',
+29 verbose rebuildBundles   'which' ]
+30 info install grunt@0.4.2
+31 info postinstall grunt@0.4.2
+32 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-clean
+33 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-clean
+34 info preinstall grunt-contrib-clean@0.4.0
+35 verbose linkStuff [ false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+36 info linkStuff grunt-contrib-clean@0.4.0
+37 verbose linkBins grunt-contrib-clean@0.4.0
+38 verbose linkMans grunt-contrib-clean@0.4.0
+39 verbose rebuildBundles grunt-contrib-clean@0.4.0
+40 info install grunt-contrib-clean@0.4.0
+41 info postinstall grunt-contrib-clean@0.4.0
+42 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-coffee
+43 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-coffee
+44 info preinstall grunt-contrib-coffee@0.7.0
+45 verbose linkStuff [ false,
+45 verbose linkStuff   false,
+45 verbose linkStuff   false,
+45 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+46 info linkStuff grunt-contrib-coffee@0.7.0
+47 verbose linkBins grunt-contrib-coffee@0.7.0
+48 verbose linkMans grunt-contrib-coffee@0.7.0
+49 verbose rebuildBundles grunt-contrib-coffee@0.7.0
+50 verbose rebuildBundles [ '.bin', 'coffee-script' ]
+51 info install grunt-contrib-coffee@0.7.0
+52 info postinstall grunt-contrib-coffee@0.7.0
+53 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-concat
+54 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-concat
+55 info preinstall grunt-contrib-concat@0.3.0
+56 verbose linkStuff [ false,
+56 verbose linkStuff   false,
+56 verbose linkStuff   false,
+56 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+57 info linkStuff grunt-contrib-concat@0.3.0
+58 verbose linkBins grunt-contrib-concat@0.3.0
+59 verbose linkMans grunt-contrib-concat@0.3.0
+60 verbose rebuildBundles grunt-contrib-concat@0.3.0
+61 info install grunt-contrib-concat@0.3.0
+62 info postinstall grunt-contrib-concat@0.3.0
+63 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-copy
+64 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-copy
+65 info preinstall grunt-contrib-copy@0.4.1
+66 verbose linkStuff [ false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   false,
+66 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+67 info linkStuff grunt-contrib-copy@0.4.1
+68 verbose linkBins grunt-contrib-copy@0.4.1
+69 verbose linkMans grunt-contrib-copy@0.4.1
+70 verbose rebuildBundles grunt-contrib-copy@0.4.1
+71 info install grunt-contrib-copy@0.4.1
+72 info postinstall grunt-contrib-copy@0.4.1
+73 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-sass
+74 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-contrib-sass
+75 info preinstall grunt-contrib-sass@0.5.0
+76 verbose linkStuff [ false,
+76 verbose linkStuff   false,
+76 verbose linkStuff   false,
+76 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+77 info linkStuff grunt-contrib-sass@0.5.0
+78 verbose linkBins grunt-contrib-sass@0.5.0
+79 verbose linkMans grunt-contrib-sass@0.5.0
+80 verbose rebuildBundles grunt-contrib-sass@0.5.0
+81 verbose rebuildBundles [ 'dargs' ]
+82 info install grunt-contrib-sass@0.5.0
+83 info postinstall grunt-contrib-sass@0.5.0
+84 verbose rebuild bundle /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-extend-config
+85 info build /Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules/grunt-extend-config
+86 info preinstall grunt-extend-config@0.9.1
+87 verbose linkStuff [ false,
+87 verbose linkStuff   false,
+87 verbose linkStuff   false,
+87 verbose linkStuff   '/Users/ramin/Work/personal/buskr/buskr-app.steroids/node_modules' ]
+88 info linkStuff grunt-extend-config@0.9.1
+89 verbose linkBins grunt-extend-config@0.9.1
+90 verbose linkMans grunt-extend-config@0.9.1
+91 verbose rebuildBundles grunt-extend-config@0.9.1
+92 info install grunt-extend-config@0.9.1
+93 info postinstall grunt-extend-config@0.9.1
+94 info install mySteroidsProject@0.0.1
+95 info postinstall mySteroidsProject@0.0.1
+96 info prepublish mySteroidsProject@0.0.1
+97 error peerinvalid The package grunt does not satisfy its siblings' peerDependencies requirements!
+97 error peerinvalid Peer grunt-steroids@0.1.1 wants grunt@0.4.1
+97 error peerinvalid Peer grunt-contrib-compass@0.7.0 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-contrib-watch@0.5.3 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-contrib-clean@0.4.0 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-contrib-concat@0.3.0 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-contrib-copy@0.4.1 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-extend-config@0.9.1 wants grunt@~0.4.1
+97 error peerinvalid Peer grunt-contrib-coffee@0.7.0 wants grunt@~0.4.0
+97 error peerinvalid Peer grunt-contrib-sass@0.5.0 wants grunt@~0.4.0
+98 error System Darwin 13.0.0
+99 error command "/usr/local/Cellar/node/0.10.22/bin/node" "/usr/local/bin/npm" "install"
+100 error cwd /Users/ramin/Work/personal/buskr/buskr-app.steroids
+101 error node -v v0.10.22
+102 error npm -v 1.3.14
+103 error code EPEERINVALID
+104 verbose exit [ 1, true ]

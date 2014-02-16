@@ -8,14 +8,28 @@ var buskrApp = angular.module('buskrApp', [
   'buskrApp.services'
 ]);
 
-var drawerView = new steroids.views.WebView({location:'menu.html'});
-var loginView = new steroids.views.WebView({location:'views/login/index.html'});
-var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.html'});
+var loginView = new steroids.views.WebView({id: 'loginView', location:'views/login/index.html'});
+var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
+
+// artistView.preload({id: 'artistView'}, {
+//   onSuccess: function () {},
+//   onFailure: function (error) {
+//     alert(error.errorDescription);
+//   }
+// });
+
+loginView.preload({id: 'loginView'}, {
+  onSuccess: function () {},
+  onFailure: function (error) {
+    alert(error.errorDescription);
+  }
+});
 
 drawerView.preload({id: 'drawerView'}, {
   onSuccess: function () {
     drawerView.visible = false;
-    steroids.drawers.enableGesture(drawerView);
+    // steroids.drawers.enableGesture(drawerView);
   },
   onFailure: function (error) {
     alert('[drawerView.preload] ' + error.errorDescription);
@@ -35,12 +49,12 @@ buskrApp.run(function ($rootScope, $window, User) {
     }
   );
 
-  if (user) {
-    artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+  steroids.view.navigationBar.hide();
 
+  if (user) {
     steroids.layers.push({
       view: artistView,
-      navigationBar: false,
+      // navigationBar: false,
       animation: new steroids.Animation({
         transition: 'fade',
         duration: 0.1
@@ -102,12 +116,11 @@ buskrApp.run(function ($rootScope, $window, User) {
     // });
   }
 
-  document.addEventListener('visibilitychange', function (event) {
-    if (document.hidden) {
-    } else {
-
-    }
-  }, false);
+  // document.addEventListener('visibilitychange', function (event) {
+  //   if (document.hidden) {
+  //   } else {
+  //   }
+  // }, false);
 
   window.addEventListener('message', function (event) {
     if (event.data && event.data.action) {
@@ -132,11 +145,10 @@ buskrApp.run(function ($rootScope, $window, User) {
           break;
         case 'skipLogin':
           steroids.layers.push({
-            view: artistView,
-            navigationBar: false
+            view: artistView
+            // navigationBar: false
           }, {
             onSuccess: function () {
-
             },
             onFailure: function (error) {
               alert(error.errorDescription);
@@ -148,7 +160,6 @@ buskrApp.run(function ($rootScope, $window, User) {
         case 'openLogin':
           steroids.layers.pop({}, {
             onSuccess: function () {
-              // steroids.view.navigationBar.hide();
               setTimeout(function () {
                 steroids.drawers.hide({}, {
                   onSuccess: function () {
@@ -193,6 +204,9 @@ buskrApp.run(function ($rootScope, $window, User) {
 
 document.addEventListener('deviceready', function () {
   steroids.view.setBackgroundColor('#fbc26b');
+  steroids.view.navigationBar.hide();
+  // steroids.statusBar.hide();
+
   angular.bootstrap(document, ['buskrApp']);
 }, false);
 

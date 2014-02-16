@@ -10,6 +10,8 @@ document.addEventListener('deviceready', function () {
     });
   }
 
+  // steroids.view.navigationBar.hide();
+
   // Parse.FacebookUtils.init({
   //   appId      : '574303185975176', // Facebook App ID
   //   nativeInterface: CDV.FB,

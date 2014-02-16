@@ -14,7 +14,23 @@ html, body {
 
   background: #fbc26b url(../images/splash.png) no-repeat;
   background-size: 100%;
-  background-position: 0 20%;
+  background-position: 0 -80px;
+
+  .login-title {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+
+    .title {
+      font-size: 14pt;
+    }
+    .subtitle {
+      font-size: 11pt;
+    }
+  }
 
   .login-buttons {
     -webkit-align-self: flex-end;

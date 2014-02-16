@@ -15,28 +15,39 @@ var FB_APP_ID = 574303185975176;
   var signUpView = new steroids.views.WebView({location:'/views/login/signup.html'});
   var typeSelectView = new steroids.views.WebView({location:'views/login/type-select.html'});
   var performerDetailsView = new steroids.views.WebView({location:'views/login/performer-details.html'});
-  var artistView = new steroids.views.WebView({location:'views/artist/index.html'});
+
+  var artistView = new steroids.views.WebView({id:'artistView', location:'views/artist/index.html'});
 
   loginApp.run(function () {
-
   });
 
   // Index: http://localhost/views/login/index.html
   loginApp.controller('LoginCtrl', function ($scope, User) {
-    steroids.view.navigationBar.hide();
-    steroids.view.navigationBar.setButtons({
+    artistView.preload({id: 'artistView'}, {
+      onSuccess: function () {
+        steroids.view.navigationBar.hide();
+      },
+      onFailure: function (error) {
+        alert(error.errorDescription);
+      }
+    });
+
+    steroids.view.navigationBar.update({
       overrideBackButton: true
     }, {
-      onSuccess: function () {
-        // steroids.view.navigationBar.show('');
+      onSuccess: function() {
+        steroids.splashscreen.hide();
+      },
+      onFailure: function() {
+        alert('Failed to set Nav Bar buttons.');
       }
     });
 
     $scope.skipLogin = function () {
       steroids.layers.push({
         view: artistView,
-        keepLoading: true,
-        navigationBar: false
+        // keepLoading: true,
+        // navigationBar: false
       }, {
         onSuccess: function () {},
         onFailure: function (error) {
@@ -182,13 +193,13 @@ var FB_APP_ID = 574303185975176;
     //   alert('TestFlight error: ' + error);
     // }, '32984304-6d9a-4bbf-913e-40246035a8ac');
 
+    // steroids.view.navigationBar.hide();
     steroids.view.setBackgroundColor('#fbc26b');
+
     angular.bootstrap(document, ['loginApp']);
   }, false);
 
   document.addEventListener('visibilitychange', function (event) {
-    if (document.hidden) {
-    }
   }, false);
 
 })(window.Firebase);

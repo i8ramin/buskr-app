@@ -23,29 +23,21 @@
 
       mapButton.onTap = function () {
         steroids.layers.push(mapView);
-
-        // steroids.modal.show( {
-        //   view: mapView
-        // }, {
-        //   onSuccess: function () {
-        //   },
-        //   onFailure: function (error) {
-        //     alert('Could not present the modal: ' + error.errorDescription);
-        //   }
-        // });
       };
 
-      steroids.view.navigationBar.setButtons({
-        left: [drawerButton],
-        right: [mapButton],
-        overrideBackButton: true
+      steroids.view.navigationBar.update({
+        overrideBackButton: true,
+        buttons: {
+          left: [drawerButton],
+          right: [mapButton]
+        }
       }, {
-        onSuccess: function () {
+        onSuccess: function() {
           if (callback) {
             callback.apply(this, arguments);
           }
         },
-        onFailure: function () {
+        onFailure: function() {
           alert('Failed to set Nav Bar buttons.');
         }
       });

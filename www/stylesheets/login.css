@@ -5906,18 +5906,35 @@ html, body {
   padding: 2rem;
   background: #fbc26b url(../images/splash.png) no-repeat;
   background-size: 100%;
-  background-position: 0 20%;
+  background-position: 0 -80px;
 }
 /* line 19, ../../app/scss/login.scss */
+#loginPage .login-title {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+/* line 27, ../../app/scss/login.scss */
+#loginPage .login-title .title {
+  font-size: 14pt;
+}
+/* line 30, ../../app/scss/login.scss */
+#loginPage .login-title .subtitle {
+  font-size: 11pt;
+}
+/* line 35, ../../app/scss/login.scss */
 #loginPage .login-buttons {
   -webkit-align-self: flex-end;
   align-self: flex-end;
 }
-/* line 23, ../../app/scss/login.scss */
+/* line 39, ../../app/scss/login.scss */
 #loginPage .login-buttons .btn {
   margin: 5px auto;
 }
-/* line 28, ../../app/scss/login.scss */
+/* line 44, ../../app/scss/login.scss */
 #loginPage .skip-login {
   margin: auto;
   text-align: right;
@@ -5925,18 +5942,18 @@ html, body {
   color: #bf8c3f;
 }
 
-/* line 36, ../../app/scss/login.scss */
+/* line 52, ../../app/scss/login.scss */
 h1 {
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* line 41, ../../app/scss/login.scss */
+/* line 57, ../../app/scss/login.scss */
 form[name=loginForm] {
   margin-bottom: 100px;
 }
 
-/* line 45, ../../app/scss/login.scss */
+/* line 61, ../../app/scss/login.scss */
 .submit-area {
   margin-top: 20px;
 }

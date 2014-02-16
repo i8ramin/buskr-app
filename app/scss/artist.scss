@@ -1,6 +1,12 @@
 @import "variable-overrides";
 @import "artist-card";
 
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
 .buskr-list-artists {
   background-color: black;
   margin: 0;

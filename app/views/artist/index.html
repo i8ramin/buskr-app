@@ -1,20 +1,26 @@
-<div ng-controller="IndexCtrl" ng-cloak>
+<div class="view" ng-controller="IndexCtrl" ng-cloak>
+  <!-- <header class="view-header">
+    <div class="icon icon-left icon-toggle"></div>
+    <div class="title">Artists</div>
+    <div class="icon icon-right icon-map"></div>
+  </header> -->
+  <div class="content">
+    <ul class="buskr-list-artists list-unstyled">
+      <li
+        class="repeat-animation"
+        ng-click="open(artist.objectId)"
+        ng-repeat="artist in artists | orderBy:['-live', 'distance']">
 
-  <ul class="buskr-list-artists list-unstyled">
-    <li
-      class="repeat-animation"
-      ng-click="open(artist.objectId)"
-      ng-repeat="artist in artists | orderBy:['-live', 'distance']">
-
-      <div class="artist-card">
-        <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
-        <div class="artist-name">{{artist.name}}</div>
-        <div class="live-location">
-          <div class="loc">{{artist.distance}} mi</div>
-          <button class="btn btn-xs btn-live" ng-if="artist.live">Live now!</button>
+        <div class="artist-card">
+          <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
+          <div class="artist-name">{{artist.name}}</div>
+          <div class="live-location">
+            <div class="loc">{{artist.distance}} mi</div>
+            <button class="btn btn-xs btn-live" ng-if="artist.live">Live now!</button>
+          </div>
         </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 
 </div>
