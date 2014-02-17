@@ -45,9 +45,7 @@ var FB_APP_ID = 574303185975176;
 
     $scope.skipLogin = function () {
       steroids.layers.push({
-        view: artistView,
-        // keepLoading: true,
-        // navigationBar: false
+        view: artistView
       }, {
         onSuccess: function () {},
         onFailure: function (error) {
@@ -65,8 +63,7 @@ var FB_APP_ID = 574303185975176;
       User.fbLogin().then(
         function (user) {
           steroids.layers.push({
-            view: artistView,
-            navigationBar: false
+            view: artistView
           });
         },
         function (error) {

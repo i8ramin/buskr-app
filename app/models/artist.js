@@ -14,41 +14,41 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
   var Artist = Parse.Object.extend('Artist');
   var query = new Parse.Query(Artist);
 
-  var artistsCache = $angularCacheFactory('artistsCache', {
-    // This cache can hold 1000 items
-    capacity: 1000,
+  // var artistsCache = $angularCacheFactory('artistsCache', {
+  //   // This cache can hold 1000 items
+  //   capacity: 1000,
 
-    // Items added to this cache expire after 1 hour
-    maxAge: 6000000,
+  //   // Items added to this cache expire after 1 hour
+  //   maxAge: 6000000,
 
-    // Items will be actively deleted when they expire
-    deleteOnExpire: 'aggressive',
+  //   // Items will be actively deleted when they expire
+  //   deleteOnExpire: 'aggressive',
 
-    // This cache will check for expired items every 10 min
-    recycleFreq: 600000,
+  //   // This cache will check for expired items every 10 min
+  //   recycleFreq: 600000,
 
-    // This cache will clear itself every 4 hours
-    cacheFlushInterval: 14400000,
+  //   // This cache will clear itself every 4 hours
+  //   cacheFlushInterval: 14400000,
 
-    // This cache will sync itself with localStorage
-    storageMode: 'localStorage',
+  //   // This cache will sync itself with localStorage
+  //   storageMode: 'localStorage',
 
-    // Full synchronization with localStorage on every operation
-    verifyIntegrity: true,
+  //   // Full synchronization with localStorage on every operation
+  //   verifyIntegrity: true,
 
-    // This callback is executed when the item specified by "key" expires.
-    // At this point you could retrieve a fresh value for "key"
-    // from the server and re-insert it into the cache.
-    onExpire: function (key, value) {
-      console.log('---------------- CACHE EXPIRED! --------------');
+  //   // This callback is executed when the item specified by "key" expires.
+  //   // At this point you could retrieve a fresh value for "key"
+  //   // from the server and re-insert it into the cache.
+  //   onExpire: function (key, value) {
+  //     console.log('---------------- CACHE EXPIRED! --------------');
 
-      if (key === 'artists') {
-        reloadArtists();
-      } else {
-        reloadArtist(key);
-      }
-    }
-  });
+  //     if (key === 'artists') {
+  //       reloadArtists();
+  //     } else {
+  //       reloadArtist(key);
+  //     }
+  //   }
+  // });
 
   var reloadArtists = function () {
     var deferred = $q.defer();
@@ -58,7 +58,10 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
       success: function (artists) {
         artistsAsJSON = artists.map(function (a) {return a.toJSON();});
 
-        artistsCache.put('artists', artistsAsJSON);
+        // if (artistsAsJSON && artistsAsJSON.length) {
+        //   artistsCache.put('artists', artistsAsJSON);
+        // }
+
         deferred.resolve(artistsAsJSON);
       },
       error: function(error) {
@@ -71,10 +74,16 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
 
   var reloadArtist = function (id) {
     var deferred = $q.defer();
+    var artistAsJSON;
 
     query.get(id, {
       success: function (artist) {
-        artistsCache.put('artists/' + id, artist.toJSON());
+        artistAsJSON = artist.toJSON();
+
+        // if (artistAsJSON) {
+        //   artistsCache.put('artists/' + id, artistAsJSON);
+        // }
+
         deferred.resolve(artist.toJSON());
       },
       error: function(error) {
@@ -87,7 +96,7 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
 
   var loadAll = function () {
     var deferred = $q.defer();
-    var artists = artistsCache.get('artists');
+    var artists; // = artistsCache.get('artists');
 
     if (artists) {
       console.log('[Buskr] Loading cached Artists...');
@@ -100,13 +109,11 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
     }
 
     return artists;
-
-    // return reloadArtists();
   };
 
   var loadOne = function (id) {
     var deferred = $q.defer();
-    var artist = artistsCache.get(id);
+    var artist; // = artistsCache.get(id);
 
     if (artist) {
       console.log('[Buskr] Artist cached...', artist.name);
@@ -119,8 +126,6 @@ module.factory('ArtistService', function ArtistService($q, $firebase, $angularCa
     }
 
     return artist;
-
-    // return reloadArtist(id);
   };
 
   return {

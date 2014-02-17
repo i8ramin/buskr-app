@@ -4,6 +4,7 @@
 
   var gaPlugin;
   var artistApp = angular.module('artistApp', [
+    // 'mgcrea.pullToRefresh',
     'google-maps',
     'ngAnimate',
     'UserModel',
@@ -26,8 +27,10 @@
     NavbarService.navBar.init(function () {
     });
 
+    $scope.artists = [];
+
     $scope.loadArtists = function () {
-      ArtistService.all().then(
+      var promise = ArtistService.all().then(
         function (artists) {
           console.log('[BUSKR] Loaded ' + artists.length + ' artists.');
           $scope.artists = artists;
@@ -118,10 +121,15 @@
     myMarker = {
       latitude: position.latitude,
       longitude: position.longitude,
-      icon: {
-        url: 'http://localhost/images/marker-me.png',
-        scaledSize: new google.maps.Size(49, 63)
-      },
+      icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+        new google.maps.Size(22,22),
+        new google.maps.Point(0,18),
+        new google.maps.Point(11,11)
+      ),
+      // icon: {
+      //   url: 'http://localhost/images/marker-me.png',
+      //   scaledSize: new google.maps.Size(49, 63)
+      // },
       options: {
       }
     };
@@ -216,6 +224,8 @@
   });
 
   document.addEventListener('deviceready', function () {
+    var app;
+
     gaPlugin = window.plugins.gaPlugin;
     gaPlugin.init(
       function () {
@@ -233,15 +243,27 @@
     ImgCache.options.useDataURI = true;
     ImgCache.init(
       function () {
-        // angular.bootstrap(document, ['artistApp']);
       },
       function () {
-        // angular.bootstrap(document, ['artistApp']);
       }
     );
 
-    angular.bootstrap(document, ['artistApp']);
-  });
+    app = angular.bootstrap(document, ['artistApp']);
+
+    // $(document).ready(function () {
+    //   $('.scrollable').pullToRefresh({
+    //     callback: function() {
+    //       var def = $.Deferred();
+
+    //       setTimeout(function() {
+    //         def.resolve();
+    //       }, 1000);
+
+    //       return def.promise();
+    //     }
+    //   });
+    // });
+  }, false);
 
   document.addEventListener('visibilitychange', function (event) {
     if (document.hidden) {

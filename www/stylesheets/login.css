@@ -5919,11 +5919,11 @@ html, body {
 }
 /* line 27, ../../app/scss/login.scss */
 #loginPage .login-title .title {
-  font-size: 14pt;
+  font-size: 12pt;
 }
 /* line 30, ../../app/scss/login.scss */
 #loginPage .login-title .subtitle {
-  font-size: 11pt;
+  font-size: 10pt;
 }
 /* line 35, ../../app/scss/login.scss */
 #loginPage .login-buttons {

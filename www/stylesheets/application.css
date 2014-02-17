@@ -5930,27 +5930,27 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   display: none !important;
 }
 
-/* line 47, ../../app/scss/application.scss */
+/* line 40, ../../app/scss/application.scss */
 header {
   margin-bottom: 1rem;
 }
 
-/* line 51, ../../app/scss/application.scss */
+/* line 44, ../../app/scss/application.scss */
 form {
   display: block;
   width: 100%;
 }
 
-/* line 56, ../../app/scss/application.scss */
+/* line 49, ../../app/scss/application.scss */
 .buskr-input {
   margin-bottom: 1rem;
 }
-/* line 59, ../../app/scss/application.scss */
+/* line 52, ../../app/scss/application.scss */
 .buskr-input.with-info {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 63, ../../app/scss/application.scss */
+/* line 56, ../../app/scss/application.scss */
 .buskr-input.with-info .input-info {
   position: relative;
   top: -2px;
@@ -5964,13 +5964,13 @@ form {
   border-top-right-radius: 0;
 }
 
-/* line 78, ../../app/scss/application.scss */
+/* line 71, ../../app/scss/application.scss */
 article.view {
   min-height: 100%;
   display: -webkit-flex;
   display: flex;
 }
-/* line 90, ../../app/scss/application.scss */
+/* line 77, ../../app/scss/application.scss */
 article.view > .content {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -5979,20 +5979,20 @@ article.view > .content {
   -webkit-flex-flow: column;
   flex-flow: column;
 }
-/* line 100, ../../app/scss/application.scss */
+/* line 87, ../../app/scss/application.scss */
 article.view > .content.content-padded {
   margin: 2vw;
   padding: 20px 15px;
   background-color: white;
   border-radius: 4px;
 }
-/* line 107, ../../app/scss/application.scss */
+/* line 94, ../../app/scss/application.scss */
 article.view > .content > *:not(footer) {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
-/* line 121, ../../app/scss/application.scss */
+/* line 108, ../../app/scss/application.scss */
 .overlay-wrapper {
   position: fixed;
   z-index: 999;
@@ -6001,7 +6001,7 @@ article.view > .content > *:not(footer) {
   left: 0;
   right: 0;
 }
-/* line 129, ../../app/scss/application.scss */
+/* line 116, ../../app/scss/application.scss */
 .overlay-wrapper .mask {
   position: absolute;
   top: 0;
@@ -6011,7 +6011,7 @@ article.view > .content > *:not(footer) {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 139, ../../app/scss/application.scss */
+/* line 126, ../../app/scss/application.scss */
 .overlay-wrapper .overlay {
   position: absolute;
   z-index: 2;
@@ -6019,7 +6019,7 @@ article.view > .content > *:not(footer) {
   right: 1rem;
   top: 15%;
 }
-/* line 146, ../../app/scss/application.scss */
+/* line 133, ../../app/scss/application.scss */
 .overlay-wrapper .overlay header {
   margin-bottom: 0;
   padding: 1.5rem 1rem;
@@ -6028,100 +6028,100 @@ article.view > .content > *:not(footer) {
   background-color: #afafad;
   color: white;
 }
-/* line 155, ../../app/scss/application.scss */
+/* line 142, ../../app/scss/application.scss */
 .overlay-wrapper .overlay .body {
   padding: 1rem 1rem 30px;
   text-align: center;
   border-radius: 0 0 3px 3px;
   background-color: white;
 }
-/* line 162, ../../app/scss/application.scss */
+/* line 149, ../../app/scss/application.scss */
 .overlay-wrapper .overlay footer {
   position: absolute;
   bottom: -20px;
   left: 15%;
   right: 15%;
 }
-/* line 168, ../../app/scss/application.scss */
+/* line 155, ../../app/scss/application.scss */
 .overlay-wrapper .overlay footer button {
   border-color: white;
   border-width: 3px;
 }
 
 @-webkit-keyframes invalidshake {
-  /* line 178, ../../app/scss/application.scss */
+  /* line 165, ../../app/scss/application.scss */
   8%, 41% {
     -webkit-transform: translateX(-10px);
   }
 
-  /* line 179, ../../app/scss/application.scss */
+  /* line 166, ../../app/scss/application.scss */
   25%, 58% {
     -webkit-transform: translateX(10px);
   }
 
-  /* line 180, ../../app/scss/application.scss */
+  /* line 167, ../../app/scss/application.scss */
   75% {
     -webkit-transform: translateX(-5px);
   }
 
-  /* line 181, ../../app/scss/application.scss */
+  /* line 168, ../../app/scss/application.scss */
   92% {
     -webkit-transform: translateX(5px);
   }
 
-  /* line 182, ../../app/scss/application.scss */
+  /* line 169, ../../app/scss/application.scss */
   0%, 100% {
     -webkit-transform: translateX(0);
   }
 }
 
 @keyframes invalidshake {
-  /* line 185, ../../app/scss/application.scss */
+  /* line 172, ../../app/scss/application.scss */
   8%, 41% {
     transform: translateX(-10px);
   }
 
-  /* line 186, ../../app/scss/application.scss */
+  /* line 173, ../../app/scss/application.scss */
   25%, 58% {
     transform: translateX(10px);
   }
 
-  /* line 187, ../../app/scss/application.scss */
+  /* line 174, ../../app/scss/application.scss */
   75% {
     transform: translateX(-5px);
   }
 
-  /* line 188, ../../app/scss/application.scss */
+  /* line 175, ../../app/scss/application.scss */
   92% {
     transform: translateX(5px);
   }
 
-  /* line 189, ../../app/scss/application.scss */
+  /* line 176, ../../app/scss/application.scss */
   0%, 100% {
     transform: translateX(0);
   }
 }
 
 @-webkit-keyframes bounceIn {
-  /* line 193, ../../app/scss/application.scss */
+  /* line 180, ../../app/scss/application.scss */
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.85, 0.85, 0.85);
   }
 
-  /* line 194, ../../app/scss/application.scss */
+  /* line 181, ../../app/scss/application.scss */
   50% {
     opacity: 1;
     -webkit-transform: scale3d(1.05, 1.05, 1.05);
   }
 
-  /* line 195, ../../app/scss/application.scss */
+  /* line 182, ../../app/scss/application.scss */
   70% {
     opacity: 1;
     -webkit-transform: scale3d(0.9, 0.9, 0.9);
   }
 
-  /* line 196, ../../app/scss/application.scss */
+  /* line 183, ../../app/scss/application.scss */
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
@@ -6129,25 +6129,25 @@ article.view > .content > *:not(footer) {
 }
 
 @keyframes bounceIn {
-  /* line 199, ../../app/scss/application.scss */
+  /* line 186, ../../app/scss/application.scss */
   0% {
     opacity: 0;
     transform: scale3d(0.85, 0.85, 0.85);
   }
 
-  /* line 200, ../../app/scss/application.scss */
+  /* line 187, ../../app/scss/application.scss */
   50% {
     opacity: 1;
     transform: scale3d(1.05, 1.05, 1.05);
   }
 
-  /* line 201, ../../app/scss/application.scss */
+  /* line 188, ../../app/scss/application.scss */
   70% {
     opacity: 1;
     transform: scale3d(0.9, 0.9, 0.9);
   }
 
-  /* line 202, ../../app/scss/application.scss */
+  /* line 189, ../../app/scss/application.scss */
   100% {
     opacity: 1;
     transform: scale3d(1, 1, 1);
@@ -6155,13 +6155,13 @@ article.view > .content > *:not(footer) {
 }
 
 @-webkit-keyframes scaleIn {
-  /* line 206, ../../app/scss/application.scss */
+  /* line 193, ../../app/scss/application.scss */
   0% {
     opacity: 0;
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
   }
 
-  /* line 207, ../../app/scss/application.scss */
+  /* line 194, ../../app/scss/application.scss */
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
@@ -6169,13 +6169,13 @@ article.view > .content > *:not(footer) {
 }
 
 @keyframes scaleIn {
-  /* line 210, ../../app/scss/application.scss */
+  /* line 197, ../../app/scss/application.scss */
   0% {
     opacity: 0;
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
   }
 
-  /* line 211, ../../app/scss/application.scss */
+  /* line 198, ../../app/scss/application.scss */
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
@@ -6183,13 +6183,13 @@ article.view > .content > *:not(footer) {
 }
 
 @-webkit-keyframes scaleOut {
-  /* line 214, ../../app/scss/application.scss */
+  /* line 201, ../../app/scss/application.scss */
   0% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
   }
 
-  /* line 215, ../../app/scss/application.scss */
+  /* line 202, ../../app/scss/application.scss */
   100% {
     opacity: 0;
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
@@ -6197,13 +6197,13 @@ article.view > .content > *:not(footer) {
 }
 
 @keyframes scaleOut {
-  /* line 218, ../../app/scss/application.scss */
+  /* line 205, ../../app/scss/application.scss */
   0% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
   }
 
-  /* line 219, ../../app/scss/application.scss */
+  /* line 206, ../../app/scss/application.scss */
   100% {
     opacity: 0;
     -webkit-transform: scale3d(1.15, 1.15, 1.15);
@@ -6211,54 +6211,54 @@ article.view > .content > *:not(footer) {
 }
 
 @-webkit-keyframes fadeIn {
-  /* line 223, ../../app/scss/application.scss */
+  /* line 210, ../../app/scss/application.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 224, ../../app/scss/application.scss */
+  /* line 211, ../../app/scss/application.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes fadeIn {
-  /* line 227, ../../app/scss/application.scss */
+  /* line 214, ../../app/scss/application.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 228, ../../app/scss/application.scss */
+  /* line 215, ../../app/scss/application.scss */
   100% {
     opacity: 1;
   }
 }
 
-/* line 231, ../../app/scss/application.scss */
+/* line 218, ../../app/scss/application.scss */
 .animated.invalid-shake {
   -webkit-animation: invalidshake .5s linear;
   animation: invalidshake .5s linear;
 }
 
-/* line 236, ../../app/scss/application.scss */
+/* line 223, ../../app/scss/application.scss */
 .animate-mask {
   -webkit-transition: all 300ms;
   transition: all 300ms;
   opacity: 1;
 }
 
-/* line 242, ../../app/scss/application.scss */
+/* line 229, ../../app/scss/application.scss */
 .animate-mask.ng-hide-add,
 .animate-mask.ng-hide-remove {
   display: block !important;
 }
 
-/* line 245, ../../app/scss/application.scss */
+/* line 232, ../../app/scss/application.scss */
 .animate-mask.ng-hide {
   opacity: 0;
 }
 
-/* line 254, ../../app/scss/application.scss */
+/* line 241, ../../app/scss/application.scss */
 .animate-tip-amounts.ng-hide-add,
 .animate-tip-amounts.ng-hide-remove {
   display: block !important;
@@ -6268,26 +6268,26 @@ article.view > .content > *:not(footer) {
   animation: bounceIn 400ms;
 }
 
-/* line 267, ../../app/scss/application.scss */
+/* line 254, ../../app/scss/application.scss */
 .animate-if.ng-enter,
 .animate-if.ng-leave {
   -webkit-transition: all linear 200ms;
   transition: all linear 200ms;
 }
 
-/* line 273, ../../app/scss/application.scss */
+/* line 260, ../../app/scss/application.scss */
 .animate-if.ng-enter,
 .animate-if.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-/* line 278, ../../app/scss/application.scss */
+/* line 265, ../../app/scss/application.scss */
 .animate-if.ng-leave,
 .animate-if.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-/* line 286, ../../app/scss/application.scss */
+/* line 273, ../../app/scss/application.scss */
 .animate-overlay.ng-hide-add,
 .animate-overlay.ng-hide-remove {
   display: block !important;
@@ -6297,20 +6297,20 @@ article.view > .content > *:not(footer) {
   animation: scaleIn 400ms;
 }
 
-/* line 295, ../../app/scss/application.scss */
+/* line 282, ../../app/scss/application.scss */
 .animate-overlay.ng-hide {
   -webkit-animation: scaleOut 400ms;
   animation: scaleOut 400ms;
 }
 
-/* line 304, ../../app/scss/application.scss */
+/* line 291, ../../app/scss/application.scss */
 .repeat-animation.ng-move,
 .repeat-animation.ng-enter,
 .repeat-animation.ng-leave {
   opacity: 0;
 }
 
-/* line 310, ../../app/scss/application.scss */
+/* line 297, ../../app/scss/application.scss */
 .repeat-animation.ng-enter-stagger,
 .repeat-animation.ng-leave-stagger,
 .repeat-animation.ng-move-stagger {
@@ -6322,7 +6322,7 @@ article.view > .content > *:not(footer) {
 
 /* ending enter and move styling
    (this is what the element will animate from */
-/* line 320, ../../app/scss/application.scss */
+/* line 307, ../../app/scss/application.scss */
 .repeat-animation.ng-enter {
   -webkit-animation: scaleIn 400ms;
   animation: scaleIn 400ms;
