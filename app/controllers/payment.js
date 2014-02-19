@@ -66,6 +66,7 @@
 
     $scope.confirm = function () {
       $scope.confirmed = true;
+      steroids.view.navigationBar.show('Congratulations');
     };
 
     $scope.cancel = function () {

@@ -5902,6 +5902,10 @@ html, body {
   background-size: 100%;
 }
 /* line 14, ../../app/scss/payment.scss */
+.confirm-view.confirmed .content {
+  background-image: none;
+}
+/* line 20, ../../app/scss/payment.scss */
 .confirm-view .body header {
   border-radius: 3px 3px 0 0;
   padding: 2rem 1rem;
@@ -5910,13 +5914,14 @@ html, body {
   background-color: #f1efeb;
   color: #7c7c7a;
 }
-/* line 24, ../../app/scss/payment.scss */
+/* line 30, ../../app/scss/payment.scss */
 .confirm-view .amount-area {
+  overflow: hidden;
   position: relative;
   width: 200px;
   margin: 50px auto;
 }
-/* line 29, ../../app/scss/payment.scss */
+/* line 36, ../../app/scss/payment.scss */
 .confirm-view .amount-area .amount {
   float: left;
   height: 80px;
@@ -5926,13 +5931,13 @@ html, body {
   background: transparent url(/images/confirm-amt-bg.png) no-repeat;
   background-size: 80px 80px;
 }
-/* line 38, ../../app/scss/payment.scss */
+/* line 45, ../../app/scss/payment.scss */
 .confirm-view .amount-area .amount span {
   display: inline-block;
   font-size: 12pt;
   color: #18c97c;
 }
-/* line 45, ../../app/scss/payment.scss */
+/* line 52, ../../app/scss/payment.scss */
 .confirm-view .amount-area .divider {
   float: left;
   height: 80px;
@@ -5940,7 +5945,7 @@ html, body {
   background: transparent url(/images/confirm-arrow.png) no-repeat 50%;
   background-size: 23px 80px;
 }
-/* line 53, ../../app/scss/payment.scss */
+/* line 60, ../../app/scss/payment.scss */
 .confirm-view .amount-area .artist {
   float: left;
   width: 80px;
@@ -5949,16 +5954,44 @@ html, body {
   border-radius: 100%;
   background-color: #f1efeb;
 }
-/* line 61, ../../app/scss/payment.scss */
+/* line 68, ../../app/scss/payment.scss */
 .confirm-view .amount-area .artist img {
   display: block;
   height: 100%;
 }
-/* line 68, ../../app/scss/payment.scss */
+/* line 74, ../../app/scss/payment.scss */
+.confirm-view .amount-area.confirmed {
+  margin: 0 auto;
+}
+/* line 77, ../../app/scss/payment.scss */
 .confirm-view .amount-area.confirmed .amount {
   background-image: url(/images/confirm-thanks-bg.png);
 }
-/* line 72, ../../app/scss/payment.scss */
+/* line 81, ../../app/scss/payment.scss */
 .confirm-view .amount-area.confirmed .divider {
   background-image: url(/images/confirm-check.png);
+}
+/* line 87, ../../app/scss/payment.scss */
+.confirm-view .confirm-message {
+  margin: 35px 0 15px;
+  padding-top: 125px;
+  clear: left;
+  text-align: center;
+  background: transparent url(/images/tip-badge.png) no-repeat;
+  background-size: 162.5px auto;
+  background-position: top center;
+}
+/* line 96, ../../app/scss/payment.scss */
+.confirm-view .confirm-message .share-buttons {
+  width: 231px;
+  margin: 20px auto 0;
+}
+/* line 100, ../../app/scss/payment.scss */
+.confirm-view .confirm-message .share-buttons img {
+  float: left;
+  display: block;
+}
+/* line 104, ../../app/scss/payment.scss */
+.confirm-view .confirm-message .share-buttons img:first-of-type {
+  margin-right: 1px;
 }

@@ -10,6 +10,12 @@ html, body {
     background-size: 100%;
   }
 
+  &.confirmed {
+    .content {
+      background-image: none;
+    }
+  }
+
   .body {
     header {
       border-radius: $border-radius-base $border-radius-base 0 0;
@@ -22,6 +28,7 @@ html, body {
   }
 
   .amount-area {
+    overflow: hidden;
     position: relative;
     width: 200px;
     margin: 50px auto;
@@ -65,6 +72,8 @@ html, body {
     }
 
     &.confirmed {
+      margin: 0 auto;
+
       .amount {
         background-image: url(/images/confirm-thanks-bg.png);
       }
@@ -74,4 +83,30 @@ html, body {
       }
     }
   }
+
+  .confirm-message {
+    margin: 35px 0 15px;
+    padding-top: 125px;
+    clear: left;
+    text-align: center;
+    background: transparent url(/images/tip-badge.png) no-repeat;
+    background-size: 162.5px auto;
+    background-position: top center;
+
+    .share-buttons {
+      width: 231px;
+      margin: 20px auto 0;
+
+      img {
+        float: left;
+        display: block;
+
+        &:first-of-type {
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+
+
 }

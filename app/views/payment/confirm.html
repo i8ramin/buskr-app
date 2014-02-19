@@ -7,11 +7,11 @@
         <strong>{{artist.name}}</strong>
       </header>
 
-      <header ng-if="confirmed">
+      <!-- <header ng-if="confirmed">
         Thank you!<br>
         <strong>${{amount|number}}</strong> to
         <strong>{{artist.name}}</strong> confirmed!
-      </header>
+      </header> -->
 
       <div class="amount-area" ng-if="!confirmed">
         <div class="amount">
@@ -30,6 +30,19 @@
         <div class="divider"></div>
         <div class="artist">
           <img class="artist-image" cache-src ng-src="{{artist.image_url}}">
+        </div>
+      </div>
+
+      <div class="confirm-message" ng-if="confirmed">
+        <p>You earn <strong>Act of Generosity</strong> badge!</p>
+
+        <p>
+          Tell you friends how awesome you and
+          <strong>{{artist.name}}</strong> are!</p>
+
+        <div class="share-buttons">
+          <img src="/images/share-fb.png" width="115">
+          <img src="/images/share-twitter.png" width="115">
         </div>
       </div>
     </div>
