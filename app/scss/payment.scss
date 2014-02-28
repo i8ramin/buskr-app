@@ -4,6 +4,21 @@ html, body {
   height: 100%;
 }
 
+.buskr-input.credit-card {
+  display: -webkit-flex;
+  display: flex;
+
+  .card {
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  .cvc {
+    margin-left: 4px;
+    -webkit-flex: 1 3 auto;
+    flex: 1 3 auto;
+  }
+}
+
 .confirm-view {
   .content {
     background: transparent url(/images/confirm-bg.png) no-repeat bottom center;
@@ -107,6 +122,4 @@ html, body {
       }
     }
   }
-
-
 }

@@ -25,7 +25,7 @@ var FB_APP_ID = 574303185975176;
   loginApp.controller('LoginCtrl', function ($scope, User) {
     artistView.preload({id: 'artistView'}, {
       onSuccess: function () {
-        steroids.view.navigationBar.hide();
+        // steroids.view.navigationBar.hide();
       },
       onFailure: function (error) {
         alert(error.errorDescription);

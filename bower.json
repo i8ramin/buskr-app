@@ -30,7 +30,8 @@
     "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.0.3-0",
     "angular-google-maps": "~1.0.9",
     "parse-js-sdk": "~1.2.16",
-    "angular-pull-to-refresh": "~0.3.0"
+    "angular-pull-to-refresh": "~0.3.0",
+    "angular-payments": "*"
   },
   "resolutions": {
     "angular": "~1.2.9"

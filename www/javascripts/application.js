@@ -12,6 +12,8 @@ var drawerView = new steroids.views.WebView({id: 'drawerView', location:'menu.ht
 var loginView = new steroids.views.WebView({id: 'loginView', location:'views/login/index.html'});
 var artistView = new steroids.views.WebView({id: 'artistView', location:'views/artist/index.html'});
 
+steroids.splashscreen.show();
+
 loginView.preload({id: 'loginView'}, {
   onSuccess: function () {},
   onFailure: function (error) {
@@ -42,8 +44,6 @@ buskrApp.run(function ($rootScope, $window, User) {
     }
   );
 
-  steroids.view.navigationBar.hide();
-
   if (user) {
     steroids.layers.push({
       view: artistView,
@@ -61,7 +61,7 @@ buskrApp.run(function ($rootScope, $window, User) {
   } else {
     steroids.layers.push({
       view: loginView,
-      navigationBar: false,
+      // navigationBar: false,
       animation: new steroids.Animation({
         transition: 'fade',
         duration: 0.1
@@ -170,7 +170,7 @@ buskrApp.run(function ($rootScope, $window, User) {
 
 document.addEventListener('deviceready', function () {
   steroids.view.setBackgroundColor('#fbc26b');
-  steroids.view.navigationBar.hide();
+  // steroids.view.navigationBar.hide();
   // steroids.statusBar.hide();
 
   angular.bootstrap(document, ['buskrApp']);

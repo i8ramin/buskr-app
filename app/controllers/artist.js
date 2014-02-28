@@ -99,11 +99,13 @@
     };
 
     $scope.addCard = function () {
-      $scope.showOverlay = false;
-      $scope.showPaymentOverlay = false;
-
       steroids.layers.push(addCardView);
       $scope.hideOverlay();
+    };
+
+    $scope.custom = function () {
+      $scope.showTipAmountOverlay = false;
+      $scope.showPaymentOverlay = true;
     };
 
     $scope.hideOverlay = function () {

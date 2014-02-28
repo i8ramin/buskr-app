@@ -4,6 +4,7 @@
 
   var gaPlugin;
   var paymentApp = angular.module('paymentApp', [
+    'angularPayments',
     'ngAnimate',
     'UserModel',
     'ArtistModel',
@@ -48,6 +49,19 @@
     // gaPlugin.trackPage($.noop, $.noop, 'views/payment/add-card');
 
     steroids.view.navigationBar.show('Add Card');
+
+    $scope.handlePayment = function(status, response) {
+      var token;
+
+      if (response.error) {
+        alert(response.error);
+        // there was an error. Fix it.
+      } else {
+        // got stripe token, now charge it or smt
+        token = response.id;
+        alert(token);
+      }
+    };
   });
 
   paymentApp.controller('ConfirmCtrl', function ($scope, ArtistService) {

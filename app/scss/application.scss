@@ -44,6 +44,17 @@ header {
 form {
   display: block;
   width: 100%;
+
+  &.invalid .ng-invalid,
+  .ng-dirty.ng-invalid {
+    color: $brand-danger;
+    background-color: #fee;
+    border-color: #fee;
+
+    &::-webkit-input-placeholder { /* WebKit browsers */
+      color: $brand-danger;
+    }
+  }
 }
 
 .buskr-input {

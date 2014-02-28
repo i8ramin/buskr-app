@@ -1,21 +1,36 @@
 <article class="view" ng-controller="AddCardCtrl">
   <div class="content content-padded">
-    <form name="addCardForm">
+    <form name="addCardForm" stripe-form="handlePayment" method="post" accept-charset="UTF-8" ng-class="{'invalid invalid-shake':invalid}">
       <div class="buskr-input">
         <input type="text" class="form-control"
           ng-model="name"
           placeholder="Name">
       </div>
 
-      <div class="buskr-input">
-        <input type="text" class="form-control"
-          ng-model="cc"
-          placeholder="CC">
-      </div>
-    </form>
+      <div class="buskr-input credit-card">
+        <input type="text" class="form-control card" placeholder="Card Number"
+          ng-model="number"
+          payments-format="card"
+          payments-validate="card"
+          payments-type-model="type">
 
-    <footer class="footer-bottom">
-      <button class="btn btn-primary btn-block" ng-click="signUp()">Add Card</button>
-    </footer>
+        <input type="text" class="form-control cvc" placeholder="CVC" maxlength="4"
+          ng-model="cvc"
+          payments-format="cvc"
+          payments-validate="cvc"
+          payments-type-model="type">
+      </div>
+
+      <div class="buskr-input">
+        <input type="text" class="form-control expiry" placeholder="MM/YY"
+          ng-model="expiry"
+          payments-format="expiry"
+          payments-validate="expiry">
+      </div>
+
+      <footer class="footer-bottom">
+        <button class="btn btn-primary btn-block">Add Card</button>
+      </footer>
+    </form>
   </div>
 </article>
